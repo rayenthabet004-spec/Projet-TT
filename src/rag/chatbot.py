@@ -135,7 +135,7 @@ def chat_gemini(
         try:
             import requests
             url = f"https://generativelanguage.googleapis.com/v1beta/models/{model_name}:generateContent?key={key}"
-            resp = requests.post(url, headers=headers, json=payload, timeout=15)
+            resp = requests.post(url, headers=headers, json=payload, timeout=4)
             if resp.status_code == 200:
                 data = resp.json()
                 candidates = data.get("candidates", [])
@@ -143,6 +143,9 @@ def chat_gemini(
                     parts = candidates[0].get("content", {}).get("parts", [])
                     if parts:
                         return parts[0].get("text", "")
+            elif resp.status_code in [400, 401, 403]:
+                # Invalid API key - fall back immediately without waiting
+                break
         except Exception:
             continue
 

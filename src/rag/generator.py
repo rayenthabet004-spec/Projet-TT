@@ -458,7 +458,7 @@ def generate_gemini(
         try:
             import requests
             url = f"https://generativelanguage.googleapis.com/v1beta/models/{model_name}:generateContent?key={key}"
-            resp = requests.post(url, headers=headers, json=payload, timeout=15)
+            resp = requests.post(url, headers=headers, json=payload, timeout=4)
             if resp.status_code == 200:
                 data = resp.json()
                 candidates = data.get("candidates", [])
@@ -486,6 +486,9 @@ def generate_gemini(
                             confidence=parsed["confidence"] or "high",
                             source=f"gemini_llm ({model_name})"
                         )
+            elif resp.status_code in [400, 401, 403]:
+                # Invalid API key - do not retry other models with the same invalid key
+                break
         except Exception:
             continue
 

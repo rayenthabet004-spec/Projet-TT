@@ -12,6 +12,12 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
+# Pre-cache Hugging Face FLAN-T5 model weights at build time
+ENV HF_HOME=/app/hf_cache
+RUN python -c "from transformers import AutoTokenizer, AutoModelForSeq2SeqLM; \
+    AutoTokenizer.from_pretrained('rayenthabet004/tt-multi-engine-t5'); \
+    AutoModelForSeq2SeqLM.from_pretrained('rayenthabet004/tt-multi-engine-t5', low_cpu_mem_usage=True)"
+
 # Copy application source code and data
 COPY . .
 

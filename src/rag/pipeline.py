@@ -63,11 +63,13 @@ def analyze_log(
     use_classifier: bool = True,
     filter_informational: bool = False,
     engine: str = None,
+    api_key: str = None,
 ) -> dict:
     """Analyze raw log text end-to-end and return a report dict.
 
     Args:
         engine: 'oracle', 'postgres', 'mysql', or None for auto-detection.
+        api_key: Optional Gemini API key if using mode='gemini'.
     """
     if kb is None:
         kb = load_default_kb()
@@ -119,6 +121,7 @@ def analyze_log(
             retrieved=retrieved,
             mode=mode,
             engine=engine,
+            api_key=api_key,
         )
         finding = {
             "code": code,

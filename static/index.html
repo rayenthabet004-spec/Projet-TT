@@ -27,10 +27,15 @@
         </div>
       </div>
 
-      <div class="supported-engines-chips">
-        <div class="engine-chip oracle"><span class="dot"></span> Oracle DB</div>
-        <div class="engine-chip postgres"><span class="dot"></span> PostgreSQL</div>
-        <div class="engine-chip mysql"><span class="dot"></span> MySQL Server</div>
+      <div style="display: flex; align-items: center; gap: 12px; flex-wrap: wrap;">
+        <div class="supported-engines-chips">
+          <div class="engine-chip oracle"><span class="dot"></span> Oracle DB</div>
+          <div class="engine-chip postgres"><span class="dot"></span> PostgreSQL</div>
+          <div class="engine-chip mysql"><span class="dot"></span> MySQL Server</div>
+        </div>
+        <button type="button" class="btn-theme-toggle" id="theme-toggle-btn" onclick="toggleTheme()">
+          <span id="theme-icon">🌙</span> <span id="theme-text">Mode Sombre</span>
+        </button>
       </div>
     </div>
   </header>
@@ -110,15 +115,20 @@
 
           <div class="control-group">
             <label for="mode-select">Mode de Diagnostic IA :</label>
-            <select id="mode-select" class="select-input">
+            <select id="mode-select" class="select-input" onchange="handleModeChange(this.value)">
               <option value="mock" selected>⚡ RAG Déterministe + Base de Connaissances (Instantané)</option>
+              <option value="gemini">🌐 Mode Hybride LLM (Google Gemini API)</option>
               <option value="t5">🧠 Modèle FLAN-T5 Fine-Tuné (Local)</option>
-              <option value="gemini">🌐 Mode Hybride LLM (API)</option>
             </select>
           </div>
 
+          <div class="control-group" id="api-key-group">
+            <label for="api-key-input">Clé API Gemini (Optionnelle si configurée dans .env) :</label>
+            <input type="password" id="api-key-input" class="select-input" placeholder="Collez votre clé API Gemini ici..." onchange="saveApiKey(this.value)">
+          </div>
+
           <div class="control-group">
-            <label class="checkbox-label">
+            <label class="checkbox-label" style="margin-top: 28px;">
               <input type="checkbox" id="filter-info-checkbox">
               <span>Masquer les messages d'information (bruit bénin)</span>
             </label>

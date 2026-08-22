@@ -399,6 +399,77 @@ def generate_t5(
     )
 
 
+def generate_gemini(
+    code: str,
+    raw_line: str,
+    context: str,
+    retrieved: List[Tuple[KBEntry, float]],
+    api_key: Optional[str] = None,
+    engine: str = "oracle",
+) -> Explanation:
+    """Hybrid LLM generation via Google Gemini API."""
+    key = api_key or os.environ.get("GEMINI_API_KEY")
+    if not key:
+        exp = generate_mock(code, raw_line, context, retrieved)
+        exp.source = "mock_fallback (no API key)"
+        return exp
+
+    user_prompt = _build_user_prompt(code, raw_line, context, retrieved)
+    full_prompt = (
+        f"{SYSTEM_PROMPT}\n\n"
+        f"Target Database Engine: {engine.upper()}.\n\n"
+        f"{user_prompt}"
+    )
+
+    payload = {
+        "contents": [{"parts": [{"text": full_prompt}]}],
+        "generationConfig": {"temperature": 0.2, "maxOutputTokens": 800}
+    }
+    headers = {"Content-Type": "application/json"}
+
+    # Attempt with gemini-2.0-flash, then fallback to gemini-1.5-flash
+    models = ["gemini-2.0-flash", "gemini-1.5-flash", "gemini-2.5-flash"]
+    for model_name in models:
+        try:
+            import requests
+            url = f"https://generativelanguage.googleapis.com/v1beta/models/{model_name}:generateContent?key={key}"
+            resp = requests.post(url, headers=headers, json=payload, timeout=12)
+            if resp.status_code == 200:
+                data = resp.json()
+                candidates = data.get("candidates", [])
+                if candidates:
+                    parts = candidates[0].get("content", {}).get("parts", [])
+                    if parts:
+                        text = parts[0].get("text", "")
+                        parsed = _parse_structured_response(text)
+                        
+                        # Backfill if any field missing
+                        if retrieved:
+                            top_entry = retrieved[0][0]
+                            if not parsed["meaning"] and top_entry.message:
+                                parsed["meaning"] = top_entry.message
+                            if not parsed["likely_cause"] and top_entry.cause:
+                                parsed["likely_cause"] = top_entry.cause
+                            if not parsed["suggested_solution"] and top_entry.solution:
+                                parsed["suggested_solution"] = top_entry.solution
+
+                        return Explanation(
+                            code=code,
+                            meaning=parsed["meaning"] or "Explication générée par le modèle Gemini.",
+                            likely_cause=parsed["likely_cause"] or "Anomalie identifiée dans le contexte du log.",
+                            suggested_solution=parsed["suggested_solution"] or "Vérifier la configuration du serveur.",
+                            confidence=parsed["confidence"] or "high",
+                            source=f"gemini_llm ({model_name})"
+                        )
+        except Exception:
+            continue
+
+    # Fallback to deterministic mock if API call fails
+    fallback_exp = generate_mock(code, raw_line, context, retrieved)
+    fallback_exp.source = "gemini_api_error_fallback_to_kb"
+    return fallback_exp
+
+
 def generate(
     code: str,
     raw_line: str,
@@ -407,17 +478,29 @@ def generate(
     mode: str = "t5",
     t5_model_dir: str = DEFAULT_T5_MODEL_DIR,
     engine: str = "oracle",
+    api_key: Optional[str] = None,
 ) -> Explanation:
     """Main entry point used by the pipeline.
 
     mode:
-      "mock"  - deterministic KB-only path (no model inference).
-      "t5"    - deterministic KB lookup on confident exact matches (score >= 999),
-                falling back to the locally fine-tuned FLAN-T5 model for non-exact
-                or uncertain errors.
+      "mock"    - deterministic KB-only path (no model inference).
+      "gemini"  - Google Gemini cloud LLM reasoning with KB context.
+      "t5"      - deterministic KB lookup on confident exact matches (score >= 999),
+                  falling back to the locally fine-tuned FLAN-T5 model for non-exact
+                  or uncertain errors.
     """
     if mode == "mock":
         return generate_mock(code, raw_line, context, retrieved)
+
+    if mode == "gemini":
+        return generate_gemini(
+            code=code,
+            raw_line=raw_line,
+            context=context,
+            retrieved=retrieved,
+            api_key=api_key,
+            engine=engine,
+        )
 
     # FIX 1: Exact-match short-circuit MUST always apply before calling generate_t5()
     if retrieved and retrieved[0][1] >= 999.0:

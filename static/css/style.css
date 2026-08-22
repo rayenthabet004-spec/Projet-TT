@@ -65,6 +65,123 @@
   padding: 0;
 }
 
+/* Dark Theme Overrides */
+[data-theme="dark"] {
+  --bg-main: #0B132B;
+  --bg-card: #1C2541;
+  --bg-card-subtle: #131E3A;
+  --text-primary: #F8FAFC;
+  --text-secondary: #CBD5E1;
+  --text-muted: #94A3B8;
+  --border-color: #334155;
+  --border-focus: #00D2FF;
+
+  --tt-cyan-light: rgba(0, 178, 226, 0.16);
+  --color-error-bg: rgba(220, 38, 38, 0.18);
+  --color-error-border: rgba(239, 68, 68, 0.4);
+  --color-warning-bg: rgba(217, 119, 6, 0.18);
+  --color-warning-border: rgba(245, 158, 11, 0.4);
+  --color-success-bg: rgba(5, 150, 105, 0.18);
+  --color-success-border: rgba(16, 185, 129, 0.4);
+  --color-info-bg: rgba(2, 132, 199, 0.18);
+  --color-info-border: rgba(56, 189, 248, 0.4);
+
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 4px 14px -2px rgba(0, 0, 0, 0.4);
+  --shadow-lg: 0 10px 25px -3px rgba(0, 0, 0, 0.6);
+}
+
+[data-theme="dark"] .footer {
+  background: #0B132B;
+  border-color: #334155;
+}
+
+[data-theme="dark"] .btn-sample {
+  background: #1C2541;
+  color: #F8FAFC;
+  border-color: #334155;
+}
+
+[data-theme="dark"] .btn-sample:hover {
+  background: var(--tt-cyan);
+  color: #001242;
+  border-color: var(--tt-cyan);
+}
+
+[data-theme="dark"] .select-input,
+[data-theme="dark"] .log-textarea,
+[data-theme="dark"] .search-input {
+  background: #131E3A;
+  color: #F8FAFC;
+  border-color: #334155;
+}
+
+[data-theme="dark"] .dropzone {
+  background: #131E3A;
+  border-color: #475569;
+}
+
+[data-theme="dark"] .dropzone-icon {
+  background: #1C2541;
+}
+
+[data-theme="dark"] .dropzone-title {
+  color: #F8FAFC;
+}
+
+[data-theme="dark"] .finding-header {
+  background: #151D33;
+}
+
+[data-theme="dark"] .finding-code-badge {
+  background: #0B132B;
+  color: #38BDF8;
+  border-color: #334155;
+}
+
+[data-theme="dark"] .btn-filter,
+[data-theme="dark"] .btn-action {
+  background: #1C2541;
+  color: #F8FAFC;
+  border-color: #334155;
+}
+
+[data-theme="dark"] .btn-filter.active {
+  background: var(--tt-cyan);
+  color: #001242;
+  border-color: var(--tt-cyan);
+}
+
+[data-theme="dark"] .engine-banner,
+[data-theme="dark"] .kpi-card {
+  background: #1C2541;
+}
+
+[data-theme="dark"] .solution-box .diagnosis-text {
+  color: #A7F3D0;
+}
+
+/* Theme Toggle Button */
+.btn-theme-toggle {
+  background: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  color: #FFFFFF;
+  padding: 6px 14px;
+  border-radius: var(--radius-full);
+  font-size: 12.5px;
+  font-weight: 600;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: var(--transition);
+}
+
+.btn-theme-toggle:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: translateY(-1px);
+}
+
 body {
   font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
   background-color: var(--bg-main);

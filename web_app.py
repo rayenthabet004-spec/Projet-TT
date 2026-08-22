@@ -52,6 +52,7 @@ class AnalysisRequest(BaseModel):
     context_window: Optional[int] = 2
     use_classifier: Optional[bool] = True
     filter_informational: Optional[bool] = False
+    api_key: Optional[str] = None
 
 
 @app.get("/api/health")
@@ -109,7 +110,8 @@ def _run_pipeline(
     mode: Optional[str] = "mock",
     context_window: int = 2,
     use_classifier: bool = True,
-    filter_informational: bool = False
+    filter_informational: bool = False,
+    api_key: Optional[str] = None
 ) -> dict:
     if not log_content.strip():
         raise HTTPException(status_code=400, detail="Provided log content is empty.")
@@ -123,7 +125,8 @@ def _run_pipeline(
             context_window=context_window or 2,
             use_classifier=use_classifier,
             filter_informational=filter_informational,
-            engine=engine_arg
+            engine=engine_arg,
+            api_key=api_key
         )
         
         # Add summary structure for UI compatibility
@@ -154,7 +157,8 @@ def analyze_json_endpoint(req: AnalysisRequest):
         mode=req.mode,
         context_window=req.context_window or 2,
         use_classifier=req.use_classifier if req.use_classifier is not None else True,
-        filter_informational=req.filter_informational if req.filter_informational is not None else False
+        filter_informational=req.filter_informational if req.filter_informational is not None else False,
+        api_key=req.api_key
     )
     return JSONResponse(content=result)
 
@@ -166,7 +170,8 @@ async def analyze_file_endpoint(
     mode: Optional[str] = Form("mock"),
     context_window: Optional[int] = Form(2),
     use_classifier: Optional[bool] = Form(True),
-    filter_informational: Optional[bool] = Form(False)
+    filter_informational: Optional[bool] = Form(False),
+    api_key: Optional[str] = Form(None)
 ):
     raw_bytes = await file.read()
     log_content = raw_bytes.decode("utf-8", errors="replace")
@@ -178,7 +183,8 @@ async def analyze_file_endpoint(
         mode=mode,
         context_window=context_window or 2,
         use_classifier=use_classifier if use_classifier is not None else True,
-        filter_informational=filter_informational if filter_informational is not None else False
+        filter_informational=filter_informational if filter_informational is not None else False,
+        api_key=api_key
     )
     return JSONResponse(content=result)
 

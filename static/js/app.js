@@ -107,6 +107,76 @@ async function loadSampleLog(engine) {
 }
 
 // ==========================================
+// ==========================================
+// Theme (Dark / Light Mode)
+// ==========================================
+function initTheme() {
+  const saved = localStorage.getItem('tt_theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+  applyTheme(saved);
+}
+
+function applyTheme(theme) {
+  document.documentElement.setAttribute('data-theme', theme);
+  const icon = document.getElementById('theme-icon');
+  const text = document.getElementById('theme-text');
+  if (icon && text) {
+    if (theme === 'dark') {
+      icon.textContent = '☀️';
+      text.textContent = 'Mode Clair';
+    } else {
+      icon.textContent = '🌙';
+      text.textContent = 'Mode Sombre';
+    }
+  }
+  localStorage.setItem('tt_theme', theme);
+}
+
+function toggleTheme() {
+  const current = document.documentElement.getAttribute('data-theme') || 'light';
+  applyTheme(current === 'dark' ? 'light' : 'dark');
+}
+
+// ==========================================
+// API Key Management
+// ==========================================
+function initApiKey() {
+  const savedKey = localStorage.getItem('gemini_api_key') || '';
+  const input = document.getElementById('api-key-input');
+  if (input && savedKey) {
+    input.value = savedKey;
+  }
+}
+
+function saveApiKey(val) {
+  if (val && val.trim()) {
+    localStorage.setItem('gemini_api_key', val.trim());
+  } else {
+    localStorage.removeItem('gemini_api_key');
+  }
+}
+
+function handleModeChange(mode) {
+  const apiKeyGroup = document.getElementById('api-key-group');
+  if (apiKeyGroup) {
+    // Keep it clearly visible for Gemini mode
+    if (mode === 'gemini') {
+      apiKeyGroup.style.border = '1px solid var(--tt-cyan)';
+      apiKeyGroup.style.borderRadius = 'var(--radius-md)';
+      apiKeyGroup.style.padding = '10px';
+    } else {
+      apiKeyGroup.style.border = 'none';
+      apiKeyGroup.style.padding = '0';
+    }
+  }
+}
+
+// Init on script load
+document.addEventListener('DOMContentLoaded', () => {
+  initTheme();
+  initApiKey();
+});
+
+// ==========================================
 // Submit Analysis
 // ==========================================
 async function submitAnalysis() {
@@ -114,6 +184,8 @@ async function submitAnalysis() {
   const engine = document.getElementById('engine-select').value;
   const mode = document.getElementById('mode-select').value;
   const filterInfo = document.getElementById('filter-info-checkbox').checked;
+  const apiKeyInput = document.getElementById('api-key-input');
+  const apiKey = (apiKeyInput ? apiKeyInput.value.trim() : '') || localStorage.getItem('gemini_api_key') || '';
 
   const btn = document.getElementById('btn-submit');
   const spinner = document.getElementById('loading-spinner');
@@ -150,6 +222,9 @@ async function submitAnalysis() {
       formData.append('engine', engine);
       formData.append('mode', mode);
       formData.append('filter_informational', filterInfo);
+      if (apiKey) {
+        formData.append('api_key', apiKey);
+      }
 
       response = await fetch('/api/analyze/upload', {
         method: 'POST',
@@ -163,7 +238,8 @@ async function submitAnalysis() {
           log_text: logText,
           engine: engine,
           mode: mode,
-          filter_informational: filterInfo
+          filter_informational: filterInfo,
+          api_key: apiKey || null
         })
       });
     }

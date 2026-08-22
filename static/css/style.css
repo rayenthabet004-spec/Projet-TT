@@ -174,26 +174,72 @@
   border-color: #38BDF8;
 }
 
+[data-theme="dark"] .finding-card {
+  background: #1C2541 !important;
+  border-color: #334155 !important;
+}
+
+[data-theme="dark"] .finding-body {
+  background: #1C2541 !important;
+  color: #F8FAFC !important;
+}
+
 [data-theme="dark"] .finding-header {
-  background: #151D33;
+  background: #151D33 !important;
+  border-color: #334155 !important;
 }
 
 [data-theme="dark"] .finding-code-badge {
-  background: #0B132B;
-  color: #38BDF8;
-  border-color: #334155;
+  background: #0B132B !important;
+  color: #38BDF8 !important;
+  border-color: #334155 !important;
 }
 
 [data-theme="dark"] .diagnosis-label {
-  color: #38BDF8;
+  color: #38BDF8 !important;
 }
 
 [data-theme="dark"] .diagnosis-text {
-  color: #F8FAFC;
+  color: #F8FAFC !important;
+}
+
+[data-theme="dark"] .solution-box {
+  background: rgba(5, 150, 105, 0.16) !important;
+  border-color: rgba(16, 185, 129, 0.35) !important;
+}
+
+[data-theme="dark"] .solution-box .diagnosis-label {
+  color: #34D399 !important;
+}
+
+[data-theme="dark"] .solution-box .diagnosis-text {
+  color: #D1FAE5 !important;
+}
+
+[data-theme="dark"] .tag.tag-count {
+  background: rgba(0, 178, 226, 0.2) !important;
+  color: #38BDF8 !important;
+  border-color: rgba(0, 178, 226, 0.4) !important;
+}
+
+[data-theme="dark"] .tag.tag-real {
+  background: rgba(220, 38, 38, 0.25) !important;
+  color: #F87171 !important;
+  border-color: rgba(239, 68, 68, 0.4) !important;
+}
+
+[data-theme="dark"] .tag.tag-info {
+  background: rgba(148, 163, 184, 0.2) !important;
+  color: #CBD5E1 !important;
+  border-color: rgba(148, 163, 184, 0.4) !important;
+}
+
+[data-theme="dark"] .finding-tags span {
+  color: #CBD5E1 !important;
 }
 
 [data-theme="dark"] .btn-toggle-context {
-  color: #38BDF8;
+  color: #38BDF8 !important;
 }
 
 [data-theme="dark"] .btn-filter,
@@ -955,7 +1001,7 @@ body {
    Error Diagnostic Cards
    ========================================================================== */
 .finding-card {
-  background: #FFFFFF;
+  background: var(--bg-card);
   border: 1px solid var(--border-color);
   border-radius: var(--radius-lg);
   margin-bottom: 18px;
@@ -979,7 +1025,7 @@ body {
 
 .finding-header {
   padding: 16px 20px;
-  background: #FAFAFC;
+  background: var(--bg-card-subtle);
   border-bottom: 1px solid var(--border-color);
   display: flex;
   justify-content: space-between;

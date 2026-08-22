@@ -158,8 +158,7 @@ function saveApiKey(val) {
 function handleModeChange(mode) {
   const apiKeyGroup = document.getElementById('api-key-group');
   if (apiKeyGroup) {
-    // Keep it clearly visible for Gemini mode
-    if (mode === 'gemini') {
+    if (mode === 'gemini' || mode === 'groq') {
       apiKeyGroup.style.border = '1px solid var(--tt-cyan)';
       apiKeyGroup.style.borderRadius = 'var(--radius-md)';
       apiKeyGroup.style.padding = '10px';

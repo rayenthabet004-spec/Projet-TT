@@ -144,13 +144,60 @@ def chat_gemini(
                     if parts:
                         return parts[0].get("text", "")
             elif resp.status_code in [400, 401, 403]:
-                # Invalid API key - fall back immediately without waiting
                 break
         except Exception:
             continue
 
-    # Fallback to local KB response if API call fails
-    return chat_offline_kb(message, report_context, engine)
+    return None
+
+
+def chat_groq(
+    message: str,
+    history: List[Dict[str, str]],
+    report_context: Optional[dict] = None,
+    api_key: Optional[str] = None,
+    engine: Optional[str] = None
+) -> Optional[str]:
+    """Interactive DBA assistant powered by Groq API (LLaMA-3.3 / Mixtral)."""
+    _load_env_file()
+    key = api_key or os.environ.get("GROQ_API_KEY")
+    if not key:
+        return None
+
+    log_ctx = _extract_db_context_summary(report_context)
+    system_msg = f"{DBA_SYSTEM_PROMPT}\n\n{log_ctx}\nTarget Database Engine: {(engine or 'oracle').upper()}."
+
+    messages = [{"role": "system", "content": system_msg}]
+    for item in history[-6:]:
+        role = "user" if item.get("role") == "user" else "assistant"
+        text = item.get("content", "").strip()
+        if text:
+            messages.append({"role": role, "content": text})
+
+    messages.append({"role": "user", "content": message})
+
+    models = ["llama-3.3-70b-versatile", "llama-3.1-8b-instant", "mixtral-8x7b-32768"]
+    for model_name in models:
+        try:
+            import requests
+            url = "https://api.groq.com/openai/v1/chat/completions"
+            resp = requests.post(
+                url,
+                headers={"Content-Type": "application/json", "Authorization": f"Bearer {key}"},
+                json={"model": model_name, "messages": messages, "temperature": 0.3, "max_tokens": 1000},
+                timeout=4
+            )
+            if resp.status_code == 200:
+                data = resp.json()
+                choices = data.get("choices", [])
+                if choices:
+                    return choices[0].get("message", {}).get("content", "")
+            elif resp.status_code in [400, 401, 403]:
+                break
+        except Exception:
+            continue
+
+    return None
 
 
 def chat_offline_kb(
@@ -230,15 +277,42 @@ def handle_chat_request(
     report_context: Optional[dict] = None,
     api_key: Optional[str] = None
 ) -> Dict[str, str]:
-    """Entry point for the Chatbot API."""
+    """Entry point for the Chatbot API with cascading fallback (Gemini -> Groq -> Local KB)."""
     mode = (mode or "gemini").lower()
     
     if mode == "t5" or mode == "local" or mode == "mock":
         reply = chat_offline_kb(message, report_context, engine)
         used_mode = "FLAN-T5 / Base Locale"
-    else:
+    elif mode == "groq":
+        # 1. Try Groq
+        reply = chat_groq(message, history, report_context, api_key, engine)
+        used_mode = "Groq (LLaMA-3.3)"
+        
+        # 2. Fallback to Gemini
+        if not reply:
+            reply = chat_gemini(message, history, report_context, api_key, engine)
+            if reply:
+                used_mode = "Google Gemini (Fallback Groq)"
+
+        # 3. Fallback to Local KB
+        if not reply:
+            reply = chat_offline_kb(message, report_context, engine)
+            used_mode = "Base Locale (Fallback)"
+    else:  # mode == "gemini"
+        # 1. Try Gemini
         reply = chat_gemini(message, history, report_context, api_key, engine)
         used_mode = "Google Gemini"
+
+        # 2. Fallback to Groq
+        if not reply:
+            reply = chat_groq(message, history, report_context, api_key, engine)
+            if reply:
+                used_mode = "Groq LLaMA-3.3 (Fallback Gemini)"
+
+        # 3. Fallback to Local KB
+        if not reply:
+            reply = chat_offline_kb(message, report_context, engine)
+            used_mode = "Base Locale (Fallback)"
 
     return {
         "reply": reply,

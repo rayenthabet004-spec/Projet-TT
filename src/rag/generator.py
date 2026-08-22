@@ -492,10 +492,74 @@ def generate_gemini(
         except Exception:
             continue
 
-    # Fallback to deterministic mock if API call fails
-    fallback_exp = generate_mock(code, raw_line, context, retrieved)
-    fallback_exp.source = "gemini_api_error_fallback_to_kb"
-    return fallback_exp
+    return None
+
+
+def generate_groq(
+    code: str,
+    raw_line: str,
+    context: str,
+    retrieved: List[Tuple[KBEntry, float]],
+    api_key: Optional[str] = None,
+    engine: str = "oracle",
+) -> Optional[Explanation]:
+    """Hybrid LLM generation via Groq API (Ultra-fast LLaMA-3.3 / Mixtral)."""
+    _load_env_file()
+    key = api_key or os.environ.get("GROQ_API_KEY")
+    if not key:
+        return None
+
+    user_prompt = _build_user_prompt(code, raw_line, context, retrieved)
+    messages = [
+        {"role": "system", "content": f"{SYSTEM_PROMPT}\nTarget Database Engine: {engine.upper()}."},
+        {"role": "user", "content": user_prompt}
+    ]
+
+    payload = {
+        "messages": messages,
+        "temperature": 0.2,
+        "max_tokens": 800
+    }
+    headers = {
+        "Content-Type": "application/json",
+        "Authorization": f"Bearer {key}"
+    }
+
+    models = ["llama-3.3-70b-versatile", "llama-3.1-8b-instant", "mixtral-8x7b-32768"]
+    for model_name in models:
+        try:
+            import requests
+            url = "https://api.groq.com/openai/v1/chat/completions"
+            resp = requests.post(url, headers=headers, json={"model": model_name, **payload}, timeout=4)
+            if resp.status_code == 200:
+                data = resp.json()
+                choices = data.get("choices", [])
+                if choices:
+                    text = choices[0].get("message", {}).get("content", "")
+                    parsed = _parse_structured_response(text)
+                    if retrieved:
+                        top_entry = retrieved[0][0]
+                        if not parsed["meaning"] and top_entry.message:
+                            parsed["meaning"] = top_entry.message
+                        if not parsed["likely_cause"] and top_entry.cause:
+                            parsed["likely_cause"] = top_entry.cause
+                        if not parsed["suggested_solution"] and top_entry.solution:
+                            parsed["suggested_solution"] = top_entry.solution
+
+                    return Explanation(
+                        code=code,
+                        meaning=parsed["meaning"] or "Explication générée par le modèle Groq LLaMA.",
+                        likely_cause=parsed["likely_cause"] or "Anomalie identifiée dans le contexte du log.",
+                        suggested_solution=parsed["suggested_solution"] or "Vérifier la configuration du serveur.",
+                        confidence=parsed["confidence"] or "high",
+                        source=f"groq_llm ({model_name})"
+                    )
+            elif resp.status_code in [400, 401, 403]:
+                break
+        except Exception:
+            continue
+
+    return None
 
 
 def generate(
@@ -512,16 +576,17 @@ def generate(
 
     mode:
       "mock"    - deterministic KB-only path (no model inference).
-      "gemini"  - Google Gemini cloud LLM reasoning with KB context.
+      "gemini"  - Google Gemini cloud LLM reasoning (fallback to Groq -> Local KB).
+      "groq"    - Groq ultra-fast LLaMA-3.3 reasoning (fallback to Gemini -> Local KB).
       "t5"      - deterministic KB lookup on confident exact matches (score >= 999),
-                  falling back to the locally fine-tuned FLAN-T5 model for non-exact
-                  or uncertain errors.
+                  falling back to the locally fine-tuned FLAN-T5 model.
     """
     if mode == "mock":
         return generate_mock(code, raw_line, context, retrieved)
 
     if mode == "gemini":
-        return generate_gemini(
+        # 1. Try Gemini
+        gem_exp = generate_gemini(
             code=code,
             raw_line=raw_line,
             context=context,
@@ -529,6 +594,55 @@ def generate(
             api_key=api_key,
             engine=engine,
         )
+        if gem_exp and not gem_exp.source.startswith("gemini_api_error") and not gem_exp.source.startswith("mock_fallback"):
+            return gem_exp
+
+        # 2. Fallback to Groq
+        groq_exp = generate_groq(
+            code=code,
+            raw_line=raw_line,
+            context=context,
+            retrieved=retrieved,
+            api_key=api_key,
+            engine=engine,
+        )
+        if groq_exp:
+            return groq_exp
+
+        # 3. Fallback to Local KB
+        local_exp = generate_mock(code, raw_line, context, retrieved)
+        local_exp.source = "fallback_local_kb (gemini & groq unavailable)"
+        return local_exp
+
+    if mode == "groq":
+        # 1. Try Groq
+        groq_exp = generate_groq(
+            code=code,
+            raw_line=raw_line,
+            context=context,
+            retrieved=retrieved,
+            api_key=api_key,
+            engine=engine,
+        )
+        if groq_exp:
+            return groq_exp
+
+        # 2. Fallback to Gemini
+        gem_exp = generate_gemini(
+            code=code,
+            raw_line=raw_line,
+            context=context,
+            retrieved=retrieved,
+            api_key=api_key,
+            engine=engine,
+        )
+        if gem_exp and not gem_exp.source.startswith("gemini_api_error") and not gem_exp.source.startswith("mock_fallback"):
+            return gem_exp
+
+        # 3. Fallback to Local KB
+        local_exp = generate_mock(code, raw_line, context, retrieved)
+        local_exp.source = "fallback_local_kb (groq & gemini unavailable)"
+        return local_exp
 
     # FIX 1: Exact-match short-circuit MUST always apply before calling generate_t5()
     if retrieved and retrieved[0][1] >= 999.0:

@@ -118,13 +118,14 @@
             <select id="mode-select" class="select-input" onchange="handleModeChange(this.value)">
               <option value="mock" selected>⚡ RAG Déterministe + Base de Connaissances (Instantané)</option>
               <option value="gemini">🌐 Mode Hybride LLM (Google Gemini API)</option>
+              <option value="groq">🚀 Mode Ultra-Rapide LLM (Groq LLaMA-3.3)</option>
               <option value="t5">🧠 Modèle FLAN-T5 Fine-Tuné (Local)</option>
             </select>
           </div>
 
           <div class="control-group" id="api-key-group">
-            <label for="api-key-input">Clé API Gemini (Optionnelle si configurée dans .env) :</label>
-            <input type="password" id="api-key-input" class="select-input" placeholder="Collez votre clé API Gemini ici..." onchange="saveApiKey(this.value)">
+            <label for="api-key-input">Clé API (Gemini ou Groq - optionnelle si configurée dans .env) :</label>
+            <input type="password" id="api-key-input" class="select-input" placeholder="Collez votre clé API Gemini (AIza...) ou Groq (gsk_...)" onchange="saveApiKey(this.value)">
           </div>
 
           <div class="control-group">
@@ -268,6 +269,7 @@
       <div class="chatbot-header-actions">
         <select id="chat-mode-select" class="chat-mode-dropdown" title="Choisir le moteur d'IA pour le Chat">
           <option value="gemini" selected>🌐 Mode Gemini</option>
+          <option value="groq">🚀 Mode Groq (LLaMA-3.3)</option>
           <option value="t5">🧠 Mode FLAN-T5 (Local)</option>
         </select>
         <button type="button" class="btn-chat-header-icon" onclick="clearChatHistory()" title="Effacer l'historique de discussion">🗑️</button>

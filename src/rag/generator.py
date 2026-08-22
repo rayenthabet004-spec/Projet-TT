@@ -399,6 +399,30 @@ def generate_t5(
     )
 
 
+def _load_env_file():
+    """Automatically load .env into os.environ if present."""
+    candidates = [
+        os.path.normpath(os.path.join(os.path.dirname(__file__), "..", "..", ".env")),
+        os.path.abspath(".env")
+    ]
+    for env_path in candidates:
+        if os.path.isfile(env_path):
+            try:
+                with open(env_path, "r", encoding="utf-8", errors="replace") as f:
+                    for line in f:
+                        line = line.strip()
+                        if line and not line.startswith("#") and "=" in line:
+                            k, v = line.split("=", 1)
+                            k, v = k.strip(), v.strip().strip('"').strip("'")
+                            if k and not os.environ.get(k):
+                                os.environ[k] = v
+            except Exception:
+                pass
+
+
+_load_env_file()
+
+
 def generate_gemini(
     code: str,
     raw_line: str,
@@ -408,6 +432,7 @@ def generate_gemini(
     engine: str = "oracle",
 ) -> Explanation:
     """Hybrid LLM generation via Google Gemini API."""
+    _load_env_file()
     key = api_key or os.environ.get("GEMINI_API_KEY")
     if not key:
         exp = generate_mock(code, raw_line, context, retrieved)
@@ -423,17 +448,17 @@ def generate_gemini(
 
     payload = {
         "contents": [{"parts": [{"text": full_prompt}]}],
-        "generationConfig": {"temperature": 0.2, "maxOutputTokens": 800}
+        "generationConfig": {"temperature": 0.3, "maxOutputTokens": 800}
     }
     headers = {"Content-Type": "application/json"}
 
-    # Attempt with gemini-2.0-flash, then fallback to gemini-1.5-flash
-    models = ["gemini-2.0-flash", "gemini-1.5-flash", "gemini-2.5-flash"]
+    # Supported and active Gemini models
+    models = ["gemini-flash-latest", "gemini-2.5-flash-lite", "gemini-pro-latest", "gemini-3.7-flash"]
     for model_name in models:
         try:
             import requests
             url = f"https://generativelanguage.googleapis.com/v1beta/models/{model_name}:generateContent?key={key}"
-            resp = requests.post(url, headers=headers, json=payload, timeout=12)
+            resp = requests.post(url, headers=headers, json=payload, timeout=15)
             if resp.status_code == 200:
                 data = resp.json()
                 candidates = data.get("candidates", [])

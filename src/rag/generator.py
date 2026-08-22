@@ -239,7 +239,15 @@ _T5_MODEL_CACHE = {}  # model_dir -> (tokenizer, model) -- avoid reloading from 
 
 _models_dir = os.path.normpath(os.path.join(os.path.dirname(__file__), "..", "..", "models"))
 _multi_engine_path = os.path.join(_models_dir, "multi_engine_t5_model")
-DEFAULT_T5_MODEL_DIR = _multi_engine_path if os.path.isdir(_multi_engine_path) else os.path.join(_models_dir, "oracle_log_t5_model")
+_oracle_legacy_path = os.path.join(_models_dir, "oracle_log_t5_model")
+_HF_FALLBACK_REPO = os.environ.get("T5_HF_REPO_ID", "rayenthabet004/tt-multi-engine-t5")
+
+if os.path.isdir(_multi_engine_path):
+    DEFAULT_T5_MODEL_DIR = _multi_engine_path
+elif os.path.isdir(_oracle_legacy_path):
+    DEFAULT_T5_MODEL_DIR = _oracle_legacy_path
+else:
+    DEFAULT_T5_MODEL_DIR = _HF_FALLBACK_REPO
 
 
 def _load_t5(model_dir: str):
@@ -255,15 +263,20 @@ def _load_t5(model_dir: str):
             "Install them with: pip install torch transformers sentencepiece"
         ) from e
 
-    if not os.path.isdir(model_dir):
-        raise FileNotFoundError(
-            f"No T5 model found at {model_dir}. Train it with "
-            f"notebook/oracle_log_t5_finetune_kaggle.ipynb, download the resulting "
-            f"oracle_log_t5_model.zip, and extract it to this path."
-        )
+    target_model_source = model_dir
+    # If the provided path is a non-existent local directory, fall back to Hugging Face Hub
+    if not os.path.isdir(target_model_source) and not ("/" in target_model_source and not os.path.isabs(target_model_source)):
+        target_model_source = os.environ.get("T5_HF_REPO_ID", _HF_FALLBACK_REPO)
 
-    tokenizer = AutoTokenizer.from_pretrained(model_dir)
-    model = AutoModelForSeq2SeqLM.from_pretrained(model_dir)
+    try:
+        tokenizer = AutoTokenizer.from_pretrained(target_model_source)
+        model = AutoModelForSeq2SeqLM.from_pretrained(target_model_source)
+    except Exception as err:
+        raise FileNotFoundError(
+            f"Could not load T5 model from local path '{model_dir}' or Hugging Face Hub repo '{target_model_source}'. "
+            f"Error: {err}"
+        ) from err
+
     device = "cuda" if torch.cuda.is_available() else "cpu"
     model = model.to(device)
     model.eval()

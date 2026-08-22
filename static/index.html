@@ -116,16 +116,17 @@
           <div class="control-group">
             <label for="mode-select">Mode de Diagnostic IA :</label>
             <select id="mode-select" class="select-input" onchange="handleModeChange(this.value)">
-              <option value="mock" selected>⚡ RAG Déterministe + Base de Connaissances (Instantané)</option>
-              <option value="gemini">🌐 Mode Hybride LLM (Google Gemini API)</option>
-              <option value="groq">🚀 Mode Ultra-Rapide LLM (Groq LLaMA-3.3)</option>
-              <option value="t5">🧠 Modèle FLAN-T5 Fine-Tuné (Local)</option>
+              <option value="t5" selected>🧠 Modèle FLAN-T5 Fine-Tuné (Recommandé • Local / Déployé)</option>
+              <option value="mock">⚡ RAG Déterministe + Base de Connaissances (Instantané)</option>
+              <option value="gemini">🌐 Mode Hybride LLM (Google Gemini API • Clé requise)</option>
+              <option value="groq">🚀 Mode Ultra-Rapide LLM (Groq LLaMA-3.3 • Clé requise)</option>
             </select>
           </div>
 
           <div class="control-group" id="api-key-group">
-            <label for="api-key-input">Clé API (Gemini ou Groq - optionnelle si configurée dans .env) :</label>
+            <label for="api-key-input">Clé API (Optionnelle pour Gemini ou Groq) :</label>
             <input type="password" id="api-key-input" class="select-input" placeholder="Collez votre clé API Gemini (AIza...) ou Groq (gsk_...)" onchange="saveApiKey(this.value)">
+            <small style="display:block; margin-top:4px; font-size:11px; color:var(--text-muted);">💡 Le mode FLAN-T5 (par défaut) ne requiert aucune clé API. Les modes Gemini/Groq utilisent votre propre quota.</small>
           </div>
 
           <div class="control-group">
@@ -268,9 +269,9 @@
       </div>
       <div class="chatbot-header-actions">
         <select id="chat-mode-select" class="chat-mode-dropdown" title="Choisir le moteur d'IA pour le Chat">
-          <option value="gemini" selected>🌐 Mode Gemini</option>
-          <option value="groq">🚀 Mode Groq (LLaMA-3.3)</option>
-          <option value="t5">🧠 Mode FLAN-T5 (Local)</option>
+          <option value="t5" selected>🧠 Mode FLAN-T5 (Local / Base)</option>
+          <option value="gemini">🌐 Mode Gemini (Clé requise)</option>
+          <option value="groq">🚀 Mode Groq (Clé requise)</option>
         </select>
         <button type="button" class="btn-chat-header-icon" onclick="clearChatHistory()" title="Effacer l'historique de discussion">🗑️</button>
         <button type="button" class="btn-chat-header-icon" onclick="toggleChatbot()" title="Fermer le chat">✕</button>

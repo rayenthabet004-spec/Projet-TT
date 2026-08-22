@@ -48,7 +48,7 @@ os.makedirs(os.path.join(STATIC_DIR, "js"), exist_ok=True)
 class AnalysisRequest(BaseModel):
     log_text: str
     engine: Optional[str] = "auto"
-    mode: Optional[str] = "mock"
+    mode: Optional[str] = "t5"
     context_window: Optional[int] = 2
     use_classifier: Optional[bool] = True
     filter_informational: Optional[bool] = False
@@ -61,7 +61,7 @@ def health_check():
         "status": "healthy",
         "service": "Tunisie Telecom Database Log AI Triage Suite",
         "supported_engines": ["Oracle", "PostgreSQL", "MySQL"],
-        "default_mode": "mock (Knowledge Base + Classifier)"
+        "default_mode": "t5 (Fine-tuned FLAN-T5 + Knowledge Base)"
     }
 
 
@@ -107,7 +107,7 @@ def _run_pipeline(
     log_content: str,
     source_name: str,
     engine: Optional[str] = "auto",
-    mode: Optional[str] = "mock",
+    mode: Optional[str] = "t5",
     context_window: int = 2,
     use_classifier: bool = True,
     filter_informational: bool = False,
@@ -121,7 +121,7 @@ def _run_pipeline(
     try:
         report_dict = analyze_log(
             log_text=log_content,
-            mode=mode or "mock",
+            mode=mode or "t5",
             context_window=context_window or 2,
             use_classifier=use_classifier,
             filter_informational=filter_informational,
@@ -135,7 +135,7 @@ def _run_pipeline(
             "unique_error_codes": report_dict.get("unique_error_codes", len(report_dict.get("findings", []))),
             "total_real_errors": report_dict.get("total_real_errors", 0),
             "total_informational": report_dict.get("total_informational", 0),
-            "generation_mode": report_dict.get("generation_mode", mode or "mock")
+            "generation_mode": report_dict.get("generation_mode", mode or "t5")
         }
 
         # Add metadata & preformatted markdown report
@@ -154,7 +154,7 @@ def analyze_json_endpoint(req: AnalysisRequest):
         log_content=req.log_text,
         source_name="pasted_text",
         engine=req.engine,
-        mode=req.mode,
+        mode=req.mode or "t5",
         context_window=req.context_window or 2,
         use_classifier=req.use_classifier if req.use_classifier is not None else True,
         filter_informational=req.filter_informational if req.filter_informational is not None else False,
@@ -167,7 +167,7 @@ def analyze_json_endpoint(req: AnalysisRequest):
 async def analyze_file_endpoint(
     file: UploadFile = File(...),
     engine: Optional[str] = Form("auto"),
-    mode: Optional[str] = Form("mock"),
+    mode: Optional[str] = Form("t5"),
     context_window: Optional[int] = Form(2),
     use_classifier: Optional[bool] = Form(True),
     filter_informational: Optional[bool] = Form(False),
@@ -180,7 +180,7 @@ async def analyze_file_endpoint(
         log_content=log_content,
         source_name=file.filename,
         engine=engine,
-        mode=mode,
+        mode=mode or "t5",
         context_window=context_window or 2,
         use_classifier=use_classifier if use_classifier is not None else True,
         filter_informational=filter_informational if filter_informational is not None else False,
@@ -195,7 +195,7 @@ from src.rag.chatbot import handle_chat_request
 class ChatRequest(BaseModel):
     message: str
     history: Optional[List[dict]] = []
-    mode: Optional[str] = "gemini"
+    mode: Optional[str] = "t5"
     engine: Optional[str] = None
     report_context: Optional[dict] = None
     api_key: Optional[str] = None

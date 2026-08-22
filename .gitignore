@@ -46,7 +46,12 @@ document.md
 image.png
 
 # Large Model Weights (FLAN-T5 ~1GB) & checkpoint artifacts
-models/
+models/*t5*/
+models/*.safetensors
+models/*.bin
+!models/error_classifier.joblib
+!models/error_classifier_vectorizer.joblib
+!models/error_classifier_threshold.json
 
 # Large Fine-tune Training datasets (>100MB exceeds GitHub limits, regeneratable via scripts)
 data/finetune/*.jsonl

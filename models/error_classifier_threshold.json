@@ -1,0 +1,5 @@
+{
+  "model_name": "LogisticRegression",
+  "informational_threshold": 0.3665056595923982,
+  "note": "predict as informational (label 0) if P(informational) >= this threshold; else real_error"
+}

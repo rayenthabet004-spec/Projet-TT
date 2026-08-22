@@ -1,0 +1,1208 @@
+2026-07-01T01:00:00.000000Z 0 [System] [MY-010116] [Server] mysqld starting
+2026-07-01T01:01:47.297399Z 0 [Note] [MY-010747] [Server] Plugin 'FEDERATED' is disabled.
+2026-07-01T01:02:49.165587Z 0 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+2026-07-01T01:03:42.195968Z 0 [System] [MY-010931] [Server] Ready for connections. Version: '8.0' socket: '/var/run/mysqld/mysqld.sock'
+2026-07-01T01:03:54.392232Z 0 [Note] [MY-010747] [Server] Plugin 'FEDERATED' is disabled.
+2026-07-01T01:05:26.849512Z 0 [Note] [MY-010931] [Server] Server is ready for connections
+2026-07-01T01:05:36.593033Z 0 [Note] [MY-011240] [Server] Plugin mysqlx reported: 'X Plugin ready for connections.'
+2026-07-01T01:07:35.095032Z 0 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2026-07-01T01:08:56.315472Z 0 [Note] [MY-010051] [Server] Event Scheduler: scheduler thread started
+2026-07-01T01:09:39.918592Z 0 [System] [MY-010116] [Server] /usr/sbin/mysqld (mysqld 8.0) starting as process 724
+2026-07-01T01:10:53.340739Z 0 [ERROR] [MY-001452] [Server] Cannot add or update a child row: a foreign key constraint fails
+2026-07-01T01:12:24.495030Z 0 [Note] [MY-010747] [Server] Plugin 'FEDERATED' is disabled.
+2026-07-01T01:14:01.784965Z 0 [System] [MY-010931] [Server] Ready for connections. Version: '8.0' socket: '/var/run/mysqld/mysqld.sock'
+2026-07-01T01:15:50.937044Z 0 [Note] [MY-011240] [Server] Plugin mysqlx reported: 'X Plugin ready for connections.'
+2026-07-01T01:17:09.452766Z 0 [System] [MY-010931] [Server] Ready for connections. Version: '8.0' socket: '/var/run/mysqld/mysqld.sock'
+2026-07-01T01:17:43.574474Z 0 [Note] [MY-013360] [Server] Plugin reported warning
+2026-07-01T01:17:52.163164Z 0 [System] [MY-010116] [Server] /usr/sbin/mysqld (mysqld 8.0) starting as process 64
+2026-07-01T01:19:35.132180Z 0 [System] [MY-010931] [Server] Ready for connections. Version: '8.0' socket: '/var/run/mysqld/mysqld.sock'
+2026-07-01T01:20:52.662674Z 0 [System] [MY-010931] [Server] Ready for connections. Version: '8.0' socket: '/var/run/mysqld/mysqld.sock'
+2026-07-01T01:21:41.065912Z 0 [System] [MY-010931] [Server] Ready for connections. Version: '8.0' socket: '/var/run/mysqld/mysqld.sock'
+2026-07-01T01:23:40.709723Z 0 [System] [MY-010116] [Server] /usr/sbin/mysqld (mysqld 8.0) starting as process 157
+2026-07-01T01:24:21.157276Z 0 [ERROR] [MY-001159] [Server] Got timeout reading communication packets
+2026-07-01T01:25:32.890067Z 0 [Note] [MY-010051] [Server] Event Scheduler: scheduler thread started
+2026-07-01T01:26:56.446263Z 0 [System] [MY-010116] [Server] /usr/sbin/mysqld (mysqld 8.0) starting as process 803
+2026-07-01T01:28:52.772585Z 0 [System] [MY-010931] [Server] Ready for connections. Version: '8.0' socket: '/var/run/mysqld/mysqld.sock'
+2026-07-01T01:29:07.600189Z 0 [Note] [MY-010931] [Server] Server is ready for connections
+2026-07-01T01:31:01.486442Z 0 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+2026-07-01T01:31:07.588541Z 0 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2026-07-01T01:31:34.821943Z 0 [ERROR] [MY-001034] [Server] Incorrect key file for table; try to repair it
+2026-07-01T01:32:40.983775Z 0 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+2026-07-01T01:34:30.420749Z 0 [Warning] [MY-010914] [Server] Server shutdown in progress
+2026-07-01T01:35:54.806732Z 0 [Note] [MY-010747] [Server] Plugin 'FEDERATED' is disabled.
+2026-07-01T01:37:39.004560Z 0 [ERROR] [MY-001526] [Server] Table has no partition for value
+2026-07-01T01:37:48.499259Z 0 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+2026-07-01T01:38:55.513508Z 0 [System] [MY-010931] [Server] Ready for connections. Version: '8.0' socket: '/var/run/mysqld/mysqld.sock'
+2026-07-01T01:40:53.835277Z 0 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+2026-07-01T01:41:06.796128Z 0 [Note] [MY-010051] [Server] Event Scheduler: scheduler thread started
+2026-07-01T01:41:46.309075Z 0 [ERROR] [MY-001418] [Server] This function has none of DETERMINISTIC, NO SQL, or READS SQL DATA
+2026-07-01T01:42:59.670626Z 0 [System] [MY-010931] [Server] Ready for connections. Version: '8.0' socket: '/var/run/mysqld/mysqld.sock'
+2026-07-01T01:44:31.686234Z 0 [System] [MY-010116] [Server] /usr/sbin/mysqld (mysqld 8.0) starting as process 403
+2026-07-01T01:46:12.223636Z 0 [Note] [MY-010747] [Server] Plugin 'FEDERATED' is disabled.
+2026-07-01T01:47:23.625294Z 0 [Note] [MY-010051] [Server] Event Scheduler: scheduler thread started
+2026-07-01T01:47:28.912720Z 0 [Note] [MY-010051] [Server] Event Scheduler: scheduler thread started
+2026-07-01T01:48:02.131822Z 0 [ERROR] [MY-001206] [Server] The total number of locks exceeds the lock table size
+2026-07-01T01:49:46.636996Z 0 [System] [MY-010931] [Server] Ready for connections. Version: '8.0' socket: '/var/run/mysqld/mysqld.sock'
+2026-07-01T01:50:37.533581Z 0 [ERROR] [MY-001265] [Server] Data truncated for column
+2026-07-01T01:51:59.396340Z 0 [System] [MY-010931] [Server] Ready for connections. Version: '8.0' socket: '/var/run/mysqld/mysqld.sock'
+2026-07-01T01:52:24.739401Z 0 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2026-07-01T01:53:21.613647Z 0 [Note] [MY-011240] [Server] Plugin mysqlx reported: 'X Plugin ready for connections.'
+2026-07-01T01:54:32.489927Z 0 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+2026-07-01T01:56:09.731368Z 0 [ERROR] [MY-002003] [Server] Can't connect to MySQL server on host
+2026-07-01T01:58:01.024675Z 0 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2026-07-01T01:59:52.158489Z 0 [Note] [MY-010747] [Server] Plugin 'FEDERATED' is disabled.
+2026-07-01T02:01:47.657634Z 0 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2026-07-01T02:02:44.609142Z 0 [ERROR] [MY-001364] [Server] Field doesn't have a default value
+2026-07-01T02:03:25.863334Z 0 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2026-07-01T02:04:28.635675Z 0 [Note] [MY-010747] [Server] Plugin 'FEDERATED' is disabled.
+2026-07-01T02:06:07.829241Z 0 [Note] [MY-011240] [Server] Plugin mysqlx reported: 'X Plugin ready for connections.'
+2026-07-01T02:07:59.412818Z 0 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+2026-07-01T02:09:28.751509Z 0 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+2026-07-01T02:11:05.732995Z 0 [ERROR] [MY-001048] [Server] Column cannot be null
+2026-07-01T02:11:57.556066Z 0 [Note] [MY-010747] [Server] Plugin 'FEDERATED' is disabled.
+2026-07-01T02:12:14.950384Z 0 [System] [MY-010931] [Server] Ready for connections. Version: '8.0' socket: '/var/run/mysqld/mysqld.sock'
+2026-07-01T02:14:14.321707Z 0 [Note] [MY-011240] [Server] Plugin mysqlx reported: 'X Plugin ready for connections.'
+2026-07-01T02:16:06.801749Z 0 [Note] [MY-010051] [Server] Event Scheduler: scheduler thread started
+2026-07-01T02:17:19.526254Z 0 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+2026-07-01T02:18:16.895595Z 0 [ERROR] [MY-001043] [Server] Bad handshake
+2026-07-01T02:18:45.650434Z 0 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+2026-07-01T02:19:42.436595Z 0 [ERROR] [MY-001267] [Server] Illegal mix of collations
+2026-07-01T02:21:00.717919Z 0 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2026-07-01T02:21:53.746412Z 0 [Note] [MY-010914] [Server] Server shutdown in progress
+2026-07-01T02:23:52.206424Z 0 [Note] [MY-010051] [Server] Event Scheduler: scheduler thread started
+2026-07-01T02:25:13.791181Z 0 [System] [MY-010931] [Server] Ready for connections. Version: '8.0' socket: '/var/run/mysqld/mysqld.sock'
+2026-07-01T02:25:57.142343Z 0 [Note] [MY-010051] [Server] Event Scheduler: scheduler thread started
+2026-07-01T02:26:17.372195Z 0 [Note] [MY-010051] [Server] Event Scheduler: scheduler thread started
+2026-07-01T02:27:17.746645Z 0 [Note] [MY-011240] [Server] Plugin mysqlx reported: 'X Plugin ready for connections.'
+2026-07-01T02:28:16.334177Z 0 [ERROR] [MY-002002] [Server] Can't connect to local MySQL server through socket
+2026-07-01T02:29:00.808925Z 0 [System] [MY-010116] [Server] /usr/sbin/mysqld (mysqld 8.0) starting as process 88
+2026-07-01T02:30:53.351352Z 0 [System] [MY-010931] [Server] Ready for connections. Version: '8.0' socket: '/var/run/mysqld/mysqld.sock'
+2026-07-01T02:31:33.511424Z 0 [Note] [MY-010051] [Server] Event Scheduler: scheduler thread started
+2026-07-01T02:33:15.359525Z 0 [Note] [MY-010051] [Server] Event Scheduler: scheduler thread started
+2026-07-01T02:34:03.409073Z 0 [ERROR] [MY-001153] [Server] Got a packet bigger than max_allowed_packet bytes
+2026-07-01T02:34:16.157582Z 0 [System] [MY-010931] [Server] Ready for connections. Version: '8.0' socket: '/var/run/mysqld/mysqld.sock'
+2026-07-01T02:36:05.362990Z 0 [Note] [MY-010747] [Server] Plugin 'FEDERATED' is disabled.
+2026-07-01T02:36:59.082827Z 0 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2026-07-01T02:37:57.238971Z 0 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2026-07-01T02:39:35.175652Z 0 [Note] [MY-011240] [Server] Plugin mysqlx reported: 'X Plugin ready for connections.'
+2026-07-01T02:40:44.147406Z 0 [ERROR] [MY-001205] [InnoDB] Lock wait timeout exceeded; try restarting transaction
+2026-07-01T02:41:25.769857Z 0 [System] [MY-010931] [Server] Ready for connections. Version: '8.0' socket: '/var/run/mysqld/mysqld.sock'
+2026-07-01T02:43:19.396757Z 0 [Note] [MY-010051] [Server] Event Scheduler: scheduler thread started
+2026-07-01T02:45:17.262772Z 0 [Note] [MY-011240] [Server] Plugin mysqlx reported: 'X Plugin ready for connections.'
+2026-07-01T02:46:56.105767Z 0 [ERROR] [MY-001129] [Server] Host is blocked because of many connection errors
+2026-07-01T02:48:40.366149Z 0 [System] [MY-010931] [Server] Ready for connections. Version: '8.0' socket: '/var/run/mysqld/mysqld.sock'
+2026-07-01T02:50:03.096173Z 0 [Note] [MY-010747] [Server] Plugin 'FEDERATED' is disabled.
+2026-07-01T02:51:28.033936Z 0 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+2026-07-01T02:52:26.426795Z 0 [Warning] [MY-010914] [Server] Server shutdown in progress
+2026-07-01T02:53:18.552152Z 0 [Note] [MY-010747] [Server] Plugin 'FEDERATED' is disabled.
+2026-07-01T02:53:36.819536Z 0 [Note] [MY-010747] [Server] Plugin 'FEDERATED' is disabled.
+2026-07-01T02:54:46.168902Z 0 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2026-07-01T02:56:29.619702Z 0 [Note] [MY-010914] [Server] Server shutdown in progress
+2026-07-01T02:58:02.960644Z 0 [System] [MY-010931] [Server] Ready for connections. Version: '8.0' socket: '/var/run/mysqld/mysqld.sock'
+2026-07-01T02:59:58.713930Z 0 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2026-07-01T03:01:15.772167Z 0 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2026-07-01T03:03:09.126531Z 0 [ERROR] [MY-001217] [Server] Cannot delete or update a parent row: foreign key constraint fails
+2026-07-01T03:03:17.657253Z 0 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2026-07-01T03:03:37.272451Z 0 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+2026-07-01T03:04:14.374152Z 0 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+2026-07-01T03:05:42.894949Z 0 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2026-07-01T03:06:48.359859Z 0 [Note] [MY-010931] [Server] Server is ready for connections
+2026-07-01T03:08:24.063800Z 0 [System] [MY-010116] [Server] /usr/sbin/mysqld (mysqld 8.0) starting as process 507
+2026-07-01T03:09:37.143854Z 0 [Note] [MY-010747] [Server] Plugin 'FEDERATED' is disabled.
+2026-07-01T03:09:52.763034Z 0 [System] [MY-010116] [Server] /usr/sbin/mysqld (mysqld 8.0) starting as process 868
+2026-07-01T03:10:02.000072Z 0 [Warning] [MY-013360] [Server] Plugin reported warning
+2026-07-01T03:11:30.524141Z 0 [Note] [MY-011240] [Server] Plugin mysqlx reported: 'X Plugin ready for connections.'
+2026-07-01T03:12:12.944502Z 0 [Note] [MY-011240] [Server] Plugin mysqlx reported: 'X Plugin ready for connections.'
+2026-07-01T03:12:51.717104Z 0 [System] [MY-010931] [Server] Ready for connections. Version: '8.0' socket: '/var/run/mysqld/mysqld.sock'
+2026-07-01T03:14:05.805674Z 0 [System] [MY-010116] [Server] /usr/sbin/mysqld (mysqld 8.0) starting as process 351
+2026-07-01T03:14:26.835541Z 0 [ERROR] [MY-001133] [Server] Can't find any matching row in the user table
+2026-07-01T03:16:11.129541Z 0 [System] [MY-010931] [Server] Ready for connections. Version: '8.0' socket: '/var/run/mysqld/mysqld.sock'
+2026-07-01T03:17:58.865000Z 0 [ERROR] [MY-001061] [Server] Duplicate key name
+2026-07-01T03:19:12.163157Z 0 [Note] [MY-011240] [Server] Plugin mysqlx reported: 'X Plugin ready for connections.'
+2026-07-01T03:20:36.674721Z 0 [ERROR] [MY-001041] [Server] Out of memory
+2026-07-01T03:21:05.819887Z 0 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+2026-07-01T03:22:38.736732Z 0 [Note] [MY-010051] [Server] Event Scheduler: scheduler thread started
+2026-07-01T03:22:50.043664Z 0 [ERROR] [MY-001558] [Server] Column count of the updated table does not match column count of the referenced table
+2026-07-01T03:24:27.579849Z 0 [System] [MY-010931] [Server] Ready for connections. Version: '8.0' socket: '/var/run/mysqld/mysqld.sock'
+2026-07-01T03:26:26.835501Z 0 [Note] [MY-011240] [Server] Plugin mysqlx reported: 'X Plugin ready for connections.'
+2026-07-01T03:27:01.737878Z 0 [Note] [MY-010051] [Server] Event Scheduler: scheduler thread started
+2026-07-01T03:27:59.194796Z 0 [ERROR] [MY-001872] [Repl] Replica failed to initialize relay log info structure
+2026-07-01T03:29:02.714489Z 0 [System] [MY-010931] [Server] Ready for connections. Version: '8.0' socket: '/var/run/mysqld/mysqld.sock'
+2026-07-01T03:30:44.485517Z 0 [ERROR] [MY-013183] [InnoDB] InnoDB assertion failure
+2026-07-01T03:32:00.125478Z 0 [System] [MY-010931] [Server] Ready for connections. Version: '8.0' socket: '/var/run/mysqld/mysqld.sock'
+2026-07-01T03:33:44.853803Z 0 [ERROR] [MY-001060] [Server] Duplicate column name
+2026-07-01T03:35:26.010380Z 0 [System] [MY-010931] [Server] Ready for connections. Version: '8.0' socket: '/var/run/mysqld/mysqld.sock'
+2026-07-01T03:36:41.651710Z 0 [System] [MY-010116] [Server] /usr/sbin/mysqld (mysqld 8.0) starting as process 87
+2026-07-01T03:37:10.896402Z 0 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2026-07-01T03:38:31.585760Z 0 [Note] [MY-010747] [Server] Plugin 'FEDERATED' is disabled.
+2026-07-01T03:40:06.874171Z 0 [Note] [MY-011240] [Server] Plugin mysqlx reported: 'X Plugin ready for connections.'
+2026-07-01T03:41:33.423071Z 0 [ERROR] [MY-001146] [Server] Table doesn't exist
+2026-07-01T03:43:22.324310Z 0 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+2026-07-01T03:43:34.368982Z 0 [System] [MY-010931] [Server] Ready for connections. Version: '8.0' socket: '/var/run/mysqld/mysqld.sock'
+2026-07-01T03:45:20.833470Z 0 [System] [MY-010931] [Server] Ready for connections. Version: '8.0' socket: '/var/run/mysqld/mysqld.sock'
+2026-07-01T03:45:51.659687Z 0 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2026-07-01T03:46:43.873436Z 0 [ERROR] [MY-001131] [Server] You are using MySQL as an anonymous user and anonymous users are not allowed to modify data
+2026-07-01T03:48:29.976132Z 0 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2026-07-01T03:49:49.255145Z 0 [Note] [MY-010051] [Server] Event Scheduler: scheduler thread started
+2026-07-01T03:51:45.835941Z 0 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+2026-07-01T03:52:16.206669Z 0 [ERROR] [MY-001129] [Server] Host is blocked because of many connection errors
+2026-07-01T03:52:58.785740Z 0 [Note] [MY-010051] [Server] Event Scheduler: scheduler thread started
+2026-07-01T03:54:58.157530Z 0 [System] [MY-010116] [Server] /usr/sbin/mysqld (mysqld 8.0) starting as process 583
+2026-07-01T03:55:35.255361Z 0 [Note] [MY-011240] [Server] Plugin mysqlx reported: 'X Plugin ready for connections.'
+2026-07-01T03:56:48.423374Z 0 [ERROR] [MY-001114] [Server] The table is full
+2026-07-01T03:58:19.467819Z 0 [Note] [MY-011240] [Server] Plugin mysqlx reported: 'X Plugin ready for connections.'
+2026-07-01T03:59:33.893147Z 0 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+2026-07-01T04:00:01.191896Z 0 [Note] [MY-011240] [Server] Plugin mysqlx reported: 'X Plugin ready for connections.'
+2026-07-01T04:01:55.787248Z 0 [Warning] [MY-010914] [Server] Server shutdown in progress
+2026-07-01T04:02:41.304844Z 0 [Note] [MY-011240] [Server] Plugin mysqlx reported: 'X Plugin ready for connections.'
+2026-07-01T04:03:29.060095Z 0 [Note] [MY-010931] [Server] Server is ready for connections
+2026-07-01T04:05:07.563097Z 0 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2026-07-01T04:06:30.126084Z 0 [System] [MY-010931] [Server] Ready for connections. Version: '8.0' socket: '/var/run/mysqld/mysqld.sock'
+2026-07-01T04:08:13.155437Z 0 [Note] [MY-010051] [Server] Event Scheduler: scheduler thread started
+2026-07-01T04:08:44.569683Z 0 [System] [MY-010931] [Server] Ready for connections. Version: '8.0' socket: '/var/run/mysqld/mysqld.sock'
+2026-07-01T04:10:31.971345Z 0 [System] [MY-010116] [Server] /usr/sbin/mysqld (mysqld 8.0) starting as process 844
+2026-07-01T04:12:21.452959Z 0 [ERROR] [MY-001227] [Server] Access denied; you need the SUPER privilege
+2026-07-01T04:12:36.688101Z 0 [System] [MY-010931] [Server] Ready for connections. Version: '8.0' socket: '/var/run/mysqld/mysqld.sock'
+2026-07-01T04:13:58.739162Z 0 [System] [MY-010116] [Server] /usr/sbin/mysqld (mysqld 8.0) starting as process 658
+2026-07-01T04:14:42.577870Z 0 [Note] [MY-010051] [Server] Event Scheduler: scheduler thread started
+2026-07-01T04:15:04.017544Z 0 [ERROR] [MY-001300] [Server] Invalid utf8 character UNDOTBS1
+2026-07-01T04:16:39.318399Z 0 [Note] [MY-011240] [Server] Plugin mysqlx reported: 'X Plugin ready for connections.'
+2026-07-01T04:17:04.194172Z 0 [ERROR] [MY-001060] [Server] Duplicate column name
+2026-07-01T04:17:33.194042Z 0 [Note] [MY-011240] [Server] Plugin mysqlx reported: 'X Plugin ready for connections.'
+2026-07-01T04:18:27.820813Z 0 [ERROR] [MY-001050] [Server] Table already exists
+2026-07-01T04:19:35.285401Z 0 [Note] [MY-010747] [Server] Plugin 'FEDERATED' is disabled.
+2026-07-01T04:21:07.678032Z 0 [ERROR] [MY-001558] [Server] Column count of the updated table does not match column count of the referenced table
+2026-07-01T04:21:54.165537Z 0 [System] [MY-010931] [Server] Ready for connections. Version: '8.0' socket: '/var/run/mysqld/mysqld.sock'
+2026-07-01T04:22:57.362177Z 0 [System] [MY-010931] [Server] Ready for connections. Version: '8.0' socket: '/var/run/mysqld/mysqld.sock'
+2026-07-01T04:23:03.824210Z 0 [Note] [MY-010747] [Server] Plugin 'FEDERATED' is disabled.
+2026-07-01T04:23:32.074337Z 0 [System] [MY-010931] [Server] Ready for connections. Version: '8.0' socket: '/var/run/mysqld/mysqld.sock'
+2026-07-01T04:24:48.418605Z 0 [Note] [MY-011240] [Server] Plugin mysqlx reported: 'X Plugin ready for connections.'
+2026-07-01T04:25:11.018692Z 0 [ERROR] [MY-001595] [Repl] Unsafe statement written to the binary log using statement format
+2026-07-01T04:25:27.099992Z 0 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+2026-07-01T04:26:16.311602Z 0 [System] [MY-010116] [Server] /usr/sbin/mysqld (mysqld 8.0) starting as process 997
+2026-07-01T04:26:44.888587Z 0 [Note] [MY-010747] [Server] Plugin 'FEDERATED' is disabled.
+2026-07-01T04:27:24.389622Z 0 [System] [MY-010116] [Server] /usr/sbin/mysqld (mysqld 8.0) starting as process 367
+2026-07-01T04:28:19.537067Z 0 [Warning] [MY-010914] [Server] Server shutdown in progress
+2026-07-01T04:29:21.223300Z 0 [Note] [MY-011240] [Server] Plugin mysqlx reported: 'X Plugin ready for connections.'
+2026-07-01T04:30:19.310641Z 0 [System] [MY-010931] [Server] Ready for connections. Version: '8.0' socket: '/var/run/mysqld/mysqld.sock'
+2026-07-01T04:30:25.960719Z 0 [Note] [MY-010747] [Server] Plugin 'FEDERATED' is disabled.
+2026-07-01T04:32:06.863821Z 0 [System] [MY-010116] [Server] /usr/sbin/mysqld (mysqld 8.0) starting as process 98
+2026-07-01T04:33:46.414951Z 0 [System] [MY-010931] [Server] Ready for connections. Version: '8.0' socket: '/var/run/mysqld/mysqld.sock'
+2026-07-01T04:35:01.513249Z 0 [Warning] [MY-010931] [Server] Server is ready for connections
+2026-07-01T04:36:45.866141Z 0 [System] [MY-010116] [Server] /usr/sbin/mysqld (mysqld 8.0) starting as process 729
+2026-07-01T04:38:35.365822Z 0 [Note] [MY-010747] [Server] Plugin 'FEDERATED' is disabled.
+2026-07-01T04:39:20.112155Z 0 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+2026-07-01T04:40:44.385650Z 0 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2026-07-01T04:42:31.141601Z 0 [ERROR] [MY-001051] [Server] Table must be locked before use
+2026-07-01T04:44:21.629955Z 0 [System] [MY-010931] [Server] Ready for connections. Version: '8.0' socket: '/var/run/mysqld/mysqld.sock'
+2026-07-01T04:45:25.592327Z 0 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+2026-07-01T04:47:14.367401Z 0 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+2026-07-01T04:48:15.487750Z 0 [Note] [MY-010051] [Server] Event Scheduler: scheduler thread started
+2026-07-01T04:49:02.523835Z 0 [ERROR] [MY-001062] [Server] Duplicate entry for key
+2026-07-01T04:49:43.394572Z 0 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+2026-07-01T04:51:31.801186Z 0 [System] [MY-010931] [Server] Ready for connections. Version: '8.0' socket: '/var/run/mysqld/mysqld.sock'
+2026-07-01T04:52:52.068633Z 0 [System] [MY-010931] [Server] Ready for connections. Version: '8.0' socket: '/var/run/mysqld/mysqld.sock'
+2026-07-01T04:54:11.684055Z 0 [Note] [MY-010747] [Server] Plugin 'FEDERATED' is disabled.
+2026-07-01T04:56:01.914974Z 0 [ERROR] [MY-001153] [Server] Got a packet bigger than max_allowed_packet bytes
+2026-07-01T04:56:25.070553Z 0 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+2026-07-01T04:56:36.472783Z 0 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+2026-07-01T04:56:43.747012Z 0 [System] [MY-010116] [Server] /usr/sbin/mysqld (mysqld 8.0) starting as process 911
+2026-07-01T04:57:25.645712Z 0 [Warning] [MY-013360] [Server] Plugin reported warning
+2026-07-01T04:57:49.772020Z 0 [Note] [MY-011240] [Server] Plugin mysqlx reported: 'X Plugin ready for connections.'
+2026-07-01T04:58:10.523228Z 0 [Note] [MY-010747] [Server] Plugin 'FEDERATED' is disabled.
+2026-07-01T04:59:36.454356Z 0 [ERROR] [MY-001114] [Server] The table is full
+2026-07-01T05:01:03.374542Z 0 [System] [MY-010116] [Server] /usr/sbin/mysqld (mysqld 8.0) starting as process 722
+2026-07-01T05:02:33.103636Z 0 [Note] [MY-011240] [Server] Plugin mysqlx reported: 'X Plugin ready for connections.'
+2026-07-01T05:03:09.953982Z 0 [System] [MY-010116] [Server] /usr/sbin/mysqld (mysqld 8.0) starting as process 923
+2026-07-01T05:04:33.162561Z 0 [Note] [MY-010747] [Server] Plugin 'FEDERATED' is disabled.
+2026-07-01T05:05:56.823656Z 0 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+2026-07-01T05:06:09.899509Z 0 [Note] [MY-010931] [Server] Server is ready for connections
+2026-07-01T05:07:26.910244Z 0 [Note] [MY-010747] [Server] Plugin 'FEDERATED' is disabled.
+2026-07-01T05:08:13.092131Z 0 [System] [MY-010116] [Server] /usr/sbin/mysqld (mysqld 8.0) starting as process 759
+2026-07-01T05:10:06.949085Z 0 [System] [MY-010931] [Server] Ready for connections. Version: '8.0' socket: '/var/run/mysqld/mysqld.sock'
+2026-07-01T05:11:15.444819Z 0 [Note] [MY-010051] [Server] Event Scheduler: scheduler thread started
+2026-07-01T05:12:49.866209Z 0 [Note] [MY-010747] [Server] Plugin 'FEDERATED' is disabled.
+2026-07-01T05:14:20.395983Z 0 [ERROR] [MY-001030] [InnoDB] Got error from storage engine
+2026-07-01T05:15:09.993639Z 0 [System] [MY-010116] [Server] /usr/sbin/mysqld (mysqld 8.0) starting as process 409
+2026-07-01T05:15:35.833718Z 0 [Note] [MY-010051] [Server] Event Scheduler: scheduler thread started
+2026-07-01T05:15:52.187316Z 0 [Note] [MY-013360] [Server] Plugin reported warning
+2026-07-01T05:16:55.475440Z 0 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+2026-07-01T05:18:06.285485Z 0 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2026-07-01T05:19:43.525539Z 0 [ERROR] [MY-001216] [Server] Cannot add or update a child row: foreign key constraint fails
+2026-07-01T05:19:56.104607Z 0 [Note] [MY-010051] [Server] Event Scheduler: scheduler thread started
+2026-07-01T05:21:49.606846Z 0 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2026-07-01T05:23:46.134805Z 0 [System] [MY-010931] [Server] Ready for connections. Version: '8.0' socket: '/var/run/mysqld/mysqld.sock'
+2026-07-01T05:24:11.485615Z 0 [Note] [MY-010747] [Server] Plugin 'FEDERATED' is disabled.
+2026-07-01T05:24:22.098137Z 0 [System] [MY-010931] [Server] Ready for connections. Version: '8.0' socket: '/var/run/mysqld/mysqld.sock'
+2026-07-01T05:26:07.493991Z 0 [Warning] [MY-013360] [Server] Plugin reported warning
+2026-07-01T05:27:41.389496Z 0 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2026-07-01T05:28:21.002773Z 0 [System] [MY-010931] [Server] Ready for connections. Version: '8.0' socket: '/var/run/mysqld/mysqld.sock'
+2026-07-01T05:29:08.890153Z 0 [ERROR] [MY-001160] [Server] Got timeout writing communication packets
+2026-07-01T05:31:04.456198Z 0 [Note] [MY-011240] [Server] Plugin mysqlx reported: 'X Plugin ready for connections.'
+2026-07-01T05:32:31.557858Z 0 [Note] [MY-010051] [Server] Event Scheduler: scheduler thread started
+2026-07-01T05:33:27.923085Z 0 [Note] [MY-010051] [Server] Event Scheduler: scheduler thread started
+2026-07-01T05:34:17.713274Z 0 [Note] [MY-011240] [Server] Plugin mysqlx reported: 'X Plugin ready for connections.'
+2026-07-01T05:34:58.434487Z 0 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2026-07-01T05:36:54.491318Z 0 [Warning] [MY-013360] [Server] Plugin reported warning
+2026-07-01T05:37:10.957117Z 0 [System] [MY-010116] [Server] /usr/sbin/mysqld (mysqld 8.0) starting as process 111
+2026-07-01T05:38:34.597192Z 0 [Note] [MY-011240] [Server] Plugin mysqlx reported: 'X Plugin ready for connections.'
+2026-07-01T05:40:15.905706Z 0 [ERROR] [MY-001264] [Server] Out of range value for column
+2026-07-01T05:41:11.768026Z 0 [Note] [MY-010051] [Server] Event Scheduler: scheduler thread started
+2026-07-01T05:42:10.433082Z 0 [Note] [MY-010747] [Server] Plugin 'FEDERATED' is disabled.
+2026-07-01T05:42:58.497550Z 0 [System] [MY-010116] [Server] /usr/sbin/mysqld (mysqld 8.0) starting as process 626
+2026-07-01T05:44:28.044122Z 0 [Note] [MY-010051] [Server] Event Scheduler: scheduler thread started
+2026-07-01T05:45:32.291787Z 0 [System] [MY-010116] [Server] /usr/sbin/mysqld (mysqld 8.0) starting as process 81
+2026-07-01T05:47:06.926054Z 0 [Note] [MY-010931] [Server] Server is ready for connections
+2026-07-01T05:48:57.776235Z 0 [Note] [MY-010747] [Server] Plugin 'FEDERATED' is disabled.
+2026-07-01T05:50:48.360871Z 0 [ERROR] [MY-001493] [Server] Values in VALUES IN must be unique for each partition
+2026-07-01T05:51:57.171397Z 0 [System] [MY-010116] [Server] /usr/sbin/mysqld (mysqld 8.0) starting as process 252
+2026-07-01T05:52:19.376840Z 0 [ERROR] [MY-001043] [Server] Bad handshake
+2026-07-01T05:52:59.146106Z 0 [System] [MY-010931] [Server] Ready for connections. Version: '8.0' socket: '/var/run/mysqld/mysqld.sock'
+2026-07-01T05:54:06.722086Z 0 [System] [MY-010116] [Server] /usr/sbin/mysqld (mysqld 8.0) starting as process 118
+2026-07-01T05:55:25.413533Z 0 [System] [MY-010931] [Server] Ready for connections. Version: '8.0' socket: '/var/run/mysqld/mysqld.sock'
+2026-07-01T05:56:51.377464Z 0 [ERROR] [MY-001071] [Server] Specified key was too long; max key length is 3072 bytes
+2026-07-01T05:58:08.740926Z 0 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2026-07-01T05:59:01.464436Z 0 [System] [MY-010116] [Server] /usr/sbin/mysqld (mysqld 8.0) starting as process 795
+2026-07-01T06:00:41.399279Z 0 [ERROR] [MY-001051] [Server] Table must be locked before use
+2026-07-01T06:01:41.024031Z 0 [System] [MY-010116] [Server] /usr/sbin/mysqld (mysqld 8.0) starting as process 698
+2026-07-01T06:03:34.820606Z 0 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+2026-07-01T06:04:23.718132Z 0 [Note] [MY-010051] [Server] Event Scheduler: scheduler thread started
+2026-07-01T06:04:59.098317Z 0 [Note] [MY-011240] [Server] Plugin mysqlx reported: 'X Plugin ready for connections.'
+2026-07-01T06:05:16.508318Z 0 [ERROR] [MY-002006] [Server] MySQL server has gone away
+2026-07-01T06:05:55.815764Z 0 [Note] [MY-010747] [Server] Plugin 'FEDERATED' is disabled.
+2026-07-01T06:07:43.796426Z 0 [Note] [MY-010051] [Server] Event Scheduler: scheduler thread started
+2026-07-01T06:09:10.717454Z 0 [System] [MY-010931] [Server] Ready for connections. Version: '8.0' socket: '/var/run/mysqld/mysqld.sock'
+2026-07-01T06:09:45.397471Z 0 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2026-07-01T06:10:27.849739Z 0 [ERROR] [MY-002002] [Server] Can't connect to local MySQL server through socket
+2026-07-01T06:11:36.976527Z 0 [Note] [MY-011240] [Server] Plugin mysqlx reported: 'X Plugin ready for connections.'
+2026-07-01T06:11:45.686587Z 0 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+2026-07-01T06:12:29.002333Z 0 [System] [MY-010931] [Server] Ready for connections. Version: '8.0' socket: '/var/run/mysqld/mysqld.sock'
+2026-07-01T06:13:22.674833Z 0 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+2026-07-01T06:15:16.849277Z 0 [Note] [MY-010051] [Server] Event Scheduler: scheduler thread started
+2026-07-01T06:15:58.204341Z 0 [ERROR] [MY-001060] [Server] Duplicate column name
+2026-07-01T06:16:18.426218Z 0 [Note] [MY-010747] [Server] Plugin 'FEDERATED' is disabled.
+2026-07-01T06:18:02.813947Z 0 [Note] [MY-011240] [Server] Plugin mysqlx reported: 'X Plugin ready for connections.'
+2026-07-01T06:18:08.374782Z 0 [ERROR] [MY-001045] [Server] Access denied for user (using password: YES)
+2026-07-01T06:19:55.183169Z 0 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+2026-07-01T06:21:46.501652Z 0 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+2026-07-01T06:23:42.278254Z 0 [System] [MY-010931] [Server] Ready for connections. Version: '8.0' socket: '/var/run/mysqld/mysqld.sock'
+2026-07-01T06:25:26.531521Z 0 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2026-07-01T06:26:00.826666Z 0 [ERROR] [MY-001071] [Server] Specified key was too long; max key length is 3072 bytes
+2026-07-01T06:26:34.889082Z 0 [System] [MY-010116] [Server] /usr/sbin/mysqld (mysqld 8.0) starting as process 929
+2026-07-01T06:26:40.487879Z 0 [ERROR] [MY-001130] [Server] Host is not allowed to connect to this MySQL server
+2026-07-01T06:26:55.738466Z 0 [System] [MY-010116] [Server] /usr/sbin/mysqld (mysqld 8.0) starting as process 190
+2026-07-01T06:27:48.788408Z 0 [Note] [MY-011240] [Server] Plugin mysqlx reported: 'X Plugin ready for connections.'
+2026-07-01T06:28:56.332638Z 0 [System] [MY-010931] [Server] Ready for connections. Version: '8.0' socket: '/var/run/mysqld/mysqld.sock'
+2026-07-01T06:29:10.948377Z 0 [ERROR] [MY-001188] [Server] Cannot modify a table used by an active transaction
+2026-07-01T06:30:13.046614Z 0 [System] [MY-010116] [Server] /usr/sbin/mysqld (mysqld 8.0) starting as process 864
+2026-07-01T06:30:53.674485Z 0 [System] [MY-010931] [Server] Ready for connections. Version: '8.0' socket: '/var/run/mysqld/mysqld.sock'
+2026-07-01T06:32:33.377980Z 0 [System] [MY-010931] [Server] Ready for connections. Version: '8.0' socket: '/var/run/mysqld/mysqld.sock'
+2026-07-01T06:34:13.552516Z 0 [ERROR] [MY-001034] [Server] Incorrect key file for table; try to repair it
+2026-07-01T06:35:20.542051Z 0 [Note] [MY-010051] [Server] Event Scheduler: scheduler thread started
+2026-07-01T06:35:34.961635Z 0 [Note] [MY-011240] [Server] Plugin mysqlx reported: 'X Plugin ready for connections.'
+2026-07-01T06:36:01.715321Z 0 [ERROR] [MY-001030] [InnoDB] Got error from storage engine
+2026-07-01T06:36:07.391351Z 0 [System] [MY-010931] [Server] Ready for connections. Version: '8.0' socket: '/var/run/mysqld/mysqld.sock'
+2026-07-01T06:36:22.006211Z 0 [Note] [MY-010747] [Server] Plugin 'FEDERATED' is disabled.
+2026-07-01T06:37:19.761570Z 0 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+2026-07-01T06:38:25.862420Z 0 [ERROR] [MY-001216] [Server] Cannot add or update a child row: foreign key constraint fails
+2026-07-01T06:40:11.297688Z 0 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+2026-07-01T06:40:18.707247Z 0 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2026-07-01T06:40:37.308685Z 0 [ERROR] [MY-001044] [Server] Access denied for user (using password: NO)
+2026-07-01T06:41:44.047913Z 0 [Note] [MY-010747] [Server] Plugin 'FEDERATED' is disabled.
+2026-07-01T06:43:04.938760Z 0 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+2026-07-01T06:44:11.578318Z 0 [System] [MY-010116] [Server] /usr/sbin/mysqld (mysqld 8.0) starting as process 598
+2026-07-01T06:45:06.296455Z 0 [Note] [MY-011240] [Server] Plugin mysqlx reported: 'X Plugin ready for connections.'
+2026-07-01T06:45:32.929968Z 0 [Warning] [MY-010931] [Server] Server is ready for connections
+2026-07-01T06:47:25.622428Z 0 [Note] [MY-010051] [Server] Event Scheduler: scheduler thread started
+2026-07-01T06:48:15.530366Z 0 [System] [MY-010116] [Server] /usr/sbin/mysqld (mysqld 8.0) starting as process 398
+2026-07-01T06:50:14.449908Z 0 [ERROR] [MY-001227] [Server] Access denied; you need the SUPER privilege
+2026-07-01T06:52:08.591834Z 0 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+2026-07-01T06:52:45.080745Z 0 [System] [MY-010931] [Server] Ready for connections. Version: '8.0' socket: '/var/run/mysqld/mysqld.sock'
+2026-07-01T06:53:42.839293Z 0 [System] [MY-010931] [Server] Ready for connections. Version: '8.0' socket: '/var/run/mysqld/mysqld.sock'
+2026-07-01T06:55:35.327026Z 0 [ERROR] [MY-001290] [Server] The MySQL server is running with the --read-only option
+2026-07-01T06:56:13.185525Z 0 [Note] [MY-010747] [Server] Plugin 'FEDERATED' is disabled.
+2026-07-01T06:57:26.192577Z 0 [Note] [MY-011240] [Server] Plugin mysqlx reported: 'X Plugin ready for connections.'
+2026-07-01T06:57:49.421559Z 0 [Warning] [MY-013360] [Server] Plugin reported warning
+2026-07-01T06:58:46.190373Z 0 [System] [MY-010931] [Server] Ready for connections. Version: '8.0' socket: '/var/run/mysqld/mysqld.sock'
+2026-07-01T06:59:18.237393Z 0 [System] [MY-010116] [Server] /usr/sbin/mysqld (mysqld 8.0) starting as process 963
+2026-07-01T07:00:37.357010Z 0 [Note] [MY-010051] [Server] Event Scheduler: scheduler thread started
+2026-07-01T07:01:32.845296Z 0 [ERROR] [MY-001366] [Server] Incorrect value for column
+2026-07-01T07:02:42.135831Z 0 [Note] [MY-010747] [Server] Plugin 'FEDERATED' is disabled.
+2026-07-01T07:04:25.706396Z 0 [System] [MY-010931] [Server] Ready for connections. Version: '8.0' socket: '/var/run/mysqld/mysqld.sock'
+2026-07-01T07:05:08.796669Z 0 [ERROR] [MY-002003] [Server] Can't connect to MySQL server on host
+2026-07-01T07:06:14.916951Z 0 [System] [MY-010931] [Server] Ready for connections. Version: '8.0' socket: '/var/run/mysqld/mysqld.sock'
+2026-07-01T07:08:07.906084Z 0 [Warning] [MY-010914] [Server] Server shutdown in progress
+2026-07-01T07:09:10.947549Z 0 [System] [MY-010116] [Server] /usr/sbin/mysqld (mysqld 8.0) starting as process 432
+2026-07-01T07:10:51.854464Z 0 [ERROR] [MY-003170] [Server] Memory capacity exceeded
+2026-07-01T07:12:39.133900Z 0 [Note] [MY-010747] [Server] Plugin 'FEDERATED' is disabled.
+2026-07-01T07:12:57.021281Z 0 [ERROR] [MY-001205] [InnoDB] Lock wait timeout exceeded; try restarting transaction
+2026-07-01T07:13:53.478151Z 0 [Note] [MY-010747] [Server] Plugin 'FEDERATED' is disabled.
+2026-07-01T07:14:56.252942Z 0 [Note] [MY-010051] [Server] Event Scheduler: scheduler thread started
+2026-07-01T07:16:03.718405Z 0 [Note] [MY-010747] [Server] Plugin 'FEDERATED' is disabled.
+2026-07-01T07:18:02.308917Z 0 [Note] [MY-010747] [Server] Plugin 'FEDERATED' is disabled.
+2026-07-01T07:19:12.779521Z 0 [System] [MY-010931] [Server] Ready for connections. Version: '8.0' socket: '/var/run/mysqld/mysqld.sock'
+2026-07-01T07:19:30.231512Z 0 [ERROR] [MY-001317] [Server] Query execution was interrupted
+2026-07-01T07:20:11.066835Z 0 [System] [MY-010931] [Server] Ready for connections. Version: '8.0' socket: '/var/run/mysqld/mysqld.sock'
+2026-07-01T07:20:32.508890Z 0 [System] [MY-010931] [Server] Ready for connections. Version: '8.0' socket: '/var/run/mysqld/mysqld.sock'
+2026-07-01T07:21:53.192101Z 0 [ERROR] [MY-001048] [Server] Column cannot be null
+2026-07-01T07:22:26.214579Z 0 [Note] [MY-010051] [Server] Event Scheduler: scheduler thread started
+2026-07-01T07:22:58.234492Z 0 [Note] [MY-011240] [Server] Plugin mysqlx reported: 'X Plugin ready for connections.'
+2026-07-01T07:23:39.930170Z 0 [ERROR] [MY-001267] [Server] Illegal mix of collations
+2026-07-01T07:24:52.016319Z 0 [Note] [MY-010747] [Server] Plugin 'FEDERATED' is disabled.
+2026-07-01T07:26:13.289464Z 0 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+2026-07-01T07:26:53.390438Z 0 [Note] [MY-010051] [Server] Event Scheduler: scheduler thread started
+2026-07-01T07:27:16.862968Z 0 [ERROR] [MY-001062] [Server] Duplicate entry for key
+2026-07-01T07:27:43.351353Z 0 [System] [MY-010116] [Server] /usr/sbin/mysqld (mysqld 8.0) starting as process 146
+2026-07-01T07:28:13.416359Z 0 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+2026-07-01T07:29:28.375652Z 0 [ERROR] [MY-001223] [Server] Can't execute the query because you have a conflicting read lock
+2026-07-01T07:29:47.174251Z 0 [Note] [MY-011240] [Server] Plugin mysqlx reported: 'X Plugin ready for connections.'
+2026-07-01T07:29:57.766007Z 0 [System] [MY-010116] [Server] /usr/sbin/mysqld (mysqld 8.0) starting as process 512
+2026-07-01T07:31:10.261216Z 0 [Note] [MY-010051] [Server] Event Scheduler: scheduler thread started
+2026-07-01T07:32:25.246634Z 0 [System] [MY-010116] [Server] /usr/sbin/mysqld (mysqld 8.0) starting as process 225
+2026-07-01T07:32:30.462748Z 0 [ERROR] [MY-002026] [Server] SSL connection error
+2026-07-01T07:32:45.052923Z 0 [Note] [MY-011240] [Server] Plugin mysqlx reported: 'X Plugin ready for connections.'
+2026-07-01T07:33:53.799402Z 0 [Note] [MY-010747] [Server] Plugin 'FEDERATED' is disabled.
+2026-07-01T07:35:06.350100Z 0 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2026-07-01T07:36:50.430899Z 0 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+2026-07-01T07:38:09.897489Z 0 [ERROR] [MY-001133] [Server] Can't find any matching row in the user table
+2026-07-01T07:39:55.057665Z 0 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2026-07-01T07:40:11.672529Z 0 [Note] [MY-011240] [Server] Plugin mysqlx reported: 'X Plugin ready for connections.'
+2026-07-01T07:40:56.578782Z 0 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2026-07-01T07:42:22.938580Z 0 [ERROR] [MY-001143] [Server] Table access denied
+2026-07-01T07:43:27.954218Z 0 [Note] [MY-010747] [Server] Plugin 'FEDERATED' is disabled.
+2026-07-01T07:44:54.089377Z 0 [Note] [MY-011240] [Server] Plugin mysqlx reported: 'X Plugin ready for connections.'
+2026-07-01T07:46:51.777436Z 0 [ERROR] [MY-001366] [Server] Incorrect value for column
+2026-07-01T07:48:03.399162Z 0 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+2026-07-01T07:49:43.039738Z 0 [Note] [MY-011240] [Server] Plugin mysqlx reported: 'X Plugin ready for connections.'
+2026-07-01T07:50:51.973423Z 0 [System] [MY-010931] [Server] Ready for connections. Version: '8.0' socket: '/var/run/mysqld/mysqld.sock'
+2026-07-01T07:51:51.875803Z 0 [System] [MY-010116] [Server] /usr/sbin/mysqld (mysqld 8.0) starting as process 711
+2026-07-01T07:52:34.328224Z 0 [System] [MY-010116] [Server] /usr/sbin/mysqld (mysqld 8.0) starting as process 870
+2026-07-01T07:52:45.095063Z 0 [ERROR] [MY-001143] [Server] Table access denied
+2026-07-01T07:54:37.409806Z 0 [System] [MY-010116] [Server] /usr/sbin/mysqld (mysqld 8.0) starting as process 565
+2026-07-01T07:55:39.717557Z 0 [ERROR] [MY-001050] [Server] Table already exists
+2026-07-01T07:56:14.611789Z 0 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2026-07-01T07:56:25.368512Z 0 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+2026-07-01T07:57:25.697846Z 0 [System] [MY-010116] [Server] /usr/sbin/mysqld (mysqld 8.0) starting as process 917
+2026-07-01T07:59:24.474966Z 0 [ERROR] [MY-001595] [Repl] Unsafe statement written to the binary log using statement format
+2026-07-01T08:00:19.147949Z 0 [Note] [MY-010051] [Server] Event Scheduler: scheduler thread started
+2026-07-01T08:02:18.475382Z 0 [System] [MY-010116] [Server] /usr/sbin/mysqld (mysqld 8.0) starting as process 379
+2026-07-01T08:02:54.947939Z 0 [System] [MY-010116] [Server] /usr/sbin/mysqld (mysqld 8.0) starting as process 336
+2026-07-01T08:04:10.574866Z 0 [Note] [MY-010747] [Server] Plugin 'FEDERATED' is disabled.
+2026-07-01T08:05:57.744901Z 0 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2026-07-01T08:06:23.817576Z 0 [ERROR] [MY-001217] [Server] Cannot delete or update a parent row: foreign key constraint fails
+2026-07-01T08:06:38.691319Z 0 [System] [MY-010116] [Server] /usr/sbin/mysqld (mysqld 8.0) starting as process 524
+2026-07-01T08:08:32.036868Z 0 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+2026-07-01T08:09:21.682509Z 0 [Note] [MY-010051] [Server] Event Scheduler: scheduler thread started
+2026-07-01T08:09:29.692507Z 0 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+2026-07-01T08:10:02.560359Z 0 [System] [MY-010931] [Server] Ready for connections. Version: '8.0' socket: '/var/run/mysqld/mysqld.sock'
+2026-07-01T08:11:32.703215Z 0 [Note] [MY-010914] [Server] Server shutdown in progress
+2026-07-01T08:13:07.575247Z 0 [Note] [MY-011240] [Server] Plugin mysqlx reported: 'X Plugin ready for connections.'
+2026-07-01T08:14:04.983041Z 0 [Note] [MY-010747] [Server] Plugin 'FEDERATED' is disabled.
+2026-07-01T08:15:23.990737Z 0 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+2026-07-01T08:17:21.742106Z 0 [Note] [MY-011240] [Server] Plugin mysqlx reported: 'X Plugin ready for connections.'
+2026-07-01T08:17:58.071557Z 0 [Warning] [MY-013360] [Server] Plugin reported warning
+2026-07-01T08:19:00.482205Z 0 [Note] [MY-010051] [Server] Event Scheduler: scheduler thread started
+2026-07-01T08:20:37.362615Z 0 [Note] [MY-013360] [Server] Plugin reported warning
+2026-07-01T08:20:59.140004Z 0 [Note] [MY-011240] [Server] Plugin mysqlx reported: 'X Plugin ready for connections.'
+2026-07-01T08:22:19.121204Z 0 [Note] [MY-010051] [Server] Event Scheduler: scheduler thread started
+2026-07-01T08:22:33.415659Z 0 [ERROR] [MY-001665] [Repl] Cannot execute statement: impossible to write to binary log
+2026-07-01T08:23:46.863478Z 0 [Note] [MY-011240] [Server] Plugin mysqlx reported: 'X Plugin ready for connections.'
+2026-07-01T08:24:22.558008Z 0 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2026-07-01T08:25:43.506646Z 0 [System] [MY-010116] [Server] /usr/sbin/mysqld (mysqld 8.0) starting as process 86
+2026-07-01T08:26:21.676384Z 0 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2026-07-01T08:27:33.636734Z 0 [ERROR] [MY-002026] [Server] SSL connection error
+2026-07-01T08:28:53.757490Z 0 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+2026-07-01T08:30:03.366751Z 0 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2026-07-01T08:30:30.962083Z 0 [Note] [MY-011240] [Server] Plugin mysqlx reported: 'X Plugin ready for connections.'
+2026-07-01T08:31:13.683793Z 0 [Note] [MY-011240] [Server] Plugin mysqlx reported: 'X Plugin ready for connections.'
+2026-07-01T08:31:35.612382Z 0 [ERROR] [MY-002013] [Server] Lost connection to MySQL server during query
+2026-07-01T08:33:03.207176Z 0 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2026-07-01T08:34:12.713414Z 0 [Note] [MY-010051] [Server] Event Scheduler: scheduler thread started
+2026-07-01T08:35:22.422725Z 0 [Note] [MY-010051] [Server] Event Scheduler: scheduler thread started
+2026-07-01T08:36:14.575869Z 0 [System] [MY-010116] [Server] /usr/sbin/mysqld (mysqld 8.0) starting as process 761
+2026-07-01T08:37:24.238629Z 0 [Note] [MY-011240] [Server] Plugin mysqlx reported: 'X Plugin ready for connections.'
+2026-07-01T08:39:24.943172Z 0 [ERROR] [MY-001317] [Server] Query execution was interrupted
+2026-07-01T08:39:52.446683Z 0 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+2026-07-01T08:41:02.170176Z 0 [System] [MY-010931] [Server] Ready for connections. Version: '8.0' socket: '/var/run/mysqld/mysqld.sock'
+2026-07-01T08:42:33.693232Z 0 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+2026-07-01T08:43:14.739237Z 0 [Warning] [MY-010914] [Server] Server shutdown in progress
+2026-07-01T08:44:53.026353Z 0 [Note] [MY-010051] [Server] Event Scheduler: scheduler thread started
+2026-07-01T08:45:09.331250Z 0 [ERROR] [MY-001265] [Server] Data truncated for column
+2026-07-01T08:45:18.243155Z 0 [Note] [MY-010747] [Server] Plugin 'FEDERATED' is disabled.
+2026-07-01T08:45:29.820564Z 0 [ERROR] [MY-002006] [Server] MySQL server has gone away
+2026-07-01T08:46:31.893157Z 0 [System] [MY-010116] [Server] /usr/sbin/mysqld (mysqld 8.0) starting as process 644
+2026-07-01T08:46:53.824606Z 0 [Note] [MY-011240] [Server] Plugin mysqlx reported: 'X Plugin ready for connections.'
+2026-07-01T08:48:01.313689Z 0 [Note] [MY-010051] [Server] Event Scheduler: scheduler thread started
+2026-07-01T08:48:17.842651Z 0 [Warning] [MY-010931] [Server] Server is ready for connections
+2026-07-01T08:49:32.143566Z 0 [Note] [MY-011240] [Server] Plugin mysqlx reported: 'X Plugin ready for connections.'
+2026-07-01T08:50:45.436734Z 0 [Note] [MY-010051] [Server] Event Scheduler: scheduler thread started
+2026-07-01T08:51:52.780531Z 0 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2026-07-01T08:53:11.490262Z 0 [Note] [MY-011240] [Server] Plugin mysqlx reported: 'X Plugin ready for connections.'
+2026-07-01T08:53:18.902337Z 0 [Note] [MY-011240] [Server] Plugin mysqlx reported: 'X Plugin ready for connections.'
+2026-07-01T08:53:47.134101Z 0 [ERROR] [MY-001236] [Repl] Replication event checksum verification failed
+2026-07-01T08:55:23.472686Z 0 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2026-07-01T08:57:12.081443Z 0 [Note] [MY-010747] [Server] Plugin 'FEDERATED' is disabled.
+2026-07-01T08:57:52.800520Z 0 [ERROR] [MY-001271] [Server] Illegal mix of collations for operation
+2026-07-01T08:58:53.505206Z 0 [Note] [MY-010051] [Server] Event Scheduler: scheduler thread started
+2026-07-01T09:00:37.887746Z 0 [Note] [MY-010747] [Server] Plugin 'FEDERATED' is disabled.
+2026-07-01T09:00:45.313627Z 0 [Warning] [MY-010931] [Server] Server is ready for connections
+2026-07-01T09:01:06.268060Z 0 [Note] [MY-010051] [Server] Event Scheduler: scheduler thread started
+2026-07-01T09:02:01.010273Z 0 [Note] [MY-011240] [Server] Plugin mysqlx reported: 'X Plugin ready for connections.'
+2026-07-01T09:02:13.773820Z 0 [System] [MY-010116] [Server] /usr/sbin/mysqld (mysqld 8.0) starting as process 891
+2026-07-01T09:03:58.213891Z 0 [System] [MY-010116] [Server] /usr/sbin/mysqld (mysqld 8.0) starting as process 458
+2026-07-01T09:05:17.580419Z 0 [Note] [MY-011240] [Server] Plugin mysqlx reported: 'X Plugin ready for connections.'
+2026-07-01T09:05:44.357949Z 0 [ERROR] [MY-001041] [Server] Out of memory
+2026-07-01T09:06:09.769940Z 0 [Note] [MY-010051] [Server] Event Scheduler: scheduler thread started
+2026-07-01T09:06:31.104850Z 0 [System] [MY-010931] [Server] Ready for connections. Version: '8.0' socket: '/var/run/mysqld/mysqld.sock'
+2026-07-01T09:08:28.552528Z 0 [System] [MY-010931] [Server] Ready for connections. Version: '8.0' socket: '/var/run/mysqld/mysqld.sock'
+2026-07-01T09:09:54.392457Z 0 [System] [MY-010931] [Server] Ready for connections. Version: '8.0' socket: '/var/run/mysqld/mysqld.sock'
+2026-07-01T09:11:20.902690Z 0 [ERROR] [MY-001707] [Server] Table rebuild required
+2026-07-01T09:11:49.282232Z 0 [Note] [MY-011240] [Server] Plugin mysqlx reported: 'X Plugin ready for connections.'
+2026-07-01T09:12:23.350185Z 0 [Note] [MY-010747] [Server] Plugin 'FEDERATED' is disabled.
+2026-07-01T09:13:00.590900Z 0 [ERROR] [MY-001149] [Server] SQL syntax error
+2026-07-01T09:13:45.361149Z 0 [Note] [MY-010747] [Server] Plugin 'FEDERATED' is disabled.
+2026-07-01T09:15:10.661137Z 0 [System] [MY-010931] [Server] Ready for connections. Version: '8.0' socket: '/var/run/mysqld/mysqld.sock'
+2026-07-01T09:16:09.139100Z 0 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+2026-07-01T09:17:30.243722Z 0 [Note] [MY-010747] [Server] Plugin 'FEDERATED' is disabled.
+2026-07-01T09:18:01.919012Z 0 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2026-07-01T09:18:12.120101Z 0 [Warning] [MY-010914] [Server] Server shutdown in progress
+2026-07-01T09:19:03.359545Z 0 [Note] [MY-010747] [Server] Plugin 'FEDERATED' is disabled.
+2026-07-01T09:20:15.655286Z 0 [Note] [MY-011240] [Server] Plugin mysqlx reported: 'X Plugin ready for connections.'
+2026-07-01T09:20:43.240740Z 0 [System] [MY-010931] [Server] Ready for connections. Version: '8.0' socket: '/var/run/mysqld/mysqld.sock'
+2026-07-01T09:22:07.419628Z 0 [Note] [MY-010051] [Server] Event Scheduler: scheduler thread started
+2026-07-01T09:23:37.152458Z 0 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+2026-07-01T09:25:05.048537Z 0 [Warning] [MY-013360] [Server] Plugin reported warning
+2026-07-01T09:27:05.149042Z 0 [Note] [MY-011240] [Server] Plugin mysqlx reported: 'X Plugin ready for connections.'
+2026-07-01T09:27:32.049763Z 0 [System] [MY-010116] [Server] /usr/sbin/mysqld (mysqld 8.0) starting as process 256
+2026-07-01T09:27:57.829345Z 0 [Warning] [MY-013360] [Server] Plugin reported warning
+2026-07-01T09:28:54.159731Z 0 [System] [MY-010116] [Server] /usr/sbin/mysqld (mysqld 8.0) starting as process 399
+2026-07-01T09:30:31.342367Z 0 [ERROR] [MY-001451] [Server] Cannot delete or update a parent row: a foreign key constraint fails
+2026-07-01T09:31:14.165888Z 0 [System] [MY-010931] [Server] Ready for connections. Version: '8.0' socket: '/var/run/mysqld/mysqld.sock'
+2026-07-01T09:32:40.241574Z 0 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+2026-07-01T09:34:36.225878Z 0 [Note] [MY-010051] [Server] Event Scheduler: scheduler thread started
+2026-07-01T09:36:24.820651Z 0 [System] [MY-010116] [Server] /usr/sbin/mysqld (mysqld 8.0) starting as process 111
+2026-07-01T09:37:18.417235Z 0 [ERROR] [MY-001419] [Server] You do not have the SUPER privilege and binary logging is enabled
+2026-07-01T09:38:58.690065Z 0 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2026-07-01T09:40:13.557770Z 0 [System] [MY-010931] [Server] Ready for connections. Version: '8.0' socket: '/var/run/mysqld/mysqld.sock'
+2026-07-01T09:41:55.428755Z 0 [System] [MY-010931] [Server] Ready for connections. Version: '8.0' socket: '/var/run/mysqld/mysqld.sock'
+2026-07-01T09:43:33.229054Z 0 [System] [MY-010116] [Server] /usr/sbin/mysqld (mysqld 8.0) starting as process 658
+2026-07-01T09:44:20.480824Z 0 [Note] [MY-010747] [Server] Plugin 'FEDERATED' is disabled.
+2026-07-01T09:45:04.910596Z 0 [ERROR] [MY-001142] [Server] Column access denied
+2026-07-01T09:46:03.939719Z 0 [System] [MY-010931] [Server] Ready for connections. Version: '8.0' socket: '/var/run/mysqld/mysqld.sock'
+2026-07-01T09:47:45.937840Z 0 [System] [MY-010931] [Server] Ready for connections. Version: '8.0' socket: '/var/run/mysqld/mysqld.sock'
+2026-07-01T09:49:21.037133Z 0 [Note] [MY-010747] [Server] Plugin 'FEDERATED' is disabled.
+2026-07-01T09:51:14.431821Z 0 [ERROR] [MY-001044] [Server] Database access denied
+2026-07-01T09:51:34.563569Z 0 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+2026-07-01T09:53:20.238214Z 0 [System] [MY-010116] [Server] /usr/sbin/mysqld (mysqld 8.0) starting as process 761
+2026-07-01T09:54:42.763523Z 0 [System] [MY-010931] [Server] Ready for connections. Version: '8.0' socket: '/var/run/mysqld/mysqld.sock'
+2026-07-01T09:55:39.141553Z 0 [ERROR] [MY-001595] [Repl] Unsafe statement written to the binary log using statement format
+2026-07-01T09:57:35.788385Z 0 [Note] [MY-011240] [Server] Plugin mysqlx reported: 'X Plugin ready for connections.'
+2026-07-01T09:59:32.440747Z 0 [Note] [MY-010931] [Server] Server is ready for connections
+2026-07-01T10:01:32.062219Z 0 [Note] [MY-011240] [Server] Plugin mysqlx reported: 'X Plugin ready for connections.'
+2026-07-01T10:01:42.099952Z 0 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2026-07-01T10:03:37.706130Z 0 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2026-07-01T10:04:08.310291Z 0 [System] [MY-010116] [Server] /usr/sbin/mysqld (mysqld 8.0) starting as process 592
+2026-07-01T10:06:07.514701Z 0 [Warning] [MY-013360] [Server] Plugin reported warning
+2026-07-01T10:06:26.975465Z 0 [Note] [MY-011240] [Server] Plugin mysqlx reported: 'X Plugin ready for connections.'
+2026-07-01T10:06:44.325013Z 0 [Note] [MY-010747] [Server] Plugin 'FEDERATED' is disabled.
+2026-07-01T10:08:24.274691Z 0 [ERROR] [MY-001206] [Server] The total number of locks exceeds the lock table size
+2026-07-01T10:08:45.192212Z 0 [System] [MY-010931] [Server] Ready for connections. Version: '8.0' socket: '/var/run/mysqld/mysqld.sock'
+2026-07-01T10:09:54.462817Z 0 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+2026-07-01T10:11:05.876912Z 0 [ERROR] [MY-001451] [Server] Cannot delete or update a parent row: a foreign key constraint fails
+2026-07-01T10:11:24.579093Z 0 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+2026-07-01T10:12:02.538788Z 0 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+2026-07-01T10:13:10.744663Z 0 [Note] [MY-010051] [Server] Event Scheduler: scheduler thread started
+2026-07-01T10:14:37.319459Z 0 [Note] [MY-010747] [Server] Plugin 'FEDERATED' is disabled.
+2026-07-01T10:16:05.914476Z 0 [System] [MY-010116] [Server] /usr/sbin/mysqld (mysqld 8.0) starting as process 414
+2026-07-01T10:17:36.832691Z 0 [ERROR] [MY-001048] [Server] Column cannot be null
+2026-07-01T10:19:30.447673Z 0 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+2026-07-01T10:20:43.147667Z 0 [Note] [MY-010747] [Server] Plugin 'FEDERATED' is disabled.
+2026-07-01T10:22:12.494820Z 0 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+2026-07-01T10:22:45.337432Z 0 [Note] [MY-010747] [Server] Plugin 'FEDERATED' is disabled.
+2026-07-01T10:23:16.683255Z 0 [Note] [MY-010051] [Server] Event Scheduler: scheduler thread started
+2026-07-01T10:24:46.566478Z 0 [ERROR] [MY-001043] [Server] Bad handshake
+2026-07-01T10:26:41.755274Z 0 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+2026-07-01T10:27:41.771702Z 0 [Note] [MY-010747] [Server] Plugin 'FEDERATED' is disabled.
+2026-07-01T10:28:23.448027Z 0 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+2026-07-01T10:29:53.518140Z 0 [Note] [MY-013360] [Server] Plugin reported warning
+2026-07-01T10:30:15.963305Z 0 [Note] [MY-010051] [Server] Event Scheduler: scheduler thread started
+2026-07-01T10:31:08.214314Z 0 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2026-07-01T10:31:30.796185Z 0 [ERROR] [MY-002026] [Server] SSL connection error
+2026-07-01T10:33:16.290344Z 0 [System] [MY-010116] [Server] /usr/sbin/mysqld (mysqld 8.0) starting as process 1
+2026-07-01T10:34:15.895398Z 0 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+2026-07-01T10:35:54.341405Z 0 [Note] [MY-011240] [Server] Plugin mysqlx reported: 'X Plugin ready for connections.'
+2026-07-01T10:37:09.853804Z 0 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+2026-07-01T10:37:49.911793Z 0 [Warning] [MY-010914] [Server] Server shutdown in progress
+2026-07-01T10:37:56.486017Z 0 [Note] [MY-010747] [Server] Plugin 'FEDERATED' is disabled.
+2026-07-01T10:38:14.717570Z 0 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2026-07-01T10:39:00.313625Z 0 [System] [MY-010931] [Server] Ready for connections. Version: '8.0' socket: '/var/run/mysqld/mysqld.sock'
+2026-07-01T10:40:37.542636Z 0 [ERROR] [MY-001419] [Server] You do not have the SUPER privilege and binary logging is enabled
+2026-07-01T10:41:38.404960Z 0 [Note] [MY-011240] [Server] Plugin mysqlx reported: 'X Plugin ready for connections.'
+2026-07-01T10:43:36.591441Z 0 [System] [MY-010931] [Server] Ready for connections. Version: '8.0' socket: '/var/run/mysqld/mysqld.sock'
+2026-07-01T10:44:59.430530Z 0 [Note] [MY-010051] [Server] Event Scheduler: scheduler thread started
+2026-07-01T10:46:52.007939Z 0 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2026-07-01T10:47:46.540319Z 0 [System] [MY-010116] [Server] /usr/sbin/mysqld (mysqld 8.0) starting as process 65
+2026-07-01T10:49:43.296630Z 0 [Warning] [MY-010914] [Server] Server shutdown in progress
+2026-07-01T10:50:05.785011Z 0 [Note] [MY-010051] [Server] Event Scheduler: scheduler thread started
+2026-07-01T10:51:59.562985Z 0 [Note] [MY-010747] [Server] Plugin 'FEDERATED' is disabled.
+2026-07-01T10:52:36.071332Z 0 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2026-07-01T10:54:21.647562Z 0 [ERROR] [MY-001317] [Server] Query execution was interrupted
+2026-07-01T10:55:05.704718Z 0 [System] [MY-010116] [Server] /usr/sbin/mysqld (mysqld 8.0) starting as process 771
+2026-07-01T10:57:02.605916Z 0 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+2026-07-01T10:57:49.347644Z 0 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2026-07-01T10:59:45.076822Z 0 [ERROR] [MY-001040] [Server] Too many connections
+2026-07-01T10:59:55.193471Z 0 [System] [MY-010931] [Server] Ready for connections. Version: '8.0' socket: '/var/run/mysqld/mysqld.sock'
+2026-07-01T11:01:52.925753Z 0 [System] [MY-010931] [Server] Ready for connections. Version: '8.0' socket: '/var/run/mysqld/mysqld.sock'
+2026-07-01T11:01:59.086181Z 0 [System] [MY-010116] [Server] /usr/sbin/mysqld (mysqld 8.0) starting as process 208
+2026-07-01T11:03:53.838043Z 0 [System] [MY-010931] [Server] Ready for connections. Version: '8.0' socket: '/var/run/mysqld/mysqld.sock'
+2026-07-01T11:05:32.500634Z 0 [Note] [MY-010051] [Server] Event Scheduler: scheduler thread started
+2026-07-01T11:07:27.397725Z 0 [ERROR] [MY-001142] [Server] Column access denied
+2026-07-01T11:08:03.259054Z 0 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+2026-07-01T11:09:41.771451Z 0 [Note] [MY-010051] [Server] Event Scheduler: scheduler thread started
+2026-07-01T11:10:46.966627Z 0 [Note] [MY-011240] [Server] Plugin mysqlx reported: 'X Plugin ready for connections.'
+2026-07-01T11:12:38.776315Z 0 [Warning] [MY-010914] [Server] Server shutdown in progress
+2026-07-01T11:14:24.599901Z 0 [System] [MY-010116] [Server] /usr/sbin/mysqld (mysqld 8.0) starting as process 643
+2026-07-01T11:14:42.264027Z 0 [Note] [MY-011240] [Server] Plugin mysqlx reported: 'X Plugin ready for connections.'
+2026-07-01T11:16:03.969274Z 0 [Note] [MY-010051] [Server] Event Scheduler: scheduler thread started
+2026-07-01T11:16:26.636115Z 0 [ERROR] [MY-001213] [InnoDB] Deadlock found when trying to get lock; try restarting transaction
+2026-07-01T11:16:58.832415Z 0 [System] [MY-010931] [Server] Ready for connections. Version: '8.0' socket: '/var/run/mysqld/mysqld.sock'
+2026-07-01T11:17:03.785680Z 0 [Note] [MY-010747] [Server] Plugin 'FEDERATED' is disabled.
+2026-07-01T11:18:05.849102Z 0 [System] [MY-010931] [Server] Ready for connections. Version: '8.0' socket: '/var/run/mysqld/mysqld.sock'
+2026-07-01T11:18:16.195064Z 0 [Note] [MY-010747] [Server] Plugin 'FEDERATED' is disabled.
+2026-07-01T11:19:36.681636Z 0 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+2026-07-01T11:20:54.262955Z 0 [ERROR] [MY-001044] [Server] Database access denied
+2026-07-01T11:22:39.523337Z 0 [System] [MY-010116] [Server] /usr/sbin/mysqld (mysqld 8.0) starting as process 271
+2026-07-01T11:23:48.814380Z 0 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2026-07-01T11:25:01.861277Z 0 [System] [MY-010931] [Server] Ready for connections. Version: '8.0' socket: '/var/run/mysqld/mysqld.sock'
+2026-07-01T11:25:13.429811Z 0 [ERROR] [MY-001194] [Server] Cannot modify the table — another session has a pending transaction on it
+2026-07-01T11:26:29.074537Z 0 [System] [MY-010931] [Server] Ready for connections. Version: '8.0' socket: '/var/run/mysqld/mysqld.sock'
+2026-07-01T11:26:35.768147Z 0 [Warning] [MY-010931] [Server] Server is ready for connections
+2026-07-01T11:27:57.239501Z 0 [System] [MY-010931] [Server] Ready for connections. Version: '8.0' socket: '/var/run/mysqld/mysqld.sock'
+2026-07-01T11:28:29.784329Z 0 [System] [MY-010116] [Server] /usr/sbin/mysqld (mysqld 8.0) starting as process 176
+2026-07-01T11:28:42.677969Z 0 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2026-07-01T11:29:25.123130Z 0 [System] [MY-010931] [Server] Ready for connections. Version: '8.0' socket: '/var/run/mysqld/mysqld.sock'
+2026-07-01T11:29:40.020777Z 0 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+2026-07-01T11:30:05.446882Z 0 [ERROR] [MY-001015] [Server] Can't lock file (errno: 11 - Resource temporarily unavailable)
+2026-07-01T11:30:26.002360Z 0 [System] [MY-010116] [Server] /usr/sbin/mysqld (mysqld 8.0) starting as process 670
+2026-07-01T11:32:03.412083Z 0 [System] [MY-010116] [Server] /usr/sbin/mysqld (mysqld 8.0) starting as process 494
+2026-07-01T11:32:13.103596Z 0 [System] [MY-010116] [Server] /usr/sbin/mysqld (mysqld 8.0) starting as process 939
+2026-07-01T11:33:01.635484Z 0 [ERROR] [MY-001194] [Server] Cannot modify the table — another session has a pending transaction on it
+2026-07-01T11:33:52.016654Z 0 [Note] [MY-011240] [Server] Plugin mysqlx reported: 'X Plugin ready for connections.'
+2026-07-01T11:35:19.226528Z 0 [ERROR] [MY-001223] [Server] Can't execute the query because you have a conflicting read lock
+2026-07-01T11:36:19.423442Z 0 [Note] [MY-010051] [Server] Event Scheduler: scheduler thread started
+2026-07-01T11:37:23.402413Z 0 [System] [MY-010116] [Server] /usr/sbin/mysqld (mysqld 8.0) starting as process 510
+2026-07-01T11:38:55.285571Z 0 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+2026-07-01T11:40:45.483829Z 0 [System] [MY-010931] [Server] Ready for connections. Version: '8.0' socket: '/var/run/mysqld/mysqld.sock'
+2026-07-01T11:42:45.778344Z 0 [Note] [MY-013360] [Server] Plugin reported warning
+2026-07-01T11:43:37.457494Z 0 [Note] [MY-011240] [Server] Plugin mysqlx reported: 'X Plugin ready for connections.'
+2026-07-01T11:43:56.429426Z 0 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2026-07-01T11:45:13.604582Z 0 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+2026-07-01T11:46:44.654084Z 0 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2026-07-01T11:47:25.701532Z 0 [Note] [MY-010931] [Server] Server is ready for connections
+2026-07-01T11:49:21.735377Z 0 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2026-07-01T11:49:47.714152Z 0 [ERROR] [MY-001406] [Server] Data too long for column
+2026-07-01T11:50:05.874814Z 0 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+2026-07-01T11:51:32.725922Z 0 [Note] [MY-010051] [Server] Event Scheduler: scheduler thread started
+2026-07-01T11:52:46.735849Z 0 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2026-07-01T11:53:39.493760Z 0 [ERROR] [MY-001364] [Server] Field doesn't have a default value
+2026-07-01T11:54:36.416628Z 0 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2026-07-01T11:55:09.595575Z 0 [System] [MY-010931] [Server] Ready for connections. Version: '8.0' socket: '/var/run/mysqld/mysqld.sock'
+2026-07-01T11:55:55.928260Z 0 [ERROR] [MY-001406] [Server] Data too long for column
+2026-07-01T11:57:26.020406Z 0 [Note] [MY-011240] [Server] Plugin mysqlx reported: 'X Plugin ready for connections.'
+2026-07-01T11:58:23.031893Z 0 [Note] [MY-010051] [Server] Event Scheduler: scheduler thread started
+2026-07-01T11:59:35.401889Z 0 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+2026-07-01T11:59:51.962126Z 0 [Note] [MY-013360] [Server] Plugin reported warning
+2026-07-01T12:01:17.803761Z 0 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2026-07-01T12:03:15.434522Z 0 [Note] [MY-011240] [Server] Plugin mysqlx reported: 'X Plugin ready for connections.'
+2026-07-01T12:04:46.893370Z 0 [System] [MY-010116] [Server] /usr/sbin/mysqld (mysqld 8.0) starting as process 46
+2026-07-01T12:05:49.592517Z 0 [System] [MY-010931] [Server] Ready for connections. Version: '8.0' socket: '/var/run/mysqld/mysqld.sock'
+2026-07-01T12:07:24.581922Z 0 [Warning] [MY-010914] [Server] Server shutdown in progress
+2026-07-01T12:09:12.564141Z 0 [System] [MY-010931] [Server] Ready for connections. Version: '8.0' socket: '/var/run/mysqld/mysqld.sock'
+2026-07-01T12:09:43.689457Z 0 [ERROR] [MY-010457] [Server] Data directory has files in it during --initialize
+2026-07-01T12:11:27.782895Z 0 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2026-07-01T12:11:36.740676Z 0 [System] [MY-010116] [Server] /usr/sbin/mysqld (mysqld 8.0) starting as process 640
+2026-07-01T12:12:46.481437Z 0 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+2026-07-01T12:14:43.529385Z 0 [Note] [MY-013360] [Server] Plugin reported warning
+2026-07-01T12:16:43.114736Z 0 [Note] [MY-011240] [Server] Plugin mysqlx reported: 'X Plugin ready for connections.'
+2026-07-01T12:17:15.581114Z 0 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+2026-07-01T12:18:18.523816Z 0 [Note] [MY-010051] [Server] Event Scheduler: scheduler thread started
+2026-07-01T12:18:39.063265Z 0 [ERROR] [MY-001217] [Server] Cannot delete or update a parent row: foreign key constraint fails
+2026-07-01T12:19:59.755507Z 0 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2026-07-01T12:21:11.421221Z 0 [ERROR] [MY-001160] [Server] Got timeout writing communication packets
+2026-07-01T12:21:46.597750Z 0 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+2026-07-01T12:22:06.057400Z 0 [Note] [MY-010051] [Server] Event Scheduler: scheduler thread started
+2026-07-01T12:23:17.407182Z 0 [Note] [MY-013360] [Server] Plugin reported warning
+2026-07-01T12:25:05.181316Z 0 [System] [MY-010116] [Server] /usr/sbin/mysqld (mysqld 8.0) starting as process 834
+2026-07-01T12:26:04.113773Z 0 [System] [MY-010116] [Server] /usr/sbin/mysqld (mysqld 8.0) starting as process 457
+2026-07-01T12:27:06.249667Z 0 [System] [MY-010931] [Server] Ready for connections. Version: '8.0' socket: '/var/run/mysqld/mysqld.sock'
+2026-07-01T12:28:10.565103Z 0 [Note] [MY-010051] [Server] Event Scheduler: scheduler thread started
+2026-07-01T12:28:25.712820Z 0 [System] [MY-010931] [Server] Ready for connections. Version: '8.0' socket: '/var/run/mysqld/mysqld.sock'
+2026-07-01T12:29:22.386877Z 0 [ERROR] [MY-001061] [Server] Duplicate key name
+2026-07-01T12:29:57.693229Z 0 [Note] [MY-010051] [Server] Event Scheduler: scheduler thread started
+2026-07-01T12:30:20.303837Z 0 [System] [MY-010116] [Server] /usr/sbin/mysqld (mysqld 8.0) starting as process 426
+2026-07-01T12:31:05.420515Z 0 [Note] [MY-010051] [Server] Event Scheduler: scheduler thread started
+2026-07-01T12:31:39.282449Z 0 [ERROR] [MY-001051] [Server] Table must be locked before use
+2026-07-01T12:32:30.572286Z 0 [System] [MY-010931] [Server] Ready for connections. Version: '8.0' socket: '/var/run/mysqld/mysqld.sock'
+2026-07-01T12:33:41.356957Z 0 [Note] [MY-010051] [Server] Event Scheduler: scheduler thread started
+2026-07-01T12:35:06.691625Z 0 [Note] [MY-011240] [Server] Plugin mysqlx reported: 'X Plugin ready for connections.'
+2026-07-01T12:36:30.108115Z 0 [Note] [MY-010747] [Server] Plugin 'FEDERATED' is disabled.
+2026-07-01T12:38:18.072933Z 0 [ERROR] [MY-001042] [Server] Can't get hostname for your address
+2026-07-01T12:39:23.361024Z 0 [Note] [MY-010051] [Server] Event Scheduler: scheduler thread started
+2026-07-01T12:40:40.692711Z 0 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+2026-07-01T12:41:23.911428Z 0 [ERROR] [MY-001149] [Server] SQL syntax error
+2026-07-01T12:42:04.099137Z 0 [System] [MY-010931] [Server] Ready for connections. Version: '8.0' socket: '/var/run/mysqld/mysqld.sock'
+2026-07-01T12:43:25.992987Z 0 [ERROR] [MY-001068] [Server] Too many keys specified; max allowed is 64
+2026-07-01T12:43:34.980836Z 0 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2026-07-01T12:44:12.985063Z 0 [System] [MY-010116] [Server] /usr/sbin/mysqld (mysqld 8.0) starting as process 255
+2026-07-01T12:44:39.875007Z 0 [Note] [MY-010747] [Server] Plugin 'FEDERATED' is disabled.
+2026-07-01T12:45:06.025706Z 0 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2026-07-01T12:46:43.061203Z 0 [System] [MY-010931] [Server] Ready for connections. Version: '8.0' socket: '/var/run/mysqld/mysqld.sock'
+2026-07-01T12:48:13.411644Z 0 [ERROR] [MY-001418] [Server] This function has none of DETERMINISTIC, NO SQL, or READS SQL DATA
+2026-07-01T12:48:26.911219Z 0 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+2026-07-01T12:49:19.217194Z 0 [ERROR] [MY-001366] [Server] Incorrect value for column
+2026-07-01T12:49:26.040389Z 0 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+2026-07-01T12:50:57.499448Z 0 [Note] [MY-010747] [Server] Plugin 'FEDERATED' is disabled.
+2026-07-01T12:51:37.619922Z 0 [Note] [MY-010051] [Server] Event Scheduler: scheduler thread started
+2026-07-01T12:52:09.302739Z 0 [Note] [MY-010747] [Server] Plugin 'FEDERATED' is disabled.
+2026-07-01T12:53:02.760433Z 0 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2026-07-01T12:54:46.247516Z 0 [ERROR] [MY-003546] [Server] Access denied; you need the SYSTEM_VARIABLES_ADMIN privilege
+2026-07-01T12:56:30.931052Z 0 [System] [MY-010116] [Server] /usr/sbin/mysqld (mysqld 8.0) starting as process 25
+2026-07-01T12:58:03.140446Z 0 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2026-07-01T12:59:32.285568Z 0 [ERROR] [MY-001068] [Server] Too many keys specified; max allowed is 64
+2026-07-01T13:00:10.301182Z 0 [Note] [MY-010051] [Server] Event Scheduler: scheduler thread started
+2026-07-01T13:02:08.646590Z 0 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+2026-07-01T13:02:23.839557Z 0 [ERROR] [MY-002013] [Server] Lost connection to MySQL server during query
+2026-07-01T13:03:42.245062Z 0 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2026-07-01T13:05:12.316661Z 0 [System] [MY-010931] [Server] Ready for connections. Version: '8.0' socket: '/var/run/mysqld/mysqld.sock'
+2026-07-01T13:05:31.522048Z 0 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+2026-07-01T13:07:29.509601Z 0 [Note] [MY-011240] [Server] Plugin mysqlx reported: 'X Plugin ready for connections.'
+2026-07-01T13:08:06.639989Z 0 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+2026-07-01T13:08:23.374602Z 0 [Warning] [MY-010914] [Server] Server shutdown in progress
+2026-07-01T13:09:32.472343Z 0 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+2026-07-01T13:10:07.343105Z 0 [Note] [MY-011240] [Server] Plugin mysqlx reported: 'X Plugin ready for connections.'
+2026-07-01T13:10:46.313777Z 0 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2026-07-01T13:11:41.001473Z 0 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2026-07-01T13:13:22.060521Z 0 [System] [MY-010116] [Server] /usr/sbin/mysqld (mysqld 8.0) starting as process 118
+2026-07-01T13:13:38.163521Z 0 [ERROR] [MY-001129] [Server] Host is blocked because of many connection errors
+2026-07-01T13:15:09.664326Z 0 [Note] [MY-011240] [Server] Plugin mysqlx reported: 'X Plugin ready for connections.'
+2026-07-01T13:16:43.555790Z 0 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+2026-07-01T13:17:32.329322Z 0 [System] [MY-010931] [Server] Ready for connections. Version: '8.0' socket: '/var/run/mysqld/mysqld.sock'
+2026-07-01T13:17:58.192165Z 0 [Note] [MY-010051] [Server] Event Scheduler: scheduler thread started
+2026-07-01T13:18:56.661644Z 0 [Note] [MY-010747] [Server] Plugin 'FEDERATED' is disabled.
+2026-07-01T13:19:31.008471Z 0 [ERROR] [MY-001665] [Repl] Cannot execute statement: impossible to write to binary log
+2026-07-01T13:19:45.126264Z 0 [System] [MY-010931] [Server] Ready for connections. Version: '8.0' socket: '/var/run/mysqld/mysqld.sock'
+2026-07-01T13:21:04.756975Z 0 [Note] [MY-011240] [Server] Plugin mysqlx reported: 'X Plugin ready for connections.'
+2026-07-01T13:22:09.656507Z 0 [System] [MY-010116] [Server] /usr/sbin/mysqld (mysqld 8.0) starting as process 707
+2026-07-01T13:22:57.461888Z 0 [ERROR] [MY-001406] [Server] Data too long for column
+2026-07-01T13:24:09.611394Z 0 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+2026-07-01T13:25:56.285830Z 0 [Note] [MY-011240] [Server] Plugin mysqlx reported: 'X Plugin ready for connections.'
+2026-07-01T13:26:05.435283Z 0 [Note] [MY-011240] [Server] Plugin mysqlx reported: 'X Plugin ready for connections.'
+2026-07-01T13:27:11.616141Z 0 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2026-07-01T13:27:17.327592Z 0 [System] [MY-010116] [Server] /usr/sbin/mysqld (mysqld 8.0) starting as process 376
+2026-07-01T13:28:26.360808Z 0 [ERROR] [MY-001526] [Server] Table has no partition for value
+2026-07-01T13:29:55.997121Z 0 [System] [MY-010931] [Server] Ready for connections. Version: '8.0' socket: '/var/run/mysqld/mysqld.sock'
+2026-07-01T13:30:44.444048Z 0 [System] [MY-010931] [Server] Ready for connections. Version: '8.0' socket: '/var/run/mysqld/mysqld.sock'
+2026-07-01T13:32:23.785874Z 0 [Note] [MY-011240] [Server] Plugin mysqlx reported: 'X Plugin ready for connections.'
+2026-07-01T13:33:03.460398Z 0 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2026-07-01T13:33:17.668442Z 0 [ERROR] [MY-001493] [Server] Values in VALUES IN must be unique for each partition
+2026-07-01T13:33:40.874321Z 0 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2026-07-01T13:34:28.681650Z 0 [ERROR] [MY-013183] [InnoDB] InnoDB assertion failure
+2026-07-01T13:35:19.290125Z 0 [System] [MY-010116] [Server] /usr/sbin/mysqld (mysqld 8.0) starting as process 378
+2026-07-01T13:37:03.411107Z 0 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+2026-07-01T13:38:09.359166Z 0 [System] [MY-010116] [Server] /usr/sbin/mysqld (mysqld 8.0) starting as process 630
+2026-07-01T13:38:35.302421Z 0 [ERROR] [MY-001131] [Server] You are using MySQL as an anonymous user and anonymous users are not allowed to modify data
+2026-07-01T13:38:42.863562Z 0 [Note] [MY-010747] [Server] Plugin 'FEDERATED' is disabled.
+2026-07-01T13:39:46.358294Z 0 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+2026-07-01T13:40:43.464695Z 0 [System] [MY-010931] [Server] Ready for connections. Version: '8.0' socket: '/var/run/mysqld/mysqld.sock'
+2026-07-01T13:41:57.788752Z 0 [Note] [MY-011240] [Server] Plugin mysqlx reported: 'X Plugin ready for connections.'
+2026-07-01T13:43:54.986776Z 0 [ERROR] [MY-001045] [Server] Access denied for user (using password: YES)
+2026-07-01T13:45:40.745559Z 0 [Note] [MY-010051] [Server] Event Scheduler: scheduler thread started
+2026-07-01T13:45:57.150793Z 0 [ERROR] [MY-001707] [Server] Table rebuild required
+2026-07-01T13:47:00.317740Z 0 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+2026-07-01T13:48:19.729889Z 0 [ERROR] [MY-001160] [Server] Got timeout writing communication packets
+2026-07-01T13:48:50.809241Z 0 [Note] [MY-010051] [Server] Event Scheduler: scheduler thread started
+2026-07-01T13:50:00.854826Z 0 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2026-07-01T13:51:54.466533Z 0 [ERROR] [MY-001206] [Server] The total number of locks exceeds the lock table size
+2026-07-01T13:53:44.454135Z 0 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2026-07-01T13:54:32.046236Z 0 [System] [MY-010116] [Server] /usr/sbin/mysqld (mysqld 8.0) starting as process 795
+2026-07-01T13:56:05.064565Z 0 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+2026-07-01T13:57:51.212083Z 0 [Note] [MY-011240] [Server] Plugin mysqlx reported: 'X Plugin ready for connections.'
+2026-07-01T13:59:26.038609Z 0 [ERROR] [MY-001267] [Server] Illegal mix of collations
+2026-07-01T14:01:23.367348Z 0 [System] [MY-010931] [Server] Ready for connections. Version: '8.0' socket: '/var/run/mysqld/mysqld.sock'
+2026-07-01T14:02:58.642460Z 0 [System] [MY-010931] [Server] Ready for connections. Version: '8.0' socket: '/var/run/mysqld/mysqld.sock'
+2026-07-01T14:04:40.069231Z 0 [ERROR] [MY-001130] [Server] Host is not allowed to connect to this MySQL server
+2026-07-01T14:06:19.824763Z 0 [Note] [MY-011240] [Server] Plugin mysqlx reported: 'X Plugin ready for connections.'
+2026-07-01T14:07:02.608571Z 0 [ERROR] [MY-001015] [Server] Can't lock file (errno: 11 - Resource temporarily unavailable)
+2026-07-01T14:07:24.097638Z 0 [Note] [MY-011240] [Server] Plugin mysqlx reported: 'X Plugin ready for connections.'
+2026-07-01T14:07:41.235057Z 0 [System] [MY-010116] [Server] /usr/sbin/mysqld (mysqld 8.0) starting as process 21
+2026-07-01T14:09:29.169707Z 0 [Note] [MY-011240] [Server] Plugin mysqlx reported: 'X Plugin ready for connections.'
+2026-07-01T14:10:28.312333Z 0 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2026-07-01T14:10:57.914350Z 0 [ERROR] [MY-001042] [Server] Can't get hostname for your address
+2026-07-01T14:12:16.208858Z 0 [System] [MY-010931] [Server] Ready for connections. Version: '8.0' socket: '/var/run/mysqld/mysqld.sock'
+2026-07-01T14:13:46.707613Z 0 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+2026-07-01T14:14:23.181507Z 0 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+2026-07-01T14:14:55.061428Z 0 [Note] [MY-010051] [Server] Event Scheduler: scheduler thread started
+2026-07-01T14:16:53.801527Z 0 [Note] [MY-010914] [Server] Server shutdown in progress
+2026-07-01T14:17:13.276336Z 0 [System] [MY-010116] [Server] /usr/sbin/mysqld (mysqld 8.0) starting as process 112
+2026-07-01T14:19:11.423620Z 0 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2026-07-01T14:20:28.150693Z 0 [Note] [MY-010051] [Server] Event Scheduler: scheduler thread started
+2026-07-01T14:21:55.159853Z 0 [Note] [MY-011240] [Server] Plugin mysqlx reported: 'X Plugin ready for connections.'
+2026-07-01T14:23:06.385296Z 0 [Note] [MY-013360] [Server] Plugin reported warning
+2026-07-01T14:24:31.833493Z 0 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2026-07-01T14:25:35.117574Z 0 [System] [MY-010116] [Server] /usr/sbin/mysqld (mysqld 8.0) starting as process 657
+2026-07-01T14:26:26.174523Z 0 [Note] [MY-011240] [Server] Plugin mysqlx reported: 'X Plugin ready for connections.'
+2026-07-01T14:28:07.800948Z 0 [System] [MY-010116] [Server] /usr/sbin/mysqld (mysqld 8.0) starting as process 503
+2026-07-01T14:28:59.080853Z 0 [Note] [MY-011240] [Server] Plugin mysqlx reported: 'X Plugin ready for connections.'
+2026-07-01T14:29:56.337279Z 0 [ERROR] [MY-001205] [InnoDB] Lock wait timeout exceeded; try restarting transaction
+2026-07-01T14:30:43.180962Z 0 [System] [MY-010116] [Server] /usr/sbin/mysqld (mysqld 8.0) starting as process 15
+2026-07-01T14:32:41.562865Z 0 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+2026-07-01T14:34:12.011839Z 0 [Note] [MY-011240] [Server] Plugin mysqlx reported: 'X Plugin ready for connections.'
+2026-07-01T14:35:10.126001Z 0 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2026-07-01T14:35:40.185804Z 0 [ERROR] [MY-001064] [Server] You have an error in your SQL syntax
+2026-07-01T14:36:05.174289Z 0 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2026-07-01T14:36:29.991726Z 0 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+2026-07-01T14:37:40.637989Z 0 [ERROR] [MY-010457] [Server] Data directory has files in it during --initialize
+2026-07-01T14:38:03.592303Z 0 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+2026-07-01T14:39:32.117982Z 0 [Note] [MY-010051] [Server] Event Scheduler: scheduler thread started
+2026-07-01T14:40:02.768329Z 0 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+2026-07-01T14:40:51.072634Z 0 [ERROR] [MY-001227] [Server] Access denied; you need the SUPER privilege
+2026-07-01T14:41:23.827683Z 0 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2026-07-01T14:42:26.865129Z 0 [Note] [MY-011240] [Server] Plugin mysqlx reported: 'X Plugin ready for connections.'
+2026-07-01T14:42:52.757063Z 0 [ERROR] [MY-003170] [Server] Memory capacity exceeded
+2026-07-01T14:43:40.590298Z 0 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+2026-07-01T14:44:58.353496Z 0 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+2026-07-01T14:46:37.250923Z 0 [Note] [MY-010747] [Server] Plugin 'FEDERATED' is disabled.
+2026-07-01T14:48:05.398147Z 0 [ERROR] [MY-001050] [Server] Table is already locked
+2026-07-01T14:49:30.042525Z 0 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2026-07-01T14:49:35.588572Z 0 [Note] [MY-010051] [Server] Event Scheduler: scheduler thread started
+2026-07-01T14:51:16.125423Z 0 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+2026-07-01T14:52:45.208122Z 0 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2026-07-01T14:52:56.010236Z 0 [System] [MY-010931] [Server] Ready for connections. Version: '8.0' socket: '/var/run/mysqld/mysqld.sock'
+2026-07-01T14:53:04.218441Z 0 [Note] [MY-010914] [Server] Server shutdown in progress
+2026-07-01T14:54:30.296275Z 0 [System] [MY-010116] [Server] /usr/sbin/mysqld (mysqld 8.0) starting as process 153
+2026-07-01T14:56:06.389274Z 0 [System] [MY-010931] [Server] Ready for connections. Version: '8.0' socket: '/var/run/mysqld/mysqld.sock'
+2026-07-01T14:57:37.463269Z 0 [Note] [MY-010747] [Server] Plugin 'FEDERATED' is disabled.
+2026-07-01T14:58:59.116743Z 0 [Note] [MY-010747] [Server] Plugin 'FEDERATED' is disabled.
+2026-07-01T15:00:45.911961Z 0 [ERROR] [MY-003546] [Server] Access denied; you need the SYSTEM_VARIABLES_ADMIN privilege
+2026-07-01T15:00:54.582612Z 0 [Note] [MY-011240] [Server] Plugin mysqlx reported: 'X Plugin ready for connections.'
+2026-07-01T15:01:25.016959Z 0 [Note] [MY-010051] [Server] Event Scheduler: scheduler thread started
+2026-07-01T15:03:03.199532Z 0 [Note] [MY-011240] [Server] Plugin mysqlx reported: 'X Plugin ready for connections.'
+2026-07-01T15:04:28.514131Z 0 [System] [MY-010931] [Server] Ready for connections. Version: '8.0' socket: '/var/run/mysqld/mysqld.sock'
+2026-07-01T15:05:03.958771Z 0 [ERROR] [MY-001213] [InnoDB] Deadlock found when trying to get lock; try restarting transaction
+2026-07-01T15:06:10.071929Z 0 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+2026-07-01T15:07:16.128151Z 0 [ERROR] [MY-001451] [Server] Cannot delete or update a parent row: a foreign key constraint fails
+2026-07-01T15:08:30.066907Z 0 [System] [MY-010931] [Server] Ready for connections. Version: '8.0' socket: '/var/run/mysqld/mysqld.sock'
+2026-07-01T15:10:05.950813Z 0 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+2026-07-01T15:10:56.671042Z 0 [Note] [MY-010931] [Server] Server is ready for connections
+2026-07-01T15:11:33.625419Z 0 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2026-07-01T15:12:33.168447Z 0 [Note] [MY-010747] [Server] Plugin 'FEDERATED' is disabled.
+2026-07-01T15:13:37.850611Z 0 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+2026-07-01T15:14:47.998517Z 0 [Note] [MY-011240] [Server] Plugin mysqlx reported: 'X Plugin ready for connections.'
+2026-07-01T15:15:02.794822Z 0 [ERROR] [MY-001290] [Server] The MySQL server is running with the --read-only option
+2026-07-01T15:16:00.156023Z 0 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+2026-07-01T15:17:01.587634Z 0 [System] [MY-010931] [Server] Ready for connections. Version: '8.0' socket: '/var/run/mysqld/mysqld.sock'
+2026-07-01T15:18:20.925093Z 0 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+2026-07-01T15:19:45.363424Z 0 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2026-07-01T15:20:08.013174Z 0 [ERROR] [MY-001114] [Server] The table is full
+2026-07-01T15:20:58.327695Z 0 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2026-07-01T15:21:20.077312Z 0 [System] [MY-010931] [Server] Ready for connections. Version: '8.0' socket: '/var/run/mysqld/mysqld.sock'
+2026-07-01T15:23:18.452746Z 0 [System] [MY-010931] [Server] Ready for connections. Version: '8.0' socket: '/var/run/mysqld/mysqld.sock'
+2026-07-01T15:24:15.361729Z 0 [Note] [MY-011240] [Server] Plugin mysqlx reported: 'X Plugin ready for connections.'
+2026-07-01T15:24:46.328439Z 0 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2026-07-01T15:26:39.596093Z 0 [Note] [MY-010914] [Server] Server shutdown in progress
+2026-07-01T15:28:13.043751Z 0 [Note] [MY-010051] [Server] Event Scheduler: scheduler thread started
+2026-07-01T15:29:25.865931Z 0 [Note] [MY-010747] [Server] Plugin 'FEDERATED' is disabled.
+2026-07-01T15:31:21.746292Z 0 [Note] [MY-011240] [Server] Plugin mysqlx reported: 'X Plugin ready for connections.'
+2026-07-01T15:33:21.629834Z 0 [System] [MY-010116] [Server] /usr/sbin/mysqld (mysqld 8.0) starting as process 64
+2026-07-01T15:33:50.412987Z 0 [ERROR] [MY-003170] [Server] Memory capacity exceeded
+2026-07-01T15:34:50.767409Z 0 [Note] [MY-010051] [Server] Event Scheduler: scheduler thread started
+2026-07-01T15:35:24.173110Z 0 [Note] [MY-010051] [Server] Event Scheduler: scheduler thread started
+2026-07-01T15:35:53.264388Z 0 [Note] [MY-010747] [Server] Plugin 'FEDERATED' is disabled.
+2026-07-01T15:36:28.169965Z 0 [ERROR] [MY-010457] [Server] Data directory has files in it during --initialize
+2026-07-01T15:37:13.461062Z 0 [Note] [MY-010051] [Server] Event Scheduler: scheduler thread started
+2026-07-01T15:37:24.494576Z 0 [Note] [MY-011240] [Server] Plugin mysqlx reported: 'X Plugin ready for connections.'
+2026-07-01T15:38:12.650285Z 0 [Note] [MY-011240] [Server] Plugin mysqlx reported: 'X Plugin ready for connections.'
+2026-07-01T15:39:56.071638Z 0 [Note] [MY-011240] [Server] Plugin mysqlx reported: 'X Plugin ready for connections.'
+2026-07-01T15:40:16.893370Z 0 [Note] [MY-010747] [Server] Plugin 'FEDERATED' is disabled.
+2026-07-01T15:40:22.549922Z 0 [ERROR] [MY-001872] [Repl] Replica failed to initialize relay log info structure
+2026-07-01T15:40:29.632680Z 0 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2026-07-01T15:42:13.648569Z 0 [Note] [MY-011240] [Server] Plugin mysqlx reported: 'X Plugin ready for connections.'
+2026-07-01T15:42:50.523436Z 0 [Warning] [MY-010931] [Server] Server is ready for connections
+2026-07-01T15:43:20.120778Z 0 [Note] [MY-011240] [Server] Plugin mysqlx reported: 'X Plugin ready for connections.'
+2026-07-01T15:44:30.269802Z 0 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+2026-07-01T15:45:38.483676Z 0 [ERROR] [MY-001050] [Server] Table already exists
+2026-07-01T15:47:01.289663Z 0 [System] [MY-010931] [Server] Ready for connections. Version: '8.0' socket: '/var/run/mysqld/mysqld.sock'
+2026-07-01T15:47:32.915651Z 0 [Note] [MY-011240] [Server] Plugin mysqlx reported: 'X Plugin ready for connections.'
+2026-07-01T15:48:27.018347Z 0 [ERROR] [MY-001452] [Server] Cannot add or update a child row: a foreign key constraint fails
+2026-07-01T15:48:52.644887Z 0 [System] [MY-010116] [Server] /usr/sbin/mysqld (mysqld 8.0) starting as process 407
+2026-07-01T15:49:15.613008Z 0 [Note] [MY-010747] [Server] Plugin 'FEDERATED' is disabled.
+2026-07-01T15:50:00.159313Z 0 [System] [MY-010931] [Server] Ready for connections. Version: '8.0' socket: '/var/run/mysqld/mysqld.sock'
+2026-07-01T15:51:15.045874Z 0 [ERROR] [MY-001872] [Repl] Replica failed to initialize relay log info structure
+2026-07-01T15:53:12.711783Z 0 [System] [MY-010931] [Server] Ready for connections. Version: '8.0' socket: '/var/run/mysqld/mysqld.sock'
+2026-07-01T15:54:40.558127Z 0 [ERROR] [MY-001236] [Repl] Replication event checksum verification failed
+2026-07-01T15:55:25.220343Z 0 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2026-07-01T15:56:14.356673Z 0 [Note] [MY-011240] [Server] Plugin mysqlx reported: 'X Plugin ready for connections.'
+2026-07-01T15:56:37.932565Z 0 [Note] [MY-011240] [Server] Plugin mysqlx reported: 'X Plugin ready for connections.'
+2026-07-01T15:57:08.224945Z 0 [System] [MY-010931] [Server] Ready for connections. Version: '8.0' socket: '/var/run/mysqld/mysqld.sock'
+2026-07-01T15:57:21.801290Z 0 [Note] [MY-011240] [Server] Plugin mysqlx reported: 'X Plugin ready for connections.'
+2026-07-01T15:58:09.096785Z 0 [ERROR] [MY-002006] [Server] MySQL server has gone away
+2026-07-01T15:58:19.609218Z 0 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+2026-07-01T15:59:39.317374Z 0 [Note] [MY-010931] [Server] Server is ready for connections
+2026-07-01T16:01:22.478246Z 0 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+2026-07-01T16:02:10.029806Z 0 [Note] [MY-010051] [Server] Event Scheduler: scheduler thread started
+2026-07-01T16:03:58.320800Z 0 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2026-07-01T16:04:11.624558Z 0 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+2026-07-01T16:06:03.370614Z 0 [Note] [MY-011240] [Server] Plugin mysqlx reported: 'X Plugin ready for connections.'
+2026-07-01T16:07:27.435651Z 0 [ERROR] [MY-001015] [Server] Can't lock file (errno: 11 - Resource temporarily unavailable)
+2026-07-01T16:09:04.756553Z 0 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+2026-07-01T16:09:20.192055Z 0 [Note] [MY-010051] [Server] Event Scheduler: scheduler thread started
+2026-07-01T16:09:43.774927Z 0 [Note] [MY-010747] [Server] Plugin 'FEDERATED' is disabled.
+2026-07-01T16:10:16.681148Z 0 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+2026-07-01T16:12:14.285109Z 0 [Warning] [MY-013360] [Server] Plugin reported warning
+2026-07-01T16:13:01.993380Z 0 [Note] [MY-010747] [Server] Plugin 'FEDERATED' is disabled.
+2026-07-01T16:14:18.573666Z 0 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2026-07-01T16:15:05.635907Z 0 [Warning] [MY-010914] [Server] Server shutdown in progress
+2026-07-01T16:16:50.399674Z 0 [System] [MY-010931] [Server] Ready for connections. Version: '8.0' socket: '/var/run/mysqld/mysqld.sock'
+2026-07-01T16:17:51.340234Z 0 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+2026-07-01T16:19:47.683912Z 0 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2026-07-01T16:20:02.798549Z 0 [System] [MY-010931] [Server] Ready for connections. Version: '8.0' socket: '/var/run/mysqld/mysqld.sock'
+2026-07-01T16:20:44.280100Z 0 [Note] [MY-010747] [Server] Plugin 'FEDERATED' is disabled.
+2026-07-01T16:21:37.397218Z 0 [ERROR] [MY-002013] [Server] Lost connection to MySQL server during query
+2026-07-01T16:23:19.301915Z 0 [Note] [MY-011240] [Server] Plugin mysqlx reported: 'X Plugin ready for connections.'
+2026-07-01T16:24:09.455855Z 0 [Warning] [MY-010914] [Server] Server shutdown in progress
+2026-07-01T16:25:07.867869Z 0 [Note] [MY-010747] [Server] Plugin 'FEDERATED' is disabled.
+2026-07-01T16:26:09.934820Z 0 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2026-07-01T16:26:34.278814Z 0 [Note] [MY-010051] [Server] Event Scheduler: scheduler thread started
+2026-07-01T16:28:11.201244Z 0 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+2026-07-01T16:28:33.639085Z 0 [ERROR] [MY-001054] [Server] Unknown column in field list
+2026-07-01T16:29:38.581555Z 0 [Note] [MY-011240] [Server] Plugin mysqlx reported: 'X Plugin ready for connections.'
+2026-07-01T16:30:31.467692Z 0 [Note] [MY-010931] [Server] Server is ready for connections
+2026-07-01T16:31:20.628125Z 0 [Note] [MY-011240] [Server] Plugin mysqlx reported: 'X Plugin ready for connections.'
+2026-07-01T16:33:10.123986Z 0 [System] [MY-010116] [Server] /usr/sbin/mysqld (mysqld 8.0) starting as process 679
+2026-07-01T16:34:58.559662Z 0 [System] [MY-010116] [Server] /usr/sbin/mysqld (mysqld 8.0) starting as process 737
+2026-07-01T16:35:36.714408Z 0 [System] [MY-010116] [Server] /usr/sbin/mysqld (mysqld 8.0) starting as process 933
+2026-07-01T16:35:56.312469Z 0 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2026-07-01T16:37:56.394082Z 0 [ERROR] [MY-001169] [Server] Can't write, duplicate key in table
+2026-07-01T16:38:26.871112Z 0 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2026-07-01T16:39:43.197600Z 0 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2026-07-01T16:41:35.054800Z 0 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2026-07-01T16:42:11.589198Z 0 [Note] [MY-010931] [Server] Server is ready for connections
+2026-07-01T16:43:55.788427Z 0 [Note] [MY-010051] [Server] Event Scheduler: scheduler thread started
+2026-07-01T16:45:00.257689Z 0 [Note] [MY-011240] [Server] Plugin mysqlx reported: 'X Plugin ready for connections.'
+2026-07-01T16:45:56.265590Z 0 [Note] [MY-011240] [Server] Plugin mysqlx reported: 'X Plugin ready for connections.'
+2026-07-01T16:47:21.054660Z 0 [System] [MY-010931] [Server] Ready for connections. Version: '8.0' socket: '/var/run/mysqld/mysqld.sock'
+2026-07-01T16:48:26.252594Z 0 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2026-07-01T16:48:56.011233Z 0 [ERROR] [MY-001050] [Server] Table is already locked
+2026-07-01T16:50:33.822863Z 0 [Note] [MY-010051] [Server] Event Scheduler: scheduler thread started
+2026-07-01T16:51:31.497023Z 0 [ERROR] [MY-001049] [Server] Unknown database
+2026-07-01T16:53:17.627028Z 0 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2026-07-01T16:53:51.193811Z 0 [Note] [MY-010051] [Server] Event Scheduler: scheduler thread started
+2026-07-01T16:55:40.590735Z 0 [System] [MY-010116] [Server] /usr/sbin/mysqld (mysqld 8.0) starting as process 841
+2026-07-01T16:55:50.163461Z 0 [System] [MY-010931] [Server] Ready for connections. Version: '8.0' socket: '/var/run/mysqld/mysqld.sock'
+2026-07-01T16:57:07.811831Z 0 [System] [MY-010931] [Server] Ready for connections. Version: '8.0' socket: '/var/run/mysqld/mysqld.sock'
+2026-07-01T16:57:25.639426Z 0 [ERROR] [MY-003685] [Server] Authentication plugin 'mysql_native_password' is deprecated
+2026-07-01T16:58:53.756877Z 0 [System] [MY-010116] [Server] /usr/sbin/mysqld (mysqld 8.0) starting as process 648
+2026-07-01T16:59:50.832139Z 0 [Note] [MY-011240] [Server] Plugin mysqlx reported: 'X Plugin ready for connections.'
+2026-07-01T17:01:12.105879Z 0 [System] [MY-010931] [Server] Ready for connections. Version: '8.0' socket: '/var/run/mysqld/mysqld.sock'
+2026-07-01T17:02:06.281120Z 0 [ERROR] [MY-001300] [Server] Invalid utf8 character 1024
+2026-07-01T17:03:26.233042Z 0 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+2026-07-01T17:04:27.360557Z 0 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+2026-07-01T17:04:33.784566Z 0 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+2026-07-01T17:06:26.655073Z 0 [Note] [MY-010747] [Server] Plugin 'FEDERATED' is disabled.
+2026-07-01T17:07:49.502301Z 0 [Note] [MY-010931] [Server] Server is ready for connections
+2026-07-01T17:08:13.439973Z 0 [Note] [MY-010747] [Server] Plugin 'FEDERATED' is disabled.
+2026-07-01T17:08:38.320911Z 0 [ERROR] [MY-001054] [Server] Unknown column in field list
+2026-07-01T17:08:58.461520Z 0 [System] [MY-010116] [Server] /usr/sbin/mysqld (mysqld 8.0) starting as process 689
+2026-07-01T17:09:19.822022Z 0 [System] [MY-010931] [Server] Ready for connections. Version: '8.0' socket: '/var/run/mysqld/mysqld.sock'
+2026-07-01T17:10:33.434861Z 0 [Note] [MY-011240] [Server] Plugin mysqlx reported: 'X Plugin ready for connections.'
+2026-07-01T17:12:21.915739Z 0 [ERROR] [MY-001236] [Repl] Replication event checksum verification failed
+2026-07-01T17:12:58.918030Z 0 [Note] [MY-011240] [Server] Plugin mysqlx reported: 'X Plugin ready for connections.'
+2026-07-01T17:14:52.131393Z 0 [System] [MY-010931] [Server] Ready for connections. Version: '8.0' socket: '/var/run/mysqld/mysqld.sock'
+2026-07-01T17:16:02.894186Z 0 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2026-07-01T17:16:30.129634Z 0 [ERROR] [MY-001131] [Server] You are using MySQL as an anonymous user and anonymous users are not allowed to modify data
+2026-07-01T17:17:34.794962Z 0 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2026-07-01T17:18:24.291917Z 0 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2026-07-01T17:19:08.791129Z 0 [Note] [MY-010747] [Server] Plugin 'FEDERATED' is disabled.
+2026-07-01T17:19:37.280556Z 0 [Note] [MY-011240] [Server] Plugin mysqlx reported: 'X Plugin ready for connections.'
+2026-07-01T17:21:28.634750Z 0 [Note] [MY-010051] [Server] Event Scheduler: scheduler thread started
+2026-07-01T17:21:36.943026Z 0 [Note] [MY-010914] [Server] Server shutdown in progress
+2026-07-01T17:22:27.916714Z 0 [System] [MY-010116] [Server] /usr/sbin/mysqld (mysqld 8.0) starting as process 245
+2026-07-01T17:22:55.870715Z 0 [Note] [MY-010747] [Server] Plugin 'FEDERATED' is disabled.
+2026-07-01T17:23:21.031018Z 0 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+2026-07-01T17:25:01.517985Z 0 [Note] [MY-010051] [Server] Event Scheduler: scheduler thread started
+2026-07-01T17:25:26.721725Z 0 [Note] [MY-010747] [Server] Plugin 'FEDERATED' is disabled.
+2026-07-01T17:26:43.673501Z 0 [ERROR] [MY-001419] [Server] You do not have the SUPER privilege and binary logging is enabled
+2026-07-01T17:27:10.862711Z 0 [Note] [MY-011240] [Server] Plugin mysqlx reported: 'X Plugin ready for connections.'
+2026-07-01T17:28:32.637358Z 0 [ERROR] [MY-001271] [Server] Illegal mix of collations for operation
+2026-07-01T17:30:14.738829Z 0 [System] [MY-010116] [Server] /usr/sbin/mysqld (mysqld 8.0) starting as process 43
+2026-07-01T17:30:45.609410Z 0 [ERROR] [MY-001213] [InnoDB] Deadlock found when trying to get lock; try restarting transaction
+2026-07-01T17:32:33.885415Z 0 [System] [MY-010931] [Server] Ready for connections. Version: '8.0' socket: '/var/run/mysqld/mysqld.sock'
+2026-07-01T17:32:58.886714Z 0 [System] [MY-010931] [Server] Ready for connections. Version: '8.0' socket: '/var/run/mysqld/mysqld.sock'
+2026-07-01T17:34:00.888610Z 0 [ERROR] [MY-001044] [Server] Database access denied
+2026-07-01T17:34:25.757158Z 0 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2026-07-01T17:35:06.667004Z 0 [Note] [MY-010931] [Server] Server is ready for connections
+2026-07-01T17:35:59.189201Z 0 [Note] [MY-010747] [Server] Plugin 'FEDERATED' is disabled.
+2026-07-01T17:36:18.770776Z 0 [System] [MY-010116] [Server] /usr/sbin/mysqld (mysqld 8.0) starting as process 544
+2026-07-01T17:37:51.975671Z 0 [Note] [MY-010051] [Server] Event Scheduler: scheduler thread started
+2026-07-01T17:39:24.205233Z 0 [System] [MY-010931] [Server] Ready for connections. Version: '8.0' socket: '/var/run/mysqld/mysqld.sock'
+2026-07-01T17:40:39.331866Z 0 [Warning] [MY-010914] [Server] Server shutdown in progress
+2026-07-01T17:41:00.096350Z 0 [System] [MY-010931] [Server] Ready for connections. Version: '8.0' socket: '/var/run/mysqld/mysqld.sock'
+2026-07-01T17:42:04.888373Z 0 [ERROR] [MY-001041] [Server] Out of memory
+2026-07-01T17:43:24.534219Z 0 [System] [MY-010931] [Server] Ready for connections. Version: '8.0' socket: '/var/run/mysqld/mysqld.sock'
+2026-07-01T17:43:38.555784Z 0 [ERROR] [MY-001153] [Server] Got a packet bigger than max_allowed_packet bytes
+2026-07-01T17:45:28.988429Z 0 [Note] [MY-011240] [Server] Plugin mysqlx reported: 'X Plugin ready for connections.'
+2026-07-01T17:47:20.599915Z 0 [Note] [MY-010747] [Server] Plugin 'FEDERATED' is disabled.
+2026-07-01T17:48:11.836875Z 0 [ERROR] [MY-001045] [Server] Access denied for user (using password: YES)
+2026-07-01T17:49:50.657198Z 0 [System] [MY-010116] [Server] /usr/sbin/mysqld (mysqld 8.0) starting as process 225
+2026-07-01T17:51:39.771768Z 0 [ERROR] [MY-001143] [Server] Table access denied
+2026-07-01T17:52:24.703843Z 0 [Note] [MY-011240] [Server] Plugin mysqlx reported: 'X Plugin ready for connections.'
+2026-07-01T17:53:03.822885Z 0 [Note] [MY-013360] [Server] Plugin reported warning
+2026-07-01T17:54:00.728943Z 0 [System] [MY-010931] [Server] Ready for connections. Version: '8.0' socket: '/var/run/mysqld/mysqld.sock'
+2026-07-01T17:55:24.723762Z 0 [System] [MY-010931] [Server] Ready for connections. Version: '8.0' socket: '/var/run/mysqld/mysqld.sock'
+2026-07-01T17:57:03.167171Z 0 [System] [MY-010931] [Server] Ready for connections. Version: '8.0' socket: '/var/run/mysqld/mysqld.sock'
+2026-07-01T17:57:55.545005Z 0 [Note] [MY-010747] [Server] Plugin 'FEDERATED' is disabled.
+2026-07-01T17:58:32.841522Z 0 [ERROR] [MY-001188] [Server] Cannot modify a table used by an active transaction
+2026-07-01T17:59:04.344161Z 0 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+2026-07-01T18:00:50.101506Z 0 [ERROR] [MY-001050] [Server] Table is already locked
+2026-07-01T18:02:28.971470Z 0 [Note] [MY-010051] [Server] Event Scheduler: scheduler thread started
+2026-07-01T18:02:59.438059Z 0 [Note] [MY-010747] [Server] Plugin 'FEDERATED' is disabled.
+2026-07-01T18:04:25.326277Z 0 [Note] [MY-010747] [Server] Plugin 'FEDERATED' is disabled.
+2026-07-01T18:06:00.137425Z 0 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+2026-07-01T18:06:27.785609Z 0 [Note] [MY-010051] [Server] Event Scheduler: scheduler thread started
+2026-07-01T18:06:51.843348Z 0 [ERROR] [MY-001665] [Repl] Cannot execute statement: impossible to write to binary log
+2026-07-01T18:07:28.493649Z 0 [Note] [MY-010051] [Server] Event Scheduler: scheduler thread started
+2026-07-01T18:09:11.931274Z 0 [Note] [MY-010051] [Server] Event Scheduler: scheduler thread started
+2026-07-01T18:10:06.688947Z 0 [System] [MY-010931] [Server] Ready for connections. Version: '8.0' socket: '/var/run/mysqld/mysqld.sock'
+2026-07-01T18:10:55.942328Z 0 [System] [MY-010931] [Server] Ready for connections. Version: '8.0' socket: '/var/run/mysqld/mysqld.sock'
+2026-07-01T18:11:34.031206Z 0 [ERROR] [MY-001142] [Server] Column access denied
+2026-07-01T18:13:15.779582Z 0 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+2026-07-01T18:15:08.159207Z 0 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+2026-07-01T18:16:47.895403Z 0 [ERROR] [MY-001265] [Server] Data truncated for column
+2026-07-01T18:17:52.516816Z 0 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+2026-07-01T18:19:31.018280Z 0 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2026-07-01T18:20:43.632948Z 0 [Note] [MY-010747] [Server] Plugin 'FEDERATED' is disabled.
+2026-07-01T18:20:53.408012Z 0 [Note] [MY-010747] [Server] Plugin 'FEDERATED' is disabled.
+2026-07-01T18:21:23.434250Z 0 [Note] [MY-010051] [Server] Event Scheduler: scheduler thread started
+2026-07-01T18:22:10.252216Z 0 [Note] [MY-013360] [Server] Plugin reported warning
+2026-07-01T18:23:51.696681Z 0 [System] [MY-010931] [Server] Ready for connections. Version: '8.0' socket: '/var/run/mysqld/mysqld.sock'
+2026-07-01T18:25:27.567058Z 0 [System] [MY-010116] [Server] /usr/sbin/mysqld (mysqld 8.0) starting as process 801
+2026-07-01T18:26:51.584335Z 0 [Note] [MY-010747] [Server] Plugin 'FEDERATED' is disabled.
+2026-07-01T18:28:03.269919Z 0 [ERROR] [MY-001146] [Server] Table doesn't exist
+2026-07-01T18:29:26.477028Z 0 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2026-07-01T18:30:12.772166Z 0 [ERROR] [MY-002003] [Server] Can't connect to MySQL server on host
+2026-07-01T18:30:46.953645Z 0 [System] [MY-010931] [Server] Ready for connections. Version: '8.0' socket: '/var/run/mysqld/mysqld.sock'
+2026-07-01T18:31:22.233431Z 0 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+2026-07-01T18:32:34.988306Z 0 [Note] [MY-011240] [Server] Plugin mysqlx reported: 'X Plugin ready for connections.'
+2026-07-01T18:32:59.317512Z 0 [System] [MY-010116] [Server] /usr/sbin/mysqld (mysqld 8.0) starting as process 557
+2026-07-01T18:34:42.863805Z 0 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+2026-07-01T18:35:55.129458Z 0 [ERROR] [MY-001194] [Server] Cannot modify the table — another session has a pending transaction on it
+2026-07-01T18:37:50.922170Z 0 [Note] [MY-011240] [Server] Plugin mysqlx reported: 'X Plugin ready for connections.'
+2026-07-01T18:38:37.171467Z 0 [ERROR] [MY-001133] [Server] Can't find any matching row in the user table
+2026-07-01T18:39:15.243403Z 0 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+2026-07-01T18:39:31.652220Z 0 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2026-07-01T18:40:24.874718Z 0 [System] [MY-010116] [Server] /usr/sbin/mysqld (mysqld 8.0) starting as process 19
+2026-07-01T18:42:24.416337Z 0 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+2026-07-01T18:44:22.067018Z 0 [ERROR] [MY-001071] [Server] Specified key was too long; max key length is 3072 bytes
+2026-07-01T18:46:10.518063Z 0 [Note] [MY-010747] [Server] Plugin 'FEDERATED' is disabled.
+2026-07-01T18:46:47.325443Z 0 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+2026-07-01T18:47:58.977436Z 0 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+2026-07-01T18:48:40.068300Z 0 [System] [MY-010116] [Server] /usr/sbin/mysqld (mysqld 8.0) starting as process 349
+2026-07-01T18:48:54.849887Z 0 [ERROR] [MY-001264] [Server] Out of range value for column
+2026-07-01T18:49:33.416901Z 0 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+2026-07-01T18:49:44.552843Z 0 [Note] [MY-010747] [Server] Plugin 'FEDERATED' is disabled.
+2026-07-01T18:50:37.346647Z 0 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2026-07-01T18:52:33.022423Z 0 [Note] [MY-010051] [Server] Event Scheduler: scheduler thread started
+2026-07-01T18:53:10.535178Z 0 [ERROR] [MY-001364] [Server] Field doesn't have a default value
+2026-07-01T18:53:38.192023Z 0 [System] [MY-010116] [Server] /usr/sbin/mysqld (mysqld 8.0) starting as process 549
+2026-07-01T18:53:44.874813Z 0 [Warning] [MY-013360] [Server] Plugin reported warning
+2026-07-01T18:55:03.719466Z 0 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+2026-07-01T18:56:03.929085Z 0 [Note] [MY-010051] [Server] Event Scheduler: scheduler thread started
+2026-07-01T18:57:01.471653Z 0 [ERROR] [MY-001169] [Server] Can't write, duplicate key in table
+2026-07-01T18:58:16.361355Z 0 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2026-07-01T18:59:03.895333Z 0 [Warning] [MY-010931] [Server] Server is ready for connections
+2026-07-01T19:00:01.869756Z 0 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+2026-07-01T19:00:45.251092Z 0 [Warning] [MY-010914] [Server] Server shutdown in progress
+2026-07-01T19:01:42.393822Z 0 [Note] [MY-010747] [Server] Plugin 'FEDERATED' is disabled.
+2026-07-01T19:03:42.701884Z 0 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+2026-07-01T19:03:58.083802Z 0 [ERROR] [MY-001149] [Server] SQL syntax error
+2026-07-01T19:04:54.083147Z 0 [Note] [MY-010747] [Server] Plugin 'FEDERATED' is disabled.
+2026-07-01T19:05:42.866206Z 0 [Note] [MY-010051] [Server] Event Scheduler: scheduler thread started
+2026-07-01T19:06:57.935173Z 0 [ERROR] [MY-013183] [InnoDB] InnoDB assertion failure
+2026-07-01T19:07:14.084437Z 0 [Note] [MY-010747] [Server] Plugin 'FEDERATED' is disabled.
+2026-07-01T19:07:37.247735Z 0 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+2026-07-01T19:08:34.274941Z 0 [Note] [MY-010051] [Server] Event Scheduler: scheduler thread started
+2026-07-01T19:09:25.078911Z 0 [System] [MY-010931] [Server] Ready for connections. Version: '8.0' socket: '/var/run/mysqld/mysqld.sock'
+2026-07-01T19:10:48.280066Z 0 [ERROR] [MY-001044] [Server] Access denied for user (using password: NO)
+2026-07-01T19:12:06.104831Z 0 [System] [MY-010116] [Server] /usr/sbin/mysqld (mysqld 8.0) starting as process 700
+2026-07-01T19:12:23.677289Z 0 [Note] [MY-010051] [Server] Event Scheduler: scheduler thread started
+2026-07-01T19:13:34.364005Z 0 [Note] [MY-010051] [Server] Event Scheduler: scheduler thread started
+2026-07-01T19:15:11.272472Z 0 [ERROR] [MY-001707] [Server] Table rebuild required
+2026-07-01T19:16:05.607395Z 0 [Note] [MY-010051] [Server] Event Scheduler: scheduler thread started
+2026-07-01T19:17:43.045415Z 0 [Note] [MY-011240] [Server] Plugin mysqlx reported: 'X Plugin ready for connections.'
+2026-07-01T19:19:08.624855Z 0 [ERROR] [MY-001271] [Server] Illegal mix of collations for operation
+2026-07-01T19:19:49.000721Z 0 [Note] [MY-011240] [Server] Plugin mysqlx reported: 'X Plugin ready for connections.'
+2026-07-01T19:20:15.296849Z 0 [Note] [MY-010747] [Server] Plugin 'FEDERATED' is disabled.
+2026-07-01T19:21:04.809924Z 0 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2026-07-01T19:22:01.016258Z 0 [Note] [MY-010747] [Server] Plugin 'FEDERATED' is disabled.
+2026-07-01T19:23:24.507623Z 0 [ERROR] [MY-001159] [Server] Got timeout reading communication packets
+2026-07-01T19:25:04.699194Z 0 [Note] [MY-011240] [Server] Plugin mysqlx reported: 'X Plugin ready for connections.'
+2026-07-01T19:26:59.432035Z 0 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+2026-07-01T19:28:41.909781Z 0 [System] [MY-010931] [Server] Ready for connections. Version: '8.0' socket: '/var/run/mysqld/mysqld.sock'
+2026-07-01T19:29:25.206722Z 0 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+2026-07-01T19:30:21.493248Z 0 [ERROR] [MY-001452] [Server] Cannot add or update a child row: a foreign key constraint fails
+2026-07-01T19:31:45.519352Z 0 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+2026-07-01T19:33:05.065011Z 0 [Note] [MY-010747] [Server] Plugin 'FEDERATED' is disabled.
+2026-07-01T19:34:14.161257Z 0 [Note] [MY-010747] [Server] Plugin 'FEDERATED' is disabled.
+2026-07-01T19:34:51.153553Z 0 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+2026-07-01T19:36:20.944187Z 0 [ERROR] [MY-001418] [Server] This function has none of DETERMINISTIC, NO SQL, or READS SQL DATA
+2026-07-01T19:36:57.814547Z 0 [System] [MY-010931] [Server] Ready for connections. Version: '8.0' socket: '/var/run/mysqld/mysqld.sock'
+2026-07-01T19:38:14.470309Z 0 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2026-07-01T19:39:47.764040Z 0 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2026-07-01T19:40:48.614090Z 0 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+2026-07-01T19:42:21.222939Z 0 [System] [MY-010931] [Server] Ready for connections. Version: '8.0' socket: '/var/run/mysqld/mysqld.sock'
+2026-07-01T19:42:59.951853Z 0 [ERROR] [MY-001130] [Server] Host is not allowed to connect to this MySQL server
+2026-07-01T19:44:12.032005Z 0 [Note] [MY-010051] [Server] Event Scheduler: scheduler thread started
+2026-07-01T19:44:40.076355Z 0 [Note] [MY-011240] [Server] Plugin mysqlx reported: 'X Plugin ready for connections.'
+2026-07-01T19:44:49.961409Z 0 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2026-07-01T19:45:57.671898Z 0 [ERROR] [MY-001049] [Server] Unknown database
+2026-07-01T19:46:36.095701Z 0 [System] [MY-010116] [Server] /usr/sbin/mysqld (mysqld 8.0) starting as process 344
+2026-07-01T19:47:14.775574Z 0 [System] [MY-010931] [Server] Ready for connections. Version: '8.0' socket: '/var/run/mysqld/mysqld.sock'
+2026-07-01T19:47:35.232307Z 0 [System] [MY-010116] [Server] /usr/sbin/mysqld (mysqld 8.0) starting as process 522
+2026-07-01T19:47:45.266308Z 0 [ERROR] [MY-001558] [Server] Column count of the updated table does not match column count of the referenced table
+2026-07-01T19:48:07.969836Z 0 [Note] [MY-011240] [Server] Plugin mysqlx reported: 'X Plugin ready for connections.'
+2026-07-01T19:48:51.256395Z 0 [Note] [MY-011240] [Server] Plugin mysqlx reported: 'X Plugin ready for connections.'
+2026-07-01T19:49:35.469338Z 0 [Warning] [MY-010931] [Server] Server is ready for connections
+2026-07-01T19:51:20.396709Z 0 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+2026-07-01T19:51:52.492689Z 0 [Note] [MY-010051] [Server] Event Scheduler: scheduler thread started
+2026-07-01T19:52:00.115068Z 0 [System] [MY-010116] [Server] /usr/sbin/mysqld (mysqld 8.0) starting as process 653
+2026-07-01T19:53:26.688733Z 0 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2026-07-01T19:54:55.942654Z 0 [ERROR] [MY-001223] [Server] Can't execute the query because you have a conflicting read lock
+2026-07-01T19:56:19.910023Z 0 [System] [MY-010116] [Server] /usr/sbin/mysqld (mysqld 8.0) starting as process 337
+2026-07-01T19:58:18.534434Z 0 [Note] [MY-011240] [Server] Plugin mysqlx reported: 'X Plugin ready for connections.'
+2026-07-01T19:58:45.344892Z 0 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+2026-07-01T19:59:33.728776Z 0 [ERROR] [MY-001062] [Server] Duplicate entry for key
+2026-07-01T20:00:03.098089Z 0 [Note] [MY-010051] [Server] Event Scheduler: scheduler thread started
+2026-07-01T20:00:37.971518Z 0 [Warning] [MY-013360] [Server] Plugin reported warning
+2026-07-01T20:01:35.487616Z 0 [System] [MY-010931] [Server] Ready for connections. Version: '8.0' socket: '/var/run/mysqld/mysqld.sock'
+2026-07-01T20:02:37.546267Z 0 [Note] [MY-010051] [Server] Event Scheduler: scheduler thread started
+2026-07-01T20:02:43.523800Z 0 [System] [MY-010931] [Server] Ready for connections. Version: '8.0' socket: '/var/run/mysqld/mysqld.sock'
+2026-07-01T20:03:12.428775Z 0 [ERROR] [MY-001042] [Server] Can't get hostname for your address
+2026-07-01T20:04:28.317928Z 0 [Note] [MY-011240] [Server] Plugin mysqlx reported: 'X Plugin ready for connections.'
+2026-07-01T20:05:36.980386Z 0 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+2026-07-01T20:06:48.480626Z 0 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+2026-07-01T20:07:33.869897Z 0 [ERROR] [MY-001526] [Server] Table has no partition for value
+2026-07-01T20:08:24.114101Z 0 [Note] [MY-011240] [Server] Plugin mysqlx reported: 'X Plugin ready for connections.'
+2026-07-01T20:10:08.499055Z 0 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+2026-07-01T20:10:53.643613Z 0 [System] [MY-010116] [Server] /usr/sbin/mysqld (mysqld 8.0) starting as process 598
+2026-07-01T20:12:26.827891Z 0 [System] [MY-010116] [Server] /usr/sbin/mysqld (mysqld 8.0) starting as process 291
+2026-07-01T20:14:21.616260Z 0 [Note] [MY-010931] [Server] Server is ready for connections
+2026-07-01T20:14:52.911060Z 0 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2026-07-01T20:16:48.592919Z 0 [System] [MY-010931] [Server] Ready for connections. Version: '8.0' socket: '/var/run/mysqld/mysqld.sock'
+2026-07-01T20:16:58.290301Z 0 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+2026-07-01T20:18:31.741984Z 0 [ERROR] [MY-001064] [Server] You have an error in your SQL syntax
+2026-07-01T20:20:26.188378Z 0 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2026-07-01T20:22:04.161906Z 0 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2026-07-01T20:23:33.727934Z 0 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+2026-07-01T20:23:53.051391Z 0 [ERROR] [MY-001068] [Server] Too many keys specified; max allowed is 64
+2026-07-01T20:24:22.756818Z 0 [System] [MY-010116] [Server] /usr/sbin/mysqld (mysqld 8.0) starting as process 487
+2026-07-01T20:25:57.473469Z 0 [Note] [MY-010747] [Server] Plugin 'FEDERATED' is disabled.
+2026-07-01T20:26:06.010183Z 0 [Note] [MY-010747] [Server] Plugin 'FEDERATED' is disabled.
+2026-07-01T20:27:53.240399Z 0 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+2026-07-01T20:29:46.997694Z 0 [System] [MY-010931] [Server] Ready for connections. Version: '8.0' socket: '/var/run/mysqld/mysqld.sock'
+2026-07-01T20:30:43.217970Z 0 [Warning] [MY-010914] [Server] Server shutdown in progress
+2026-07-01T20:32:12.187201Z 0 [Note] [MY-010747] [Server] Plugin 'FEDERATED' is disabled.
+2026-07-01T20:32:45.078821Z 0 [Note] [MY-010051] [Server] Event Scheduler: scheduler thread started
+2026-07-01T20:33:42.900211Z 0 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2026-07-01T20:34:48.782488Z 0 [Note] [MY-011240] [Server] Plugin mysqlx reported: 'X Plugin ready for connections.'
+2026-07-01T20:35:24.706353Z 0 [ERROR] [MY-001169] [Server] Can't write, duplicate key in table
+2026-07-01T20:35:52.110697Z 0 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2026-07-01T20:36:43.420659Z 0 [ERROR] [MY-001216] [Server] Cannot add or update a child row: foreign key constraint fails
+2026-07-01T20:38:23.359156Z 0 [Note] [MY-011240] [Server] Plugin mysqlx reported: 'X Plugin ready for connections.'
+2026-07-01T20:38:47.417642Z 0 [System] [MY-010116] [Server] /usr/sbin/mysqld (mysqld 8.0) starting as process 232
+2026-07-01T20:40:22.702706Z 0 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2026-07-01T20:41:18.554806Z 0 [Note] [MY-011240] [Server] Plugin mysqlx reported: 'X Plugin ready for connections.'
+2026-07-01T20:42:08.616999Z 0 [ERROR] [MY-001146] [Server] Table doesn't exist
+2026-07-01T20:42:28.520581Z 0 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2026-07-01T20:43:32.577313Z 0 [System] [MY-010931] [Server] Ready for connections. Version: '8.0' socket: '/var/run/mysqld/mysqld.sock'
+2026-07-01T20:43:45.999384Z 0 [System] [MY-010931] [Server] Ready for connections. Version: '8.0' socket: '/var/run/mysqld/mysqld.sock'
+2026-07-01T20:44:34.694323Z 0 [Note] [MY-010747] [Server] Plugin 'FEDERATED' is disabled.
+2026-07-01T20:44:51.688214Z 0 [Note] [MY-011240] [Server] Plugin mysqlx reported: 'X Plugin ready for connections.'
+2026-07-01T20:46:10.725953Z 0 [ERROR] [MY-001264] [Server] Out of range value for column
+2026-07-01T20:46:56.889000Z 0 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+2026-07-01T20:47:52.453016Z 0 [Note] [MY-010051] [Server] Event Scheduler: scheduler thread started
+2026-07-01T20:49:15.800190Z 0 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+2026-07-01T20:50:01.084070Z 0 [System] [MY-010931] [Server] Ready for connections. Version: '8.0' socket: '/var/run/mysqld/mysqld.sock'
+2026-07-01T20:50:30.268413Z 0 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+2026-07-01T20:52:00.077442Z 0 [ERROR] [MY-003546] [Server] Access denied; you need the SYSTEM_VARIABLES_ADMIN privilege
+2026-07-01T20:53:12.628120Z 0 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2026-07-01T20:54:26.712259Z 0 [ERROR] [MY-001054] [Server] Unknown column in field list
+2026-07-01T20:55:10.292129Z 0 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+2026-07-01T20:56:57.239218Z 0 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+2026-07-01T20:57:15.660056Z 0 [ERROR] [MY-003685] [Server] Authentication plugin 'mysql_native_password' is deprecated
+2026-07-01T20:59:03.430920Z 0 [Note] [MY-010747] [Server] Plugin 'FEDERATED' is disabled.
+2026-07-01T20:59:40.711991Z 0 [ERROR] [MY-001049] [Server] Unknown database
+2026-07-01T21:00:29.598281Z 0 [Note] [MY-011240] [Server] Plugin mysqlx reported: 'X Plugin ready for connections.'
+2026-07-01T21:00:50.896450Z 0 [Note] [MY-011240] [Server] Plugin mysqlx reported: 'X Plugin ready for connections.'
+2026-07-01T21:01:52.108865Z 0 [ERROR] [MY-001159] [Server] Got timeout reading communication packets
+2026-07-01T21:03:44.307334Z 0 [Note] [MY-010051] [Server] Event Scheduler: scheduler thread started
+2026-07-01T21:04:40.069075Z 0 [ERROR] [MY-001300] [Server] Invalid utf8 character 3
+2026-07-01T21:05:49.244748Z 0 [Note] [MY-011240] [Server] Plugin mysqlx reported: 'X Plugin ready for connections.'
+2026-07-01T21:06:11.562218Z 0 [System] [MY-010116] [Server] /usr/sbin/mysqld (mysqld 8.0) starting as process 188
+2026-07-01T21:07:53.886257Z 0 [System] [MY-010931] [Server] Ready for connections. Version: '8.0' socket: '/var/run/mysqld/mysqld.sock'
+2026-07-01T21:08:02.852498Z 0 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2026-07-01T21:09:54.435511Z 0 [System] [MY-010116] [Server] /usr/sbin/mysqld (mysqld 8.0) starting as process 416
+2026-07-01T21:11:41.292547Z 0 [ERROR] [MY-001493] [Server] Values in VALUES IN must be unique for each partition
+2026-07-01T21:13:37.303510Z 0 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2026-07-01T21:15:23.875694Z 0 [System] [MY-010116] [Server] /usr/sbin/mysqld (mysqld 8.0) starting as process 311
+2026-07-01T21:16:41.256706Z 0 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+2026-07-01T21:17:35.181287Z 0 [Note] [MY-010051] [Server] Event Scheduler: scheduler thread started
+2026-07-01T21:17:57.314702Z 0 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+2026-07-01T21:19:35.157983Z 0 [ERROR] [MY-001030] [InnoDB] Got error from storage engine
+2026-07-01T21:20:38.802295Z 0 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+2026-07-01T21:21:20.963426Z 0 [Note] [MY-010747] [Server] Plugin 'FEDERATED' is disabled.
+2026-07-01T21:21:56.013085Z 0 [Note] [MY-011240] [Server] Plugin mysqlx reported: 'X Plugin ready for connections.'
+2026-07-01T21:22:10.345394Z 0 [Note] [MY-010051] [Server] Event Scheduler: scheduler thread started
+2026-07-01T21:23:25.763526Z 0 [Note] [MY-010051] [Server] Event Scheduler: scheduler thread started
+2026-07-01T21:23:54.150556Z 0 [ERROR] [MY-001040] [Server] Too many connections
+2026-07-01T21:24:54.476331Z 0 [System] [MY-010931] [Server] Ready for connections. Version: '8.0' socket: '/var/run/mysqld/mysqld.sock'
+2026-07-01T21:25:34.833166Z 0 [Note] [MY-011240] [Server] Plugin mysqlx reported: 'X Plugin ready for connections.'
+2026-07-01T21:27:29.028169Z 0 [Note] [MY-013360] [Server] Plugin reported warning
+2026-07-01T21:27:35.036008Z 0 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2026-07-01T21:27:47.076798Z 0 [System] [MY-010116] [Server] /usr/sbin/mysqld (mysqld 8.0) starting as process 873
+2026-07-01T21:29:40.745351Z 0 [ERROR] [MY-001188] [Server] Cannot modify a table used by an active transaction
+2026-07-01T21:31:08.759879Z 0 [System] [MY-010931] [Server] Ready for connections. Version: '8.0' socket: '/var/run/mysqld/mysqld.sock'
+2026-07-01T21:32:44.545451Z 0 [System] [MY-010931] [Server] Ready for connections. Version: '8.0' socket: '/var/run/mysqld/mysqld.sock'
+2026-07-01T21:34:12.818050Z 0 [ERROR] [MY-003685] [Server] Authentication plugin 'mysql_native_password' is deprecated
+2026-07-01T21:35:30.103832Z 0 [System] [MY-010931] [Server] Ready for connections. Version: '8.0' socket: '/var/run/mysqld/mysqld.sock'
+2026-07-01T21:35:53.566182Z 0 [Note] [MY-011240] [Server] Plugin mysqlx reported: 'X Plugin ready for connections.'
+2026-07-01T21:36:07.957821Z 0 [Note] [MY-010051] [Server] Event Scheduler: scheduler thread started
+2026-07-01T21:36:20.532863Z 0 [System] [MY-010116] [Server] /usr/sbin/mysqld (mysqld 8.0) starting as process 955
+2026-07-01T21:36:34.081155Z 0 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+2026-07-01T21:37:27.038880Z 0 [ERROR] [MY-001290] [Server] The MySQL server is running with the --read-only option
+2026-07-01T21:38:50.122503Z 0 [Note] [MY-010051] [Server] Event Scheduler: scheduler thread started
+2026-07-01T21:39:52.432382Z 0 [System] [MY-010116] [Server] /usr/sbin/mysqld (mysqld 8.0) starting as process 324
+2026-07-01T21:40:10.390349Z 0 [Note] [MY-010747] [Server] Plugin 'FEDERATED' is disabled.
+2026-07-01T21:41:06.957937Z 0 [ERROR] [MY-001064] [Server] You have an error in your SQL syntax
+2026-07-01T21:41:53.044465Z 0 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2026-07-01T21:42:39.254797Z 0 [Note] [MY-011240] [Server] Plugin mysqlx reported: 'X Plugin ready for connections.'
+2026-07-01T21:43:09.405623Z 0 [Note] [MY-011240] [Server] Plugin mysqlx reported: 'X Plugin ready for connections.'
+2026-07-01T21:43:15.358482Z 0 [ERROR] [MY-001044] [Server] Access denied for user (using password: NO)
+2026-07-01T21:43:37.590381Z 0 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+2026-07-01T21:45:33.997753Z 0 [Note] [MY-011240] [Server] Plugin mysqlx reported: 'X Plugin ready for connections.'
+2026-07-01T21:47:33.709838Z 0 [Note] [MY-011240] [Server] Plugin mysqlx reported: 'X Plugin ready for connections.'
+2026-07-01T21:49:04.975315Z 0 [ERROR] [MY-001034] [Server] Incorrect key file for table; try to repair it
+2026-07-01T21:50:34.828715Z 0 [System] [MY-010116] [Server] /usr/sbin/mysqld (mysqld 8.0) starting as process 221
+2026-07-01T21:52:20.493967Z 0 [Note] [MY-010051] [Server] Event Scheduler: scheduler thread started
+2026-07-01T21:53:40.169883Z 0 [ERROR] [MY-002002] [Server] Can't connect to local MySQL server through socket
+2026-07-01T21:53:56.697657Z 0 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2026-07-01T21:55:21.722684Z 0 [Note] [MY-011240] [Server] Plugin mysqlx reported: 'X Plugin ready for connections.'
+2026-07-01T21:57:00.934154Z 0 [System] [MY-010116] [Server] /usr/sbin/mysqld (mysqld 8.0) starting as process 234
+2026-07-01T21:57:23.317117Z 0 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2026-07-01T21:58:00.822078Z 0 [System] [MY-010931] [Server] Ready for connections. Version: '8.0' socket: '/var/run/mysqld/mysqld.sock'
+2026-07-01T21:58:31.719375Z 0 [Warning] [MY-010931] [Server] Server is ready for connections
+2026-07-01T21:58:43.847485Z 0 [System] [MY-010116] [Server] /usr/sbin/mysqld (mysqld 8.0) starting as process 952
+2026-07-01T21:59:01.323271Z 0 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2026-07-01T22:00:41.888940Z 0 [Note] [MY-010747] [Server] Plugin 'FEDERATED' is disabled.
+2026-07-01T22:01:07.097651Z 0 [ERROR] [MY-001061] [Server] Duplicate key name
+2026-07-01T22:02:38.067272Z 0 [Note] [MY-011240] [Server] Plugin mysqlx reported: 'X Plugin ready for connections.'
+2026-07-01T22:04:20.353741Z 0 [ERROR] [MY-001040] [Server] Too many connections

@@ -1,0 +1,43 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+*.pyc
+
+# Environments & secrets
+.env
+.venv/
+venv/
+ENV/
+env/
+
+# IDE / System
+.agents/
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Testing & Cache
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Heavy archives & external submodules
+*.zip
+my project.zip
+markitdown/
+
+# Large Model Weights (FLAN-T5 ~1GB) & checkpoint artifacts
+models/
+
+# Large Fine-tune Training datasets (>100MB exceeds GitHub limits, regeneratable via scripts)
+data/finetune/*.jsonl
+!data/finetune/.gitkeep
+!data/finetune/dataset-metadata.json
+
+# Outputs (keep directory structure via .gitkeep)
+outputs/*.json
+outputs/*.md
+!outputs/.gitkeep
+

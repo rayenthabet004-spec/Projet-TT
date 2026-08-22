@@ -1,0 +1,48 @@
+2026-08-23T00:00:01.114523Z 0 [System] [MY-010116] [Server] /usr/sbin/mysqld (mysqld 8.0.37) starting as process 1
+2026-08-23T00:00:01.221408Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2026-08-23T00:00:01.884211Z 1 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+2026-08-23T00:00:02.005112Z 0 [System] [MY-010931] [Server] /usr/sbin/mysqld: ready for connections. Version: '8.0.37' socket: '/var/run/mysqld/mysqld.sock' port: 3306
+2026-08-23T00:00:02.118990Z 9 [Warning] [MY-013360] [Server] Plugin mysql_native_password reported: ''mysql_native_password' is deprecated and will be removed in a future release. Please use caching_sha2_password instead'
+2026-08-23T01:15:03.442110Z 214 [ERROR] [MY-001045] [Server] Access denied for user 'billing_ro'@'10.20.6.44' (using password: YES)
+2026-08-23T01:15:07.881332Z 215 [ERROR] [MY-001045] [Server] Access denied for user 'billing_ro'@'10.20.6.44' (using password: YES)
+2026-08-23T01:15:11.221900Z 216 [ERROR] [MY-001045] [Server] Access denied for user 'billing_ro'@'10.20.6.44' (using password: YES)
+2026-08-23T02:00:00.331005Z 12 [Note] [MY-011825] [InnoDB] Buffer pool(s) load completed at 260823  2:00:00
+2026-08-23T04:22:18.774112Z 3401 [ERROR] [MY-001062] [Server] Duplicate entry '21698451203' for key 'invoice.uq_invoice_msisdn_period'
+2026-08-23T04:22:18.774556Z 3401 [ERROR] [MY-001062] [Server] Duplicate entry '21698451203' for key 'invoice.uq_invoice_msisdn_period'
+2026-08-23T04:22:21.009887Z 3402 [ERROR] [MY-001062] [Server] Duplicate entry '21698451203' for key 'invoice.uq_invoice_msisdn_period'
+2026-08-23T06:00:00.114220Z 15 [Note] [MY-010052] [Server] Event Scheduler: scheduled event billing.evt_close_invoicing_period started
+2026-08-23T06:00:42.883100Z 15 [Note] [MY-010053] [Server] Event Scheduler: scheduled event billing.evt_close_invoicing_period ended
+2026-08-23T07:41:09.220441Z 4188 [ERROR] [MY-001213] [InnoDB] Deadlock found when trying to get lock; try restarting transaction
+2026-08-23T07:41:09.220981Z 4188 [Warning] [MY-000000] [Server] Aborted connection 4188 to db: 'billing' user: 'billing_app' host: '10.20.6.12' (Got an error reading communication packets)
+2026-08-23T08:03:44.552210Z 4501 [ERROR] [MY-001213] [InnoDB] Deadlock found when trying to get lock; try restarting transaction
+2026-08-23T09:00:00.998001Z 22 [Note] [MY-011825] [InnoDB] Buffer pool(s) load completed at 260823  9:00:00
+2026-08-23T10:14:38.442119Z 5233 [ERROR] [MY-001146] [Server] Table 'billing.tmp_invoice_export_aug' doesn't exist
+2026-08-23T10:14:38.442600Z 5233 [ERROR] [MY-001146] [Server] Table 'billing.tmp_invoice_export_aug' doesn't exist
+2026-08-23T10:32:11.771233Z 5240 [Warning] [MY-013360] [Server] Aborted connection 5240 to db: 'billing' user: 'etl_batch' host: '10.20.6.61' (Got timeout reading communication packets)
+2026-08-23T11:00:03.221004Z 5981 [ERROR] [MY-001040] [Server] Too many connections
+2026-08-23T11:00:04.117552Z 5982 [ERROR] [MY-001040] [Server] Too many connections
+2026-08-23T11:00:07.884213Z 5983 [ERROR] [MY-001040] [Server] Too many connections
+2026-08-23T11:02:19.220887Z 0 [Warning] [MY-010914] [Server] Aborted connection 5940 to db: 'billing' user: 'unauthenticated' host: '10.20.6.90' (This connection closed normally without authentication)
+2026-08-23T12:00:00.331997Z 39 [Note] [MY-011825] [InnoDB] Buffer pool(s) load completed at 260823 12:00:00
+2026-08-23T13:26:55.117220Z 6702 [ERROR] [MY-001205] [InnoDB] Lock wait timeout exceeded; try restarting transaction
+2026-08-23T13:26:55.117701Z 6702 [Warning] [MY-013360] [Server] Aborted connection 6702 to db: 'billing' user: 'billing_app' host: '10.20.6.12' (Got an error reading communication packets)
+2026-08-23T14:44:02.882119Z 7311 [ERROR] [MY-001048] [Server] Column 'msisdn' cannot be null
+2026-08-23T14:44:02.882561Z 7311 [ERROR] [MY-001048] [Server] Column 'msisdn' cannot be null
+2026-08-23T15:00:01.114227Z 47 [Note] [MY-011825] [InnoDB] Buffer pool(s) load completed at 260823 15:00:01
+2026-08-23T16:12:41.220887Z 8003 [ERROR] [MY-001452] [InnoDB] Cannot add or update a child row: a foreign key constraint fails (`billing`.`invoice_line`, CONSTRAINT `fk_invoice_line_invoice` FOREIGN KEY (`invoice_id`) REFERENCES `invoice` (`id`))
+2026-08-23T17:00:00.556442Z 52 [Note] [MY-011825] [InnoDB] Buffer pool(s) load completed at 260823 17:00:00
+2026-08-23T18:31:19.774331Z 9142 [ERROR] [MY-001064] [Server] You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'WHERE msisdn =' at line 1
+2026-08-23T19:03:52.220119Z 9601 [ERROR] [MY-001406] [Server] Data too long for column 'offer_code' at row 1
+2026-08-23T19:03:52.220661Z 9601 [ERROR] [MY-001406] [Server] Data too long for column 'offer_code' at row 1
+2026-08-23T20:00:00.998221Z 61 [Note] [MY-011825] [InnoDB] Buffer pool(s) load completed at 260823 20:00:00
+2026-08-23T21:14:07.442119Z 10233 [ERROR] [MY-002013] [Server] Lost connection to MySQL server during query
+2026-08-23T21:14:11.220887Z 10240 [Warning] [MY-013360] [Server] Aborted connection 10240 to db: 'billing' user: 'etl_batch' host: '10.20.6.61' (Got timeout writing communication packets)
+2026-08-23T22:00:03.331442Z 68 [Note] [MY-011825] [InnoDB] Buffer pool(s) load completed at 260823 22:00:03
+2026-08-23T22:41:29.774221Z 10902 [ERROR] [MY-001114] [InnoDB] The table 'billing.call_detail_record' is full
+2026-08-23T22:41:29.774887Z 10902 [ERROR] [MY-001114] [InnoDB] The table 'billing.call_detail_record' is full
+2026-08-23T22:41:33.221009Z 10905 [ERROR] [MY-001114] [InnoDB] The table 'billing.call_detail_record' is full
+2026-08-23T23:00:00.556331Z 74 [Note] [MY-011825] [InnoDB] Buffer pool(s) load completed at 260823 23:00:00
+2026-08-24T00:00:02.114220Z 0 [System] [MY-013172] [Server] Received SHUTDOWN from user root. Shutting down mysqld (Version: 8.0.37).
+2026-08-24T00:00:03.884552Z 1 [System] [MY-010910] [Server] /usr/sbin/mysqld: Shutdown complete (mysqld 8.0.37)  MySQL Community Server - GPL.
+2026-08-24T00:00:35.221114Z 0 [System] [MY-010116] [Server] /usr/sbin/mysqld (mysqld 8.0.37) starting as process 1
+2026-08-24T00:00:36.774220Z 0 [System] [MY-010931] [Server] /usr/sbin/mysqld: ready for connections. Version: '8.0.37' socket: '/var/run/mysqld/mysqld.sock' port: 3306

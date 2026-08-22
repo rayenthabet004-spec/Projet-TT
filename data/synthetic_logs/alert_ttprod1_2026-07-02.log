@@ -1,0 +1,473 @@
+VKTM started with pid=8952
+Buffer Cache Full Scan Watermark set
+Autotune of undo retention is turned on.
+Completed checkpoint up to RBA
+Archived Log entry 198 added for thread 1 sequence 9621
+
+Thu Jul 02 00:10:38 2026
+Shared IO Pool defaulting to 691M
+Database Characterset is AL32UTF8
+SUCCESS: diskgroup DATA was mounted
+Adaptive Thread Scheduling monitor started
+Beginning log switch checkpoint up to RBA
+
+Thu Jul 02 00:22:10 2026
+ARC0: Archival started
+Thread 1 advanced to log sequence 741
+ORA-06502: PL/SQL: numeric or value error: character string buffer too small
+
+Thu Jul 02 00:31:05 2026
+Starting background process VKTM
+Beginning log switch checkpoint up to RBA
+ARC0: Archival started
+LOGSTDBY status: ORA-16111: log mining and apply setting up
+LOGSTDBY status: ORA-16111: log mining and apply setting up
+Shared IO Pool defaulting to 196M
+Database Characterset is AL32UTF8
+Current log# 758 seq# 1893 mem# 0
+Database Characterset is AL32UTF8
+Autotune of undo retention is turned on.
+Completed checkpoint up to RBA
+Current log# 20 seq# 5792 mem# 0
+Undo initialization finished
+SUCCESS: diskgroup DATA was mounted
+LOGSTDBY status: ORA-16111: log mining and apply setting up
+ARC0: Archival started
+SUCCESS: diskgroup DATA was mounted
+
+Thu Jul 02 01:02:35 2026
+LOGSTDBY status: ORA-16111: log mining and apply setting up
+Current log# 189 seq# 6203 mem# 0
+Completed checkpoint up to RBA
+Beginning log switch checkpoint up to RBA
+Adaptive Thread Scheduling monitor started
+ORA-01000: maximum open cursors exceeded
+SUCCESS: diskgroup DATA was mounted
+Buffer Cache Full Scan Watermark set
+ORA-04031: unable to allocate 532KB of shared memory ("shared pool","NETWORK_ALARMS","SQLA","kglseshtx")
+Redo thread mounted read/write
+Database Characterset is AL32UTF8
+ARC1: Archival started
+Database Characterset is AL32UTF8
+ORA-00257: archiver error. Connect internal only, until freed.
+Database Characterset is AL32UTF8
+Undo initialization finished
+ORA-16038: log 7 sequence# 5009 cannot be archived
+TNS-12514: TNS:listener does not currently know of service requested in connect descriptor
+
+Thu Jul 02 01:37:48 2026
+ARC1: Archival started
+Adaptive Thread Scheduling monitor started
+
+Thu Jul 02 01:38:55 2026
+SUCCESS: diskgroup DATA was mounted
+LOGSTDBY status: ORA-16111: log mining and apply setting up
+ARC0: Archival started
+Current log# 25 seq# 8616 mem# 0
+Archived Log entry 12 added for thread 1 sequence 4296
+Current log# 703 seq# 6460 mem# 0
+SUCCESS: diskgroup DATA was mounted
+SUCCESS: diskgroup DATA was mounted
+SUCCESS: diskgroup DATA was mounted
+Buffer Cache Full Scan Watermark set
+
+Thu Jul 02 02:00:59 2026
+Autotune of undo retention is turned on.
+
+Thu Jul 02 02:01:48 2026
+Archived Log entry 936 added for thread 1 sequence 2517
+LOGSTDBY status: ORA-16111: log mining and apply setting up
+LOGSTDBY status: ORA-16111: log mining and apply setting up
+Redo thread mounted read/write
+Current log# 280 seq# 3446 mem# 0
+Completed checkpoint up to RBA
+Autotune of undo retention is turned on.
+Buffer Cache Full Scan Watermark set
+Thread 1 advanced to log sequence 833
+Completed checkpoint up to RBA
+
+Thu Jul 02 02:19:34 2026
+Shared IO Pool defaulting to 491M
+
+Thu Jul 02 02:21:49 2026
+Current log# 334 seq# 2162 mem# 0
+Autotune of undo retention is turned on.
+Beginning log switch checkpoint up to RBA
+ARC1: Archival started
+Thread 1 advanced to log sequence 223
+Archived Log entry 698 added for thread 1 sequence 6187
+LOGSTDBY status: ORA-16111: log mining and apply setting up
+Shared IO Pool defaulting to 113M
+Adaptive Thread Scheduling monitor started
+Instance shutdown complete
+Instance shutdown complete
+Undo initialization finished
+
+Thu Jul 02 02:41:53 2026
+Beginning log switch checkpoint up to RBA
+Shared IO Pool defaulting to 116M
+
+Thu Jul 02 02:44:23 2026
+Thread 1 advanced to log sequence 252
+Autotune of undo retention is turned on.
+Redo thread mounted read/write
+Starting background process VKTM
+
+Thu Jul 02 02:55:50 2026
+Completed checkpoint up to RBA
+Beginning log switch checkpoint up to RBA
+Autotune of undo retention is turned on.
+VKTM started with pid=2900
+Undo initialization finished
+Adaptive Thread Scheduling monitor started
+Completed checkpoint up to RBA
+Buffer Cache Full Scan Watermark set
+
+Thu Jul 02 03:11:59 2026
+ORA-03113: end-of-file on communication channel
+ORA-01652: unable to extend temp segment by 59 in tablespace SYSAUX
+ORA-1652 signalled during: INSERT INTO CDR_APP.NETWORK_ALARMS...
+ARC1: Archival started
+SUCCESS: diskgroup DATA was mounted
+Completed checkpoint up to RBA
+Undo initialization finished
+
+Thu Jul 02 03:22:31 2026
+ORA-01000: maximum open cursors exceeded
+SUCCESS: diskgroup DATA was mounted
+Thread 1 advanced to log sequence 554
+Thread 1 advanced to log sequence 375
+Archived Log entry 307 added for thread 1 sequence 7391
+ORA-00001: unique constraint (CDR_APP.PK_CUSTOMER_ACCOUNTS) violated
+Database Characterset is AL32UTF8
+
+Thu Jul 02 03:34:06 2026
+LOGSTDBY status: ORA-16111: log mining and apply setting up
+
+Thu Jul 02 03:37:19 2026
+Autotune of undo retention is turned on.
+Database Characterset is AL32UTF8
+Adaptive Thread Scheduling monitor started
+ORA-01000: maximum open cursors exceeded
+ORA-01654: unable to extend index BILLING.SIM_INVENTORY_IDX by 811 in tablespace USERS
+Buffer Cache Full Scan Watermark set
+Beginning log switch checkpoint up to RBA
+Redo thread mounted read/write
+Undo initialization finished
+Autotune of undo retention is turned on.
+Database Characterset is AL32UTF8
+ORA-04031: unable to allocate 739KB of shared memory ("shared pool","CALL_DETAIL_RECORDS","SQLA","kglseshtx")
+Current log# 243 seq# 7759 mem# 0
+ARC0: Archival started
+Completed checkpoint up to RBA
+
+Thu Jul 02 04:04:38 2026
+Instance shutdown complete
+Thread 1 advanced to log sequence 422
+
+Thu Jul 02 04:08:26 2026
+Beginning log switch checkpoint up to RBA
+ORA-01555: snapshot too old: rollback segment number 42 with name "BILLING_FACT" too small
+Current log# 464 seq# 9114 mem# 0
+
+Thu Jul 02 04:15:31 2026
+Thread 1 advanced to log sequence 17
+Adaptive Thread Scheduling monitor started
+
+Thu Jul 02 04:19:52 2026
+Completed checkpoint up to RBA
+VKTM started with pid=6989
+Thread 1 advanced to log sequence 575
+Buffer Cache Full Scan Watermark set
+
+Thu Jul 02 04:27:52 2026
+Database Characterset is AL32UTF8
+Thread 1 advanced to log sequence 193
+
+Thu Jul 02 04:30:16 2026
+ARC0: Archival started
+Shared IO Pool defaulting to 431M
+LOGSTDBY status: ORA-16111: log mining and apply setting up
+Undo initialization finished
+Redo thread mounted read/write
+Redo thread mounted read/write
+Shared IO Pool defaulting to 189M
+Redo thread mounted read/write
+
+Thu Jul 02 04:49:31 2026
+LOGSTDBY status: ORA-16111: log mining and apply setting up
+Database Characterset is AL32UTF8
+
+Thu Jul 02 04:54:23 2026
+Beginning log switch checkpoint up to RBA
+Completed checkpoint up to RBA
+LOGSTDBY status: ORA-16111: log mining and apply setting up
+TNS-12514: TNS:listener does not currently know of service requested in connect descriptor
+Redo thread mounted read/write
+LOGSTDBY status: ORA-16111: log mining and apply setting up
+Buffer Cache Full Scan Watermark set
+Buffer Cache Full Scan Watermark set
+Autotune of undo retention is turned on.
+
+Thu Jul 02 05:08:17 2026
+Thread 1 advanced to log sequence 614
+Buffer Cache Full Scan Watermark set
+ARC1: Archival started
+LOGSTDBY status: ORA-16111: log mining and apply setting up
+Redo thread mounted read/write
+
+Thu Jul 02 05:18:37 2026
+Autotune of undo retention is turned on.
+LOGSTDBY status: ORA-16111: log mining and apply setting up
+
+Thu Jul 02 05:25:48 2026
+TNS-12514: TNS:listener does not currently know of service requested in connect descriptor
+ORA-01654: unable to extend index CRM.INVOICE_LINES_IDX by 228 in tablespace TEMP
+Current log# 80 seq# 1308 mem# 0
+VKTM started with pid=5145
+
+Thu Jul 02 05:30:46 2026
+Archived Log entry 602 added for thread 1 sequence 4277
+Buffer Cache Full Scan Watermark set
+LOGSTDBY status: ORA-16111: log mining and apply setting up
+Autotune of undo retention is turned on.
+Current log# 780 seq# 6149 mem# 0
+Undo initialization finished
+Database Characterset is AL32UTF8
+ORA-01017: invalid username/password; logon denied
+
+Thu Jul 02 05:44:50 2026
+Buffer Cache Full Scan Watermark set
+Beginning log switch checkpoint up to RBA
+Adaptive Thread Scheduling monitor started
+Autotune of undo retention is turned on.
+
+Thu Jul 02 05:57:43 2026
+ARC1: Archival started
+
+Thu Jul 02 06:01:02 2026
+Autotune of undo retention is turned on.
+Undo initialization finished
+VKTM started with pid=3689
+Buffer Cache Full Scan Watermark set
+
+Thu Jul 02 06:12:30 2026
+Buffer Cache Full Scan Watermark set
+
+Thu Jul 02 06:15:06 2026
+Shared IO Pool defaulting to 829M
+ORA-04031: unable to allocate 254KB of shared memory ("shared pool","CUSTOMER_ACCOUNTS","SQLA","kglseshtx")
+Starting background process VKTM
+
+Thu Jul 02 06:21:42 2026
+Starting background process VKTM
+Autotune of undo retention is turned on.
+Thread 1 advanced to log sequence 861
+Thread 1 advanced to log sequence 735
+Redo thread mounted read/write
+Undo initialization finished
+Database Characterset is AL32UTF8
+Redo thread mounted read/write
+ARC1: Archival started
+Database Characterset is AL32UTF8
+
+Thu Jul 02 06:38:24 2026
+Completed checkpoint up to RBA
+Instance shutdown complete
+LOGSTDBY status: ORA-16111: log mining and apply setting up
+Buffer Cache Full Scan Watermark set
+Instance shutdown complete
+Beginning log switch checkpoint up to RBA
+VKTM started with pid=4926
+Current log# 548 seq# 4872 mem# 0
+
+Thu Jul 02 06:55:42 2026
+Beginning log switch checkpoint up to RBA
+
+Thu Jul 02 06:59:09 2026
+Autotune of undo retention is turned on.
+
+Thu Jul 02 07:01:23 2026
+Undo initialization finished
+Starting background process VKTM
+ARC0: Archival started
+SUCCESS: diskgroup DATA was mounted
+Buffer Cache Full Scan Watermark set
+
+Thu Jul 02 07:11:47 2026
+Completed checkpoint up to RBA
+
+Thu Jul 02 07:12:30 2026
+Buffer Cache Full Scan Watermark set
+Completed checkpoint up to RBA
+Instance shutdown complete
+Buffer Cache Full Scan Watermark set
+Adaptive Thread Scheduling monitor started
+Shared IO Pool defaulting to 621M
+ARC0: Archival started
+SUCCESS: diskgroup DATA was mounted
+Completed checkpoint up to RBA
+SUCCESS: diskgroup DATA was mounted
+
+Thu Jul 02 07:28:52 2026
+Autotune of undo retention is turned on.
+Autotune of undo retention is turned on.
+ARC1: Archival started
+Thread 1 advanced to log sequence 253
+Current log# 858 seq# 6300 mem# 0
+Starting background process VKTM
+
+Thu Jul 02 07:41:37 2026
+SUCCESS: diskgroup DATA was mounted
+Adaptive Thread Scheduling monitor started
+Current log# 306 seq# 9042 mem# 0
+
+Thu Jul 02 07:49:09 2026
+Archived Log entry 502 added for thread 1 sequence 8298
+ARC1: Archival started
+ARC0: Archival started
+
+Thu Jul 02 07:54:31 2026
+Redo thread mounted read/write
+
+Thu Jul 02 07:57:01 2026
+ORA-01555: snapshot too old: rollback segment number 526 with name "_SYSSMU3$" too small
+Shared IO Pool defaulting to 261M
+VKTM started with pid=5876
+Completed checkpoint up to RBA
+Starting background process VKTM
+Autotune of undo retention is turned on.
+Archived Log entry 880 added for thread 1 sequence 1439
+Undo initialization finished
+
+Thu Jul 02 08:12:07 2026
+Database Characterset is AL32UTF8
+Adaptive Thread Scheduling monitor started
+Redo thread mounted read/write
+Instance shutdown complete
+Database Characterset is AL32UTF8
+Beginning log switch checkpoint up to RBA
+Shared IO Pool defaulting to 816M
+ARC1: Archival started
+Shared IO Pool defaulting to 903M
+
+Thu Jul 02 08:30:51 2026
+Beginning log switch checkpoint up to RBA
+ARC0: Archival started
+Current log# 844 seq# 1687 mem# 0
+Redo thread mounted read/write
+Archived Log entry 450 added for thread 1 sequence 7811
+Instance shutdown complete
+Database Characterset is AL32UTF8
+Thread 1 advanced to log sequence 347
+
+Thu Jul 02 08:52:13 2026
+ARC0: Archival started
+Starting background process VKTM
+Database Characterset is AL32UTF8
+ARC0: Archival started
+Starting background process VKTM
+
+Thu Jul 02 09:04:15 2026
+TNS-12514: TNS:listener does not currently know of service requested in connect descriptor
+Database Characterset is AL32UTF8
+Buffer Cache Full Scan Watermark set
+Shared IO Pool defaulting to 466M
+Archived Log entry 457 added for thread 1 sequence 2279
+Instance shutdown complete
+LOGSTDBY status: ORA-16111: log mining and apply setting up
+Current log# 617 seq# 7694 mem# 0
+Redo thread mounted read/write
+ORA-00018: maximum number of sessions exceeded
+Instance shutdown complete
+
+Thu Jul 02 09:28:46 2026
+Database Characterset is AL32UTF8
+Undo initialization finished
+Redo thread mounted read/write
+LOGSTDBY status: ORA-16111: log mining and apply setting up
+Buffer Cache Full Scan Watermark set
+ORA-03113: end-of-file on communication channel
+
+Thu Jul 02 09:41:35 2026
+ARC1: Archival started
+TNS-12154: TNS:could not resolve the connect identifier specified
+Adaptive Thread Scheduling monitor started
+Current log# 276 seq# 1993 mem# 0
+
+Thu Jul 02 09:48:24 2026
+Starting background process VKTM
+
+Thu Jul 02 09:50:23 2026
+Archived Log entry 802 added for thread 1 sequence 3332
+ORA-28000: the account is locked
+Shared IO Pool defaulting to 863M
+
+Thu Jul 02 09:58:20 2026
+ARC0: Archival started
+Completed checkpoint up to RBA
+ARC0: Archival started
+Autotune of undo retention is turned on.
+Current log# 362 seq# 7166 mem# 0
+Database Characterset is AL32UTF8
+Beginning log switch checkpoint up to RBA
+Adaptive Thread Scheduling monitor started
+Buffer Cache Full Scan Watermark set
+Archived Log entry 869 added for thread 1 sequence 1378
+VKTM started with pid=8086
+Beginning log switch checkpoint up to RBA
+Buffer Cache Full Scan Watermark set
+ORA-01654: unable to extend index BILLING.NETWORK_ALARMS_IDX by 29 in tablespace DATA_TS01
+Beginning log switch checkpoint up to RBA
+Current log# 641 seq# 8314 mem# 0
+ARC0: Archival started
+
+Thu Jul 02 10:34:31 2026
+ORA-01555: snapshot too old: rollback segment number 302 with name "CUST_ORDERS_IDX" too small
+Starting background process VKTM
+Starting background process VKTM
+ORA-00060: deadlock detected while waiting for resource
+ARC0: Archival started
+Redo thread mounted read/write
+ORA-06502: PL/SQL: numeric or value error: character string buffer too small
+Archived Log entry 805 added for thread 1 sequence 2120
+Buffer Cache Full Scan Watermark set
+Autotune of undo retention is turned on.
+SUCCESS: diskgroup DATA was mounted
+
+Thu Jul 02 10:54:26 2026
+ORA-01654: unable to extend index CRM.NETWORK_ALARMS_IDX by 146 in tablespace USERS
+Beginning log switch checkpoint up to RBA
+
+Thu Jul 02 10:55:33 2026
+Current log# 22 seq# 3248 mem# 0
+ARC1: Archival started
+Shared IO Pool defaulting to 326M
+SUCCESS: diskgroup DATA was mounted
+Thread 1 advanced to log sequence 172
+Autotune of undo retention is turned on.
+Beginning log switch checkpoint up to RBA
+ARC0: Archival started
+
+Thu Jul 02 11:13:45 2026
+SUCCESS: diskgroup DATA was mounted
+ORA-28000: the account is locked
+Current log# 74 seq# 6902 mem# 0
+Completed checkpoint up to RBA
+Adaptive Thread Scheduling monitor started
+Beginning log switch checkpoint up to RBA
+Archived Log entry 450 added for thread 1 sequence 8372
+TNS-12514: TNS:listener does not currently know of service requested in connect descriptor
+VKTM started with pid=3518
+Undo initialization finished
+Current log# 692 seq# 3910 mem# 0
+
+Thu Jul 02 11:36:22 2026
+Redo thread mounted read/write
+Instance shutdown complete
+
+Thu Jul 02 11:41:16 2026
+Archived Log entry 134 added for thread 1 sequence 4369
+Database Characterset is AL32UTF8
+Buffer Cache Full Scan Watermark set
+Shared IO Pool defaulting to 718M

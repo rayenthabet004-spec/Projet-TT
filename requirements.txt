@@ -1,3 +1,8 @@
+# Web Application & API (Railway deployment)
+fastapi>=0.110.0
+uvicorn[standard]>=0.28.0
+python-multipart>=0.0.9
+
 # Core RAG pipeline (no external model downloads required)
 rank_bm25==0.2.2
 

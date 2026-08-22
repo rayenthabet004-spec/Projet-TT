@@ -1,0 +1,192 @@
+"""
+web_app.py - FastAPI Web Application for Database Log AI Diagnostic Suite
+Designed for Tunisie Telecom - IT & Database Administration
+
+Provides REST API endpoints and hosts the modern web dashboard.
+"""
+
+import os
+import sys
+import tempfile
+from typing import Optional
+from fastapi import FastAPI, File, Form, UploadFile, HTTPException
+from fastapi.middleware.cors import CORSMiddleware
+from fastapi.responses import HTMLResponse, JSONResponse, FileResponse
+from fastapi.staticfiles import StaticFiles
+from pydantic import BaseModel
+
+# Ensure project root is in python path
+ROOT_DIR = os.path.dirname(os.path.abspath(__file__))
+if ROOT_DIR not in sys.path:
+    sys.path.insert(0, ROOT_DIR)
+
+from src.rag.pipeline import analyze_log, report_to_markdown
+from src.engine_detection import detect_engine
+
+app = FastAPI(
+    title="Tunisie Telecom - Database Log AI Triage Suite",
+    description="Multi-Engine Database Log Incident Analysis powered by AI (Oracle, PostgreSQL, MySQL)",
+    version="2.0.0"
+)
+
+# CORS middleware for API access
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
+# Static directory setup
+STATIC_DIR = os.path.join(ROOT_DIR, "static")
+os.makedirs(STATIC_DIR, exist_ok=True)
+os.makedirs(os.path.join(STATIC_DIR, "css"), exist_ok=True)
+os.makedirs(os.path.join(STATIC_DIR, "js"), exist_ok=True)
+
+
+class AnalysisRequest(BaseModel):
+    log_text: str
+    engine: Optional[str] = "auto"
+    mode: Optional[str] = "mock"
+    context_window: Optional[int] = 2
+    use_classifier: Optional[bool] = True
+    filter_informational: Optional[bool] = False
+
+
+@app.get("/api/health")
+def health_check():
+    return {
+        "status": "healthy",
+        "service": "Tunisie Telecom Database Log AI Triage Suite",
+        "supported_engines": ["Oracle", "PostgreSQL", "MySQL"],
+        "default_mode": "mock (Knowledge Base + Classifier)"
+    }
+
+
+@app.get("/api/samples/{engine}")
+def get_sample_log(engine: str):
+    engine = engine.lower()
+    sample_files = {
+        "oracle": "oracle_challenging.log",
+        "postgres": "postgresql_challenging.log",
+        "postgresql": "postgresql_challenging.log",
+        "mysql": "mysql_challenging.log",
+        "example": "example.log"
+    }
+
+    filename = sample_files.get(engine)
+    if not filename:
+        raise HTTPException(status_code=404, detail=f"No sample available for engine: {engine}")
+
+    file_path = os.path.join(ROOT_DIR, filename)
+    if not os.path.isfile(file_path):
+        # Fallback to synthetic logs if available
+        synth_files = {
+            "oracle": "data/synthetic_logs/alert_ttprod1_2026-07-01.log",
+            "postgres": "data/synthetic_logs/finetune_corpus_v2/finetune_postgres_000.log",
+            "mysql": "data/synthetic_logs/finetune_corpus_v2/finetune_mysql_000.log"
+        }
+        file_path = os.path.join(ROOT_DIR, synth_files.get(engine, ""))
+
+    if not os.path.isfile(file_path):
+        raise HTTPException(status_code=404, detail="Sample log file could not be found.")
+
+    with open(file_path, "r", encoding="utf-8", errors="replace") as f:
+        content = f.read()
+
+    return {
+        "engine": engine,
+        "filename": os.path.basename(file_path),
+        "content": content
+    }
+
+
+def _run_pipeline(
+    log_content: str,
+    source_name: str,
+    engine: Optional[str] = "auto",
+    mode: Optional[str] = "mock",
+    context_window: int = 2,
+    use_classifier: bool = True,
+    filter_informational: bool = False
+) -> dict:
+    if not log_content.strip():
+        raise HTTPException(status_code=400, detail="Provided log content is empty.")
+
+    engine_arg = None if (not engine or engine == "auto") else engine.lower()
+
+    try:
+        report_dict = analyze_log(
+            log_text=log_content,
+            mode=mode or "mock",
+            context_window=context_window or 2,
+            use_classifier=use_classifier,
+            filter_informational=filter_informational,
+            engine=engine_arg
+        )
+        
+        # Add metadata & preformatted markdown report
+        markdown_text = report_to_markdown(report_dict)
+        report_dict["markdown_report"] = markdown_text
+        report_dict["source_name"] = source_name
+
+        return report_dict
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"Log analysis pipeline failed: {str(e)}")
+
+
+@app.post("/api/analyze")
+def analyze_json_endpoint(req: AnalysisRequest):
+    result = _run_pipeline(
+        log_content=req.log_text,
+        source_name="pasted_text",
+        engine=req.engine,
+        mode=req.mode,
+        context_window=req.context_window or 2,
+        use_classifier=req.use_classifier if req.use_classifier is not None else True,
+        filter_informational=req.filter_informational if req.filter_informational is not None else False
+    )
+    return JSONResponse(content=result)
+
+
+@app.post("/api/analyze/upload")
+async def analyze_file_endpoint(
+    file: UploadFile = File(...),
+    engine: Optional[str] = Form("auto"),
+    mode: Optional[str] = Form("mock"),
+    context_window: Optional[int] = Form(2),
+    use_classifier: Optional[bool] = Form(True),
+    filter_informational: Optional[bool] = Form(False)
+):
+    raw_bytes = await file.read()
+    log_content = raw_bytes.decode("utf-8", errors="replace")
+    
+    result = _run_pipeline(
+        log_content=log_content,
+        source_name=file.filename,
+        engine=engine,
+        mode=mode,
+        context_window=context_window or 2,
+        use_classifier=use_classifier if use_classifier is not None else True,
+        filter_informational=filter_informational if filter_informational is not None else False
+    )
+    return JSONResponse(content=result)
+
+
+# Serve Static Assets
+app.mount("/static", StaticFiles(directory=STATIC_DIR), name="static")
+
+
+@app.get("/")
+def serve_index():
+    index_path = os.path.join(STATIC_DIR, "index.html")
+    if os.path.isfile(index_path):
+        return FileResponse(index_path)
+    return HTMLResponse("<h1>Tunisie Telecom Log AI Suite</h1><p>Frontend static files loading...</p>")
+
+
+if __name__ == "__main__":
+    import uvicorn
+    port = int(os.environ.get("PORT", 8000))
+    uvicorn.run("web_app:app", host="0.0.0.0", port=port, reload=True)

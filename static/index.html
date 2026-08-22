@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tunisie Telecom — Triage & Diagnostic IA des Logs de Bases de Données</title>
+  <meta name="description" content="Plateforme automatisée de diagnostic intelligent des logs de bases de données (Oracle, PostgreSQL, MySQL) développée pour Tunisie Telecom.">
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+  
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+
+  <!-- Header Navigation -->
+  <header class="header">
+    <div class="container header-content">
+      <div class="brand-badge-wrapper">
+        <div class="brand-logo-symbol" title="Tunisie Telecom">TT</div>
+        <div class="brand-titles">
+          <h1>Tunisie Telecom <span style="font-weight: 400; opacity: 0.85; font-size: 18px;">| DB Log AI Suite</span></h1>
+          <div class="tagline">Direction IT & Exploitation des Systèmes — Diagnostic Automatisé Multi-Moteurs</div>
+        </div>
+      </div>
+
+      <div class="supported-engines-chips">
+        <div class="engine-chip oracle"><span class="dot"></span> Oracle DB</div>
+        <div class="engine-chip postgres"><span class="dot"></span> PostgreSQL</div>
+        <div class="engine-chip mysql"><span class="dot"></span> MySQL Server</div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Workspace -->
+  <main class="main-content">
+    <div class="container">
+
+      <!-- Analysis Form Card -->
+      <section class="card" id="input-card">
+        <div class="card-header">
+          <h2 class="card-title">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+            Analyseur de Fichiers Logs
+          </h2>
+          <span style="font-size: 13px; color: var(--text-muted);">Moteurs supportés : Oracle (.log / alert.log), PostgreSQL, MySQL</span>
+        </div>
+
+        <!-- 1-Click Sample Testing Bar -->
+        <div class="sample-bar">
+          <span class="sample-bar-label">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polygon points="10 8 16 12 10 16 10 8"></polygon></svg>
+            Exemples Rapides :
+          </span>
+          <button type="button" class="btn-sample" onclick="loadSampleLog('oracle')">
+            <span style="color: var(--engine-oracle);">●</span> Log Oracle (ORA-01555...)
+          </button>
+          <button type="button" class="btn-sample" onclick="loadSampleLog('postgres')">
+            <span style="color: var(--engine-postgres);">●</span> Log PostgreSQL (FATAL / Deadlock)
+          </button>
+          <button type="button" class="btn-sample" onclick="loadSampleLog('mysql')">
+            <span style="color: var(--engine-mysql);">●</span> Log MySQL (Erreur 1045 / InnoDB)
+          </button>
+        </div>
+
+        <!-- Tabs Navigation -->
+        <div class="tabs-nav">
+          <button type="button" class="tab-btn active" id="tab-upload-btn" onclick="switchTab('upload')">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="17 8 12 3 7 8"></polyline><line x1="12" y1="3" x2="12" y2="15"></line></svg>
+            Importer un Fichier (.log / .txt)
+          </button>
+          <button type="button" class="tab-btn" id="tab-paste-btn" onclick="switchTab('paste')">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path><rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect></svg>
+            Coller le Texte du Log
+          </button>
+        </div>
+
+        <!-- Tab 1: Dropzone File Upload -->
+        <div id="tab-upload-content">
+          <div class="dropzone" id="dropzone" onclick="document.getElementById('file-input').click()">
+            <input type="file" id="file-input" style="display: none;" accept=".log,.txt,.alert">
+            <div class="dropzone-icon">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="17 8 12 3 7 8"></polyline><line x1="12" y1="3" x2="12" y2="15"></line></svg>
+            </div>
+            <div class="dropzone-title">Glissez & déposez votre fichier de log ici</div>
+            <div class="dropzone-hint">ou cliquez pour parcourir vos dossiers (.log, .txt, .alert)</div>
+            <div id="selected-file-display" style="display: none;"></div>
+          </div>
+        </div>
+
+        <!-- Tab 2: Raw Text Area -->
+        <div id="tab-paste-content" style="display: none;">
+          <textarea id="log-text-input" class="log-textarea" placeholder="Collez ici les lignes d'erreurs brutes ou le contenu complet de votre log de base de données..."></textarea>
+        </div>
+
+        <!-- Options Controls Grid -->
+        <div class="controls-grid">
+          <div class="control-group">
+            <label for="engine-select">Moteur de Base de Données :</label>
+            <select id="engine-select" class="select-input">
+              <option value="auto" selected>✨ Détection Automatique (Recommandé)</option>
+              <option value="oracle">Oracle Database</option>
+              <option value="postgres">PostgreSQL</option>
+              <option value="mysql">MySQL Server</option>
+            </select>
+          </div>
+
+          <div class="control-group">
+            <label for="mode-select">Mode de Diagnostic IA :</label>
+            <select id="mode-select" class="select-input">
+              <option value="mock" selected>⚡ RAG Déterministe + Base de Connaissances (Instantané)</option>
+              <option value="t5">🧠 Modèle FLAN-T5 Fine-Tuné (Local)</option>
+              <option value="gemini">🌐 Mode Hybride LLM (API)</option>
+            </select>
+          </div>
+
+          <div class="control-group">
+            <label class="checkbox-label">
+              <input type="checkbox" id="filter-info-checkbox">
+              <span>Masquer les messages d'information (bruit bénin)</span>
+            </label>
+          </div>
+        </div>
+
+        <!-- Submit Button -->
+        <div class="submit-wrapper">
+          <button type="button" class="btn-primary" id="btn-submit" onclick="submitAnalysis()">
+            <span class="spinner" id="loading-spinner"></span>
+            <span id="btn-text">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="vertical-align: middle; margin-right: 6px;"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+              Lancer l'Analyse IA
+            </span>
+          </button>
+        </div>
+      </section>
+
+      <!-- Results Dashboard Section -->
+      <section id="results-section">
+        
+        <!-- Engine Auto-Detection Banner -->
+        <div class="engine-banner" id="engine-banner">
+          <div class="engine-info-main">
+            <div class="engine-icon-badge" id="engine-badge-icon">DB</div>
+            <div class="engine-text">
+              <h3 id="engine-banner-title">Oracle Database détecté</h3>
+              <p id="engine-banner-subtitle">Analyse effectuée avec le parser spécialisé et la base de connaissances 27k+</p>
+            </div>
+          </div>
+          <div class="confidence-gauge">
+            <span style="font-size: 12px; color: var(--text-muted);">Confiance Détection :</span>
+            <div class="confidence-bar">
+              <div class="confidence-fill" id="confidence-fill" style="width: 95%;"></div>
+            </div>
+            <span class="confidence-value" id="confidence-val">95%</span>
+          </div>
+        </div>
+
+        <!-- KPI Summary Cards -->
+        <div class="kpi-grid">
+          <div class="kpi-card">
+            <div class="kpi-icon occurrences">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line></svg>
+            </div>
+            <div class="kpi-data">
+              <div class="kpi-num" id="kpi-total-occurrences">0</div>
+              <div class="kpi-label">Occurrences Totales</div>
+            </div>
+          </div>
+
+          <div class="kpi-card">
+            <div class="kpi-icon unique">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>
+            </div>
+            <div class="kpi-data">
+              <div class="kpi-num" id="kpi-unique-codes">0</div>
+              <div class="kpi-label">Codes d'Erreurs Uniques</div>
+            </div>
+          </div>
+
+          <div class="kpi-card">
+            <div class="kpi-icon critical">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
+            </div>
+            <div class="kpi-data">
+              <div class="kpi-num" id="kpi-real-errors">0</div>
+              <div class="kpi-label">Erreurs Réelles (Actionnables)</div>
+            </div>
+          </div>
+
+          <div class="kpi-card">
+            <div class="kpi-icon informational">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
+            </div>
+            <div class="kpi-data">
+              <div class="kpi-num" id="kpi-informational">0</div>
+              <div class="kpi-label">Messages Informatifs</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Filter & Actions Bar -->
+        <div class="results-toolbar">
+          <div class="filter-group">
+            <button type="button" class="btn-filter active" onclick="filterFindings('all', this)">Tous (<span id="count-all">0</span>)</button>
+            <button type="button" class="btn-filter" onclick="filterFindings('real', this)">Erreurs Réelles (<span id="count-real">0</span>)</button>
+            <button type="button" class="btn-filter" onclick="filterFindings('info', this)">Informatifs (<span id="count-info">0</span>)</button>
+          </div>
+
+          <input type="text" id="search-code-input" class="search-input" placeholder="🔍 Rechercher un code d'erreur..." oninput="searchFindings(this.value)">
+
+          <div class="actions-group">
+            <button type="button" class="btn-action" onclick="downloadMarkdownReport()">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+              Rapport Markdown (.md)
+            </button>
+            <button type="button" class="btn-action" onclick="downloadJsonReport()">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+              Données JSON (.json)
+            </button>
+          </div>
+        </div>
+
+        <!-- Error Findings Container -->
+        <div id="findings-container"></div>
+
+      </section>
+
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <p><span class="footer-brand">Tunisie Telecom</span> • Direction IT & Infrastructure Bases de Données • Projet d'Analyse Intelligente de Logs (Stage 2026)</p>
+    </div>
+  </footer>
+
+  <!-- Main JavaScript App -->
+  <script src="/static/js/app.js"></script>
+</body>
+</html>

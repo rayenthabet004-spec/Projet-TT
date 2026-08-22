@@ -338,7 +338,12 @@ def generate_t5(
 
     instruction = INSTRUCTIONS.get(engine, INSTRUCTIONS["oracle"])
 
-    tokenizer, model = _load_t5(model_dir)
+    try:
+        tokenizer, model = _load_t5(model_dir)
+    except Exception:
+        fallback_exp = generate_mock(code, raw_line, context, retrieved)
+        fallback_exp.source = "t5_fallback_to_kb"
+        return fallback_exp
 
     # Build retrieved knowledge block (same format as training data)
     kb_lines = []

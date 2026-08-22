@@ -21,5 +21,5 @@ EXPOSE 8000
 ENV PORT=8000
 ENV PYTHONUNBUFFERED=1
 
-# Start FastAPI server via uvicorn
-CMD ["uvicorn", "web_app:app", "--host", "0.0.0.0", "--port", "8000"]
+# Start FastAPI server
+CMD ["python", "web_app.py"]

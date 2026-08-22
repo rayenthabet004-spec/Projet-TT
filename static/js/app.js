@@ -244,8 +244,17 @@ async function submitAnalysis() {
     }
 
     if (!response.ok) {
-      const errData = await response.json().catch(() => ({}));
-      throw new Error(errData.detail || 'Erreur lors de l\'analyse du log.');
+      let errorMsg = 'Erreur serveur (' + response.status + ')';
+      try {
+        const errData = await response.json();
+        errorMsg = errData.detail || errData.message || errorMsg;
+      } catch (_) {
+        try {
+          const text = await response.text();
+          if (text) errorMsg = text.slice(0, 200);
+        } catch (_) {}
+      }
+      throw new Error(errorMsg);
     }
 
     const data = await response.json();

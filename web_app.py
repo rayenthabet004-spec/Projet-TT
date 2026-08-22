@@ -55,6 +55,13 @@ class AnalysisRequest(BaseModel):
     api_key: Optional[str] = None
 
 
+@app.on_event("startup")
+def startup_warmup():
+    import threading
+    from src.rag.generator import warmup_t5
+    threading.Thread(target=warmup_t5, daemon=True).start()
+
+
 @app.get("/api/health")
 def health_check():
     return {

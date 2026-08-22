@@ -270,7 +270,11 @@ def _load_t5(model_dir: str):
 
     try:
         tokenizer = AutoTokenizer.from_pretrained(target_model_source)
-        model = AutoModelForSeq2SeqLM.from_pretrained(target_model_source)
+        model = AutoModelForSeq2SeqLM.from_pretrained(
+            target_model_source,
+            low_cpu_mem_usage=True,
+            torch_dtype=torch.float32
+        )
     except Exception as err:
         raise FileNotFoundError(
             f"Could not load T5 model from local path '{model_dir}' or Hugging Face Hub repo '{target_model_source}'. "
@@ -283,6 +287,15 @@ def _load_t5(model_dir: str):
 
     _T5_MODEL_CACHE[model_dir] = (tokenizer, model)
     return tokenizer, model
+
+
+def warmup_t5():
+    """Background startup preloader to warm the T5 model into memory."""
+    try:
+        _load_t5(DEFAULT_T5_MODEL_DIR)
+        print(f"✅ FLAN-T5 model successfully warmed up in memory from '{DEFAULT_T5_MODEL_DIR}'")
+    except Exception as e:
+        print(f"ℹ️ FLAN-T5 background warmup deferred: {e}")
 
 
 from src.log_parser import normalize_code

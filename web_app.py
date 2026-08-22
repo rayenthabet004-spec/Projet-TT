@@ -126,6 +126,15 @@ def _run_pipeline(
             engine=engine_arg
         )
         
+        # Add summary structure for UI compatibility
+        report_dict["summary"] = {
+            "total_occurrences": report_dict.get("total_error_occurrences", 0),
+            "unique_error_codes": report_dict.get("unique_error_codes", len(report_dict.get("findings", []))),
+            "total_real_errors": report_dict.get("total_real_errors", 0),
+            "total_informational": report_dict.get("total_informational", 0),
+            "generation_mode": report_dict.get("generation_mode", mode or "mock")
+        }
+
         # Add metadata & preformatted markdown report
         markdown_text = report_to_markdown(report_dict)
         report_dict["markdown_report"] = markdown_text

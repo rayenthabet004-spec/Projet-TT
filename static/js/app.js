@@ -210,17 +210,23 @@ function renderResults(data) {
 
   const engineNames = { oracle: 'Oracle Database', postgres: 'PostgreSQL', mysql: 'MySQL Server' };
   bannerTitle.textContent = `${engineNames[engine] || engine.toUpperCase()} Détecté`;
-  bannerSub.textContent = `Analysé avec le moteur de règles spécialisé et la base de connaissances (Mode: ${data.summary.generation_mode})`;
+  const genMode = (data.summary && data.summary.generation_mode) || data.generation_mode || 'mock';
+  bannerSub.textContent = `Analysé avec le moteur de règles spécialisé et la base de connaissances (Mode: ${genMode})`;
 
   const confidence = data.detection_confidence ? Math.round(data.detection_confidence * 100) : 100;
   confFill.style.width = `${confidence}%`;
   confVal.textContent = `${confidence}%`;
 
   // 2. Summary KPI Metrics
-  document.getElementById('kpi-total-occurrences').textContent = data.summary.total_occurrences || 0;
-  document.getElementById('kpi-unique-codes').textContent = data.summary.unique_error_codes || 0;
-  document.getElementById('kpi-real-errors').textContent = data.summary.total_real_errors || 0;
-  document.getElementById('kpi-informational').textContent = data.summary.total_informational || 0;
+  const totalOcc = (data.summary && data.summary.total_occurrences) || data.total_error_occurrences || 0;
+  const uniqueCodes = (data.summary && data.summary.unique_error_codes) || data.unique_error_codes || (data.findings ? data.findings.length : 0);
+  const realErrors = (data.summary && data.summary.total_real_errors) !== undefined ? data.summary.total_real_errors : (data.total_real_errors !== undefined ? data.total_real_errors : 0);
+  const infoErrors = (data.summary && data.summary.total_informational) !== undefined ? data.summary.total_informational : (data.total_informational !== undefined ? data.total_informational : 0);
+
+  document.getElementById('kpi-total-occurrences').textContent = totalOcc;
+  document.getElementById('kpi-unique-codes').textContent = uniqueCodes;
+  document.getElementById('kpi-real-errors').textContent = realErrors;
+  document.getElementById('kpi-informational').textContent = infoErrors;
 
   // Filter count tags
   const findings = data.findings || [];

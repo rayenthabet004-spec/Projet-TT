@@ -14,7 +14,7 @@ pytest>=8.0.0
 
 # Tiny "is this a real error" classifier (src/classifier/) -- TF-IDF + Logistic
 # Regression, no model download needed
-scikit-learn>=1.4.0
+scikit-learn>=1.4.0,<1.7.0
 joblib>=1.3.0
 
 # Optional: only needed if you run src/data_generation/scrape_oracle_docs.py

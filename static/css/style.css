@@ -77,18 +77,52 @@
   --border-focus: #00D2FF;
 
   --tt-cyan-light: rgba(0, 178, 226, 0.16);
-  --color-error-bg: rgba(220, 38, 38, 0.18);
-  --color-error-border: rgba(239, 68, 68, 0.4);
-  --color-warning-bg: rgba(217, 119, 6, 0.18);
-  --color-warning-border: rgba(245, 158, 11, 0.4);
-  --color-success-bg: rgba(5, 150, 105, 0.18);
-  --color-success-border: rgba(16, 185, 129, 0.4);
-  --color-info-bg: rgba(2, 132, 199, 0.18);
-  --color-info-border: rgba(56, 189, 248, 0.4);
+  --color-error-bg: rgba(220, 38, 38, 0.22);
+  --color-error-border: rgba(239, 68, 68, 0.45);
+  --color-warning-bg: rgba(217, 119, 6, 0.22);
+  --color-warning-border: rgba(245, 158, 11, 0.45);
+  --color-success-bg: rgba(5, 150, 105, 0.22);
+  --color-success-border: rgba(16, 185, 129, 0.45);
+  --color-info-bg: rgba(2, 132, 199, 0.22);
+  --color-info-border: rgba(56, 189, 248, 0.45);
 
   --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.3);
   --shadow-md: 0 4px 14px -2px rgba(0, 0, 0, 0.4);
   --shadow-lg: 0 10px 25px -3px rgba(0, 0, 0, 0.6);
+}
+
+[data-theme="dark"] .card-title {
+  color: #F8FAFC;
+}
+
+[data-theme="dark"] .card-header span {
+  color: #94A3B8;
+}
+
+[data-theme="dark"] .sample-bar {
+  background: #131E3A;
+  border-color: #334155;
+}
+
+[data-theme="dark"] .sample-bar-label {
+  color: #38BDF8;
+}
+
+[data-theme="dark"] .tab-btn {
+  color: #94A3B8;
+}
+
+[data-theme="dark"] .tab-btn:hover {
+  color: #F8FAFC;
+}
+
+[data-theme="dark"] .tab-btn.active {
+  color: #38BDF8;
+}
+
+[data-theme="dark"] .control-group label,
+[data-theme="dark"] .checkbox-label {
+  color: #E2E8F0;
 }
 
 [data-theme="dark"] .footer {
@@ -123,10 +157,21 @@
 
 [data-theme="dark"] .dropzone-icon {
   background: #1C2541;
+  color: #38BDF8;
 }
 
 [data-theme="dark"] .dropzone-title {
   color: #F8FAFC;
+}
+
+[data-theme="dark"] .dropzone-hint {
+  color: #94A3B8;
+}
+
+[data-theme="dark"] .selected-file-pill {
+  background: #131E3A;
+  color: #38BDF8;
+  border-color: #38BDF8;
 }
 
 [data-theme="dark"] .finding-header {
@@ -137,6 +182,18 @@
   background: #0B132B;
   color: #38BDF8;
   border-color: #334155;
+}
+
+[data-theme="dark"] .diagnosis-label {
+  color: #38BDF8;
+}
+
+[data-theme="dark"] .diagnosis-text {
+  color: #F8FAFC;
+}
+
+[data-theme="dark"] .btn-toggle-context {
+  color: #38BDF8;
 }
 
 [data-theme="dark"] .btn-filter,
@@ -155,6 +212,29 @@
 [data-theme="dark"] .engine-banner,
 [data-theme="dark"] .kpi-card {
   background: #1C2541;
+}
+
+[data-theme="dark"] .engine-text h3,
+[data-theme="dark"] .kpi-data .kpi-num {
+  color: #F8FAFC;
+}
+
+[data-theme="dark"] .engine-text p,
+[data-theme="dark"] .kpi-data .kpi-label {
+  color: #94A3B8;
+}
+
+[data-theme="dark"] .confidence-gauge {
+  background: #131E3A;
+  border-color: #334155;
+}
+
+[data-theme="dark"] .confidence-value {
+  color: #38BDF8;
+}
+
+[data-theme="dark"] .solution-box .diagnosis-label {
+  color: #34D399;
 }
 
 [data-theme="dark"] .solution-box .diagnosis-text {

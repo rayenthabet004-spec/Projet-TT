@@ -8,7 +8,7 @@ Provides REST API endpoints and hosts the modern web dashboard.
 import os
 import sys
 import tempfile
-from typing import Optional
+from typing import Optional, List
 from fastapi import FastAPI, File, Form, UploadFile, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import HTMLResponse, JSONResponse, FileResponse
@@ -185,6 +185,34 @@ async def analyze_file_endpoint(
         use_classifier=use_classifier if use_classifier is not None else True,
         filter_informational=filter_informational if filter_informational is not None else False,
         api_key=api_key
+    )
+    return JSONResponse(content=result)
+
+
+from src.rag.chatbot import handle_chat_request
+
+
+class ChatRequest(BaseModel):
+    message: str
+    history: Optional[List[dict]] = []
+    mode: Optional[str] = "gemini"
+    engine: Optional[str] = None
+    report_context: Optional[dict] = None
+    api_key: Optional[str] = None
+
+
+@app.post("/api/chat")
+def chat_endpoint(req: ChatRequest):
+    if not req.message.strip():
+        raise HTTPException(status_code=400, detail="Le message ne peut pas être vide.")
+    
+    result = handle_chat_request(
+        message=req.message,
+        history=req.history or [],
+        mode=req.mode or "gemini",
+        engine=req.engine,
+        report_context=req.report_context,
+        api_key=req.api_key
     )
     return JSONResponse(content=result)
 

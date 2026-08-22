@@ -248,6 +248,69 @@
     </div>
   </footer>
 
+  <!-- Floating Chatbot FAB Trigger -->
+  <button type="button" class="chatbot-fab" id="chatbot-fab" onclick="toggleChatbot()" title="Ouvrir l'Assistant DBA IA (Tunisie Telecom)">
+    <div class="chatbot-fab-pulse"></div>
+    <span class="chatbot-fab-icon">💬</span>
+    <span class="chatbot-fab-badge">IA</span>
+  </button>
+
+  <!-- Interactive Chatbot Window -->
+  <div class="chatbot-window" id="chatbot-window" style="display: none;">
+    <div class="chatbot-header">
+      <div class="chatbot-header-info">
+        <div class="chatbot-avatar">TT</div>
+        <div>
+          <h4>Assistant IA DBA</h4>
+          <div class="chatbot-status"><span class="status-dot"></span> En ligne • Tunisie Telecom</div>
+        </div>
+      </div>
+      <div class="chatbot-header-actions">
+        <select id="chat-mode-select" class="chat-mode-dropdown" title="Choisir le moteur d'IA pour le Chat">
+          <option value="gemini" selected>🌐 Mode Gemini</option>
+          <option value="t5">🧠 Mode FLAN-T5 (Local)</option>
+        </select>
+        <button type="button" class="btn-chat-header-icon" onclick="clearChatHistory()" title="Effacer l'historique de discussion">🗑️</button>
+        <button type="button" class="btn-chat-header-icon" onclick="toggleChatbot()" title="Fermer le chat">✕</button>
+      </div>
+    </div>
+
+    <!-- Quick Suggestion Chips -->
+    <div class="chat-suggestions-bar" id="chat-suggestions">
+      <button type="button" class="chat-chip" onclick="sendQuickPrompt('Comment corriger l\'erreur ORA-00060 (Deadlock) ?')">🔒 Erreur ORA-00060 ?</button>
+      <button type="button" class="chat-chip" onclick="sendQuickPrompt('Donne-moi le script SQL de remédiation pour agrandir le tablespace.')">📜 Script SQL Remédiation</button>
+      <button type="button" class="chat-chip" onclick="sendQuickPrompt('Explique-moi la cause racine des erreurs détectées dans le dernier log.')">🔍 Diagnostic du Log</button>
+      <button type="button" class="chat-chip" onclick="sendQuickPrompt('Quelles sont les bonnes pratiques DBA pour éviter ORA-01555 Snapshot too old ?')">⚡ Prévenir ORA-01555</button>
+    </div>
+
+    <!-- Messages Stream -->
+    <div class="chat-messages" id="chat-messages">
+      <div class="chat-msg assistant">
+        <div class="msg-bubble">
+          Bonjour ! Je suis <strong>TT-DBA Assistant</strong>, votre assistant spécialisé de Tunisie Telecom.
+          <br><br>
+          Posez-moi vos questions sur les erreurs de logs (Oracle, PostgreSQL, MySQL), demandez-moi des scripts SQL de correction, ou des explications sur le dernier log analysé.
+        </div>
+      </div>
+    </div>
+
+    <!-- Typing Indicator -->
+    <div class="chat-typing-indicator" id="chat-typing" style="display: none;">
+      <span class="typing-dot"></span>
+      <span class="typing-dot"></span>
+      <span class="typing-dot"></span>
+      <span style="font-size: 11.5px; margin-left: 6px; color: var(--text-muted);">TT Assistant rédige la réponse...</span>
+    </div>
+
+    <!-- Chat Input Form -->
+    <form class="chat-input-area" id="chat-form" onsubmit="handleChatSubmit(event)">
+      <textarea id="chat-input" class="chat-textarea" placeholder="Posez une question technique DBA (ex: script SQL pour ORA-01555)..." rows="1" onkeydown="handleChatKeyDown(event)"></textarea>
+      <button type="submit" class="btn-chat-send" id="btn-chat-send" title="Envoyer le message">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+      </button>
+    </form>
+  </div>
+
   <!-- Main JavaScript App -->
   <script src="/static/js/app.js"></script>
 </body>

@@ -479,6 +479,189 @@ function downloadJsonReport() {
   URL.revokeObjectURL(url);
 }
 
+// ==========================================
+// Interactive DBA AI Chatbot Client
+// ==========================================
+let chatSessionHistory = [];
+
+function toggleChatbot() {
+  const windowEl = document.getElementById('chatbot-window');
+  if (!windowEl) return;
+  const isHidden = windowEl.style.display === 'none' || !windowEl.style.display;
+  windowEl.style.display = isHidden ? 'flex' : 'none';
+  if (isHidden) {
+    setTimeout(() => {
+      const input = document.getElementById('chat-input');
+      if (input) input.focus();
+    }, 100);
+  }
+}
+
+function clearChatHistory() {
+  chatSessionHistory = [];
+  const container = document.getElementById('chat-messages');
+  if (container) {
+    container.innerHTML = `
+      <div class="chat-msg assistant">
+        <div class="msg-bubble">
+          Historique réinitialisé. Comment puis-je vous assister sur vos bases de données ou l'analyse de vos logs ?
+        </div>
+      </div>
+    `;
+  }
+}
+
+function sendQuickPrompt(promptText) {
+  const input = document.getElementById('chat-input');
+  if (input) {
+    input.value = promptText;
+    handleChatSubmit(new Event('submit'));
+  }
+}
+
+function handleChatKeyDown(e) {
+  if (e.key === 'Enter' && !e.shiftKey) {
+    e.preventDefault();
+    handleChatSubmit(e);
+  }
+}
+
+async function handleChatSubmit(e) {
+  if (e) e.preventDefault();
+  const input = document.getElementById('chat-input');
+  if (!input) return;
+  const message = input.value.trim();
+  if (!message) return;
+
+  const modeSelect = document.getElementById('chat-mode-select');
+  const chatMode = modeSelect ? modeSelect.value : 'gemini';
+  const apiKeyInput = document.getElementById('api-key-input');
+  const apiKey = (apiKeyInput ? apiKeyInput.value.trim() : '') || localStorage.getItem('gemini_api_key') || '';
+
+  // Append user message to UI
+  appendChatMessage('user', message);
+  input.value = '';
+
+  // Show typing indicator
+  const typingEl = document.getElementById('chat-typing');
+  const sendBtn = document.getElementById('btn-chat-send');
+  if (typingEl) typingEl.style.display = 'flex';
+  if (sendBtn) sendBtn.disabled = true;
+
+  // Scroll to bottom
+  scrollChatToBottom();
+
+  try {
+    const payload = {
+      message: message,
+      history: chatSessionHistory,
+      mode: chatMode,
+      engine: currentReportData ? currentReportData.engine : null,
+      report_context: currentReportData || null,
+      api_key: apiKey || null
+    };
+
+    const res = await fetch('/api/chat', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(payload)
+    });
+
+    if (!res.ok) {
+      const errData = await res.json().catch(() => ({}));
+      throw new Error(errData.detail || 'Erreur lors de la réponse du chatbot.');
+    }
+
+    const data = await res.json();
+    const reply = data.reply || 'Désolé, aucune réponse générée.';
+
+    // Append to local history
+    chatSessionHistory.push({ role: 'user', content: message });
+    chatSessionHistory.push({ role: 'assistant', content: reply });
+
+    // Append assistant response to UI
+    appendChatMessage('assistant', reply, data.mode_used);
+
+  } catch (err) {
+    appendChatMessage('assistant', `⚠️ Erreur : ${escapeHtml(err.message)}`);
+  } finally {
+    if (typingEl) typingEl.style.display = 'none';
+    if (sendBtn) sendBtn.disabled = false;
+    scrollChatToBottom();
+  }
+}
+
+function appendChatMessage(role, text, modeUsed = '') {
+  const container = document.getElementById('chat-messages');
+  if (!container) return;
+
+  const msgDiv = document.createElement('div');
+  msgDiv.className = `chat-msg ${role}`;
+
+  const modeBadge = modeUsed ? `<div style="font-size: 10px; color: var(--text-muted); margin-bottom: 4px;">Modèle : ${escapeHtml(modeUsed)}</div>` : '';
+  const formattedContent = role === 'assistant' ? formatChatMessage(text) : escapeHtml(text);
+
+  msgDiv.innerHTML = `
+    <div class="msg-bubble">
+      ${modeBadge}
+      ${formattedContent}
+    </div>
+  `;
+
+  container.appendChild(msgDiv);
+  scrollChatToBottom();
+}
+
+function scrollChatToBottom() {
+  const container = document.getElementById('chat-messages');
+  if (container) {
+    container.scrollTop = container.scrollHeight;
+  }
+}
+
+function formatChatMessage(text) {
+  if (!text) return '';
+
+  // 1. Code blocks: ```sql ... ```
+  let formatted = text.replace(/```([a-zA-Z0-9_-]*)\n([\s\S]*?)```/g, (match, lang, code) => {
+    const safeCode = escapeHtml(code.trim());
+    const id = 'code-' + Math.random().toString(36).substring(2, 9);
+    return `
+      <pre>
+        <button type="button" class="copy-code-btn" onclick="copySnippet('${id}')">Copier</button>
+        <code id="${id}" class="language-${lang || 'text'}">${safeCode}</code>
+      </pre>
+    `;
+  });
+
+  // 2. Inline code: `code`
+  formatted = formatted.replace(/`([^`]+)`/g, '<code>$1</code>');
+
+  // 3. Bold: **bold** or __bold__
+  formatted = formatted.replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>');
+
+  // 4. Headers: ### Title
+  formatted = formatted.replace(/^### (.*$)/gim, '<h5 style="margin: 8px 0 4px 0; color: var(--tt-cyan);">$1</h5>');
+  formatted = formatted.replace(/^## (.*$)/gim, '<h4 style="margin: 8px 0 4px 0; color: var(--tt-navy);">$1</h4>');
+
+  // 5. Bullet points: - item or * item
+  formatted = formatted.replace(/^\s*[-*]\s+(.*)$/gim, '<div style="margin-left: 12px;">• $1</div>');
+
+  // 6. Newlines to <br> (avoiding pre blocks)
+  formatted = formatted.replace(/\n\n/g, '<br><br>').replace(/\n/g, '<br>');
+
+  return formatted;
+}
+
+function copySnippet(elementId) {
+  const codeEl = document.getElementById(elementId);
+  if (!codeEl) return;
+  const text = codeEl.innerText;
+  navigator.clipboard.writeText(text).then(() => {
+    alert('Code SQL / Commande copié dans le presse-papiers !');
+  }).catch(() => {});
+}
+
 // Utility
 function escapeHtml(str) {
   if (!str) return '';

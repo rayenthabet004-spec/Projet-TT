@@ -390,8 +390,10 @@ def generate_t5(
     with torch.no_grad():
         output_ids = model.generate(
             **inputs,
-            max_new_tokens=max_new_tokens,
-            repetition_penalty=1.3,
+            max_new_tokens=80,
+            do_sample=False,
+            early_stopping=True,
+            repetition_penalty=1.2,
             no_repeat_ngram_size=3,
         )
 

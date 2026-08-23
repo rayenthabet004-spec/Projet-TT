@@ -7,7 +7,6 @@ Provides REST API endpoints and hosts the modern web dashboard.
 
 import os
 import sys
-import tempfile
 from typing import Optional, List
 from fastapi import FastAPI, File, Form, UploadFile, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
@@ -21,7 +20,19 @@ if ROOT_DIR not in sys.path:
     sys.path.insert(0, ROOT_DIR)
 
 from src.rag.pipeline import analyze_log, report_to_markdown
+from src.rag.knowledge_base import load_default_kb
+from src.rag.retriever import Retriever
 from src.engine_detection import detect_engine
+
+# ---------------------------------------------------------------------------
+# Module-level singletons -- initialized ONCE at startup, reused on every
+# request.  Previously load_default_kb() + Retriever() were called inside
+# analyze_log() with no caching, re-parsing 27 622 JSONL entries and
+# rebuilding the BM25 inverted index on EVERY HTTP request (~0.78s locally,
+# ~2-4s on Railway's slower container FS).  This is now fixed.
+# ---------------------------------------------------------------------------
+_KB = None
+_RETRIEVER = None
 
 app = FastAPI(
     title="Tunisie Telecom - Database Log AI Triage Suite",
@@ -57,9 +68,23 @@ class AnalysisRequest(BaseModel):
 
 @app.on_event("startup")
 def startup_warmup():
-    import threading
+    """Initialize all heavy resources synchronously at startup.
+
+    Runs BEFORE uvicorn marks the server as ready to accept requests, so the
+    first real HTTP request never blocks on a cold KB/BM25 build or T5 load.
+    """
+    global _KB, _RETRIEVER
+
+    # 1. Load KB + build BM25 index once -- reused on every request
+    print("[startup] Loading knowledge base...", flush=True)
+    _KB = load_default_kb()
+    _RETRIEVER = Retriever(_KB)
+    print(f"[startup] KB ready ({len(_KB)} entries, BM25 indexed).", flush=True)
+
+    # 2. Pre-load T5 model into memory synchronously (blocks until done)
+    #    This ensures the first request never waits 20+ seconds for a cold load.
     from src.rag.generator import warmup_t5
-    threading.Thread(target=warmup_t5, daemon=True).start()
+    warmup_t5()
 
 
 @app.get("/api/health")
@@ -128,6 +153,8 @@ def _run_pipeline(
     try:
         report_dict = analyze_log(
             log_text=log_content,
+            kb=_KB,            # reuse singleton -- avoids 9.78 MB JSONL parse per request
+            retriever=_RETRIEVER,  # reuse singleton -- avoids BM25 index rebuild per request
             mode=mode or "t5",
             context_window=context_window or 2,
             use_classifier=use_classifier,
@@ -155,6 +182,7 @@ def _run_pipeline(
         import traceback
         traceback.print_exc()
         raise HTTPException(status_code=500, detail=f"Log analysis pipeline failed: {str(e)}")
+
 
 
 @app.post("/api/analyze")

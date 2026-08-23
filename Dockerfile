@@ -18,6 +18,11 @@ RUN python -c "from transformers import AutoTokenizer, AutoModelForSeq2SeqLM; \
     AutoTokenizer.from_pretrained('rayenthabet004/tt-multi-engine-t5'); \
     AutoModelForSeq2SeqLM.from_pretrained('rayenthabet004/tt-multi-engine-t5', low_cpu_mem_usage=True)"
 
+# Force offline mode at runtime so from_pretrained() never touches the
+# network or writes cache-validation files (defense in depth against any
+# file-watcher or cache-lock issues)
+ENV HF_HUB_OFFLINE=1
+
 # Copy application source code and data
 COPY . .
 

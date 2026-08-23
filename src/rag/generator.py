@@ -285,18 +285,11 @@ def _load_t5(model_dir: str):
     model = model.to(device)
     model.eval()
 
-    # Apply torch.compile() for faster CPU inference (~20-40% speedup on repeated calls).
-    # This JIT-fuses ops via TorchDynamo/TorchInductor and generates optimized kernels.
-    # The one-time compilation cost (~5-15s) is paid during startup warmup, not on
-    # the first real user request. Falls back gracefully on PyTorch < 2.0.
-    if device == "cpu":
-        try:
-            import torch
-            if hasattr(torch, "compile"):
-                model = torch.compile(model, mode="reduce-overhead")
-                print("[startup] torch.compile() applied to T5 model for faster CPU inference.", flush=True)
-        except Exception as compile_err:
-            print(f"[startup] torch.compile() skipped (non-fatal): {compile_err}", flush=True)
+    # NOTE: torch.compile() was tested and removed -- on Railway's constrained
+    # instances (~512MB-1GB headroom after OS), Inductor's compiled kernel cache
+    # adds ~300-500MB of working memory on top of the 1.1GB model weights,
+    # causing OOM kills. The dummy warmup forward pass below is sufficient to
+    # pre-warm PyTorch's internal allocators.
 
     _T5_MODEL_CACHE[model_dir] = (tokenizer, model)
     return tokenizer, model

@@ -1,0 +1,1453 @@
+% ============================================================
+%  Rapport de Stage de Fin d'Études
+%  Rayen Thabet -- Tunisie Telecom
+%  Année universitaire 2025/2026
+%  Plateforme intelligente de diagnostic et triage de logs
+%  de bases de données hétérogènes par RAG Multi-Moteurs
+% ============================================================
+\documentclass[12pt,a4paper]{report}
+
+\usepackage[french]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[a4paper,left=2.5cm,right=2.5cm,top=3cm,bottom=2.5cm,headheight=60pt]{geometry}
+\usepackage{graphicx}
+\usepackage{fancyhdr}
+\usepackage{titlesec}
+\usepackage[hidelinks,colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}
+\usepackage{xcolor}
+\usepackage{enumitem}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{float}
+\usepackage{setspace}
+\usepackage{tikz}
+\usetikzlibrary{shapes.geometric,arrows.meta,positioning,fit,backgrounds}
+\usepackage{tabularx}
+\usepackage{booktabs}
+\usepackage{listings}
+\usepackage{lastpage}
+\usepackage{amsmath}
+\usepackage{microtype}
+\usepackage{array}
+
+% ---------- Couleurs ----------
+\definecolor{ttblue}{RGB}{31,73,125}
+\definecolor{codegreen}{rgb}{0.0,0.5,0.0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{backcolor}{rgb}{0.97,0.97,0.97}
+
+% ---------- Style des titres ----------
+\titleformat{\chapter}[display]
+  {\normalfont\bfseries\Large\color{ttblue}}
+  {\Large\chaptertitlename\ \thechapter\ :}{6pt}{\Large}
+\titlespacing*{\chapter}{0pt}{0pt}{30pt}
+\titleformat{\section}
+  {\normalfont\bfseries\large\color{ttblue}}{\thesection.}{0.6em}{}
+\titleformat{\subsection}
+  {\normalfont\bfseries\normalsize}{\thesubsection.}{0.6em}{}
+\titleformat{\subsubsection}
+  {\normalfont\bfseries\small}{\thesubsubsection.}{0.6em}{}
+
+% ---------- En-tete / pied de page ----------
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0.6pt}
+\fancyhead[L]{\small\textit{Rapport de Stage --- Tunisie Telecom}}
+\fancyhead[R]{\small\textit{2025/2026}}
+\fancyfoot[C]{\thepage\ / \pageref{LastPage}}
+\fancypagestyle{plain}{
+  \fancyhf{}
+  \fancyhead[L]{\small\textit{Rapport de Stage --- Tunisie Telecom}}
+  \fancyhead[R]{\small\textit{2025/2026}}
+  \fancyfoot[C]{\thepage\ / \pageref{LastPage}}
+  \renewcommand{\headrulewidth}{0.6pt}
+}
+
+% ---------- Listings ----------
+\lstset{
+  backgroundcolor=\color{backcolor},
+  basicstyle=\ttfamily\small,
+  keywordstyle=\color{ttblue}\bfseries,
+  commentstyle=\color{codegreen}\itshape,
+  frame=single,breaklines=true,columns=fullflexible,
+  showstringspaces=false,
+  numbers=left,numberstyle=\tiny\color{codegray},numbersep=5pt
+}
+
+% ---------- TikZ styles ----------
+\tikzstyle{block}=[rectangle,rounded corners=3pt,minimum width=3.2cm,
+  minimum height=0.85cm,text centered,draw=ttblue,fill=blue!5,
+  font=\small,text width=3cm]
+\tikzstyle{blockW}=[rectangle,rounded corners=3pt,minimum width=4.4cm,
+  minimum height=0.85cm,text centered,draw=ttblue,fill=blue!5,
+  font=\small,text width=4.2cm]
+\tikzstyle{store}=[cylinder,shape border rotate=90,draw=gray!60,fill=gray!10,
+  font=\small,minimum height=1.1cm,minimum width=2.8cm,text centered,text width=2.6cm]
+\tikzstyle{arrow}=[-{Stealth[length=5pt]},thick,color=ttblue!80]
+\tikzstyle{dasharrow}=[-{Stealth[length=5pt]},dashed,thick,color=gray!55]
+
+% ============================================================
+\begin{document}
+
+% ============================================================
+% PAGE DE GARDE
+% ============================================================
+\begin{titlepage}
+  \begin{minipage}{0.22\textwidth}
+    \includegraphics[width=\linewidth]{enit-logo.jpg}
+  \end{minipage}
+  \hfill
+  \begin{minipage}{0.22\textwidth}
+    \raggedleft
+    \includegraphics[width=\linewidth]{images.jpg}
+  \end{minipage}
+
+\thispagestyle{empty}
+\begin{center}
+\vspace*{0.8cm}
+{\large\bfseries\color{ttblue} RAPPORT DE STAGE DE FIN D'\'ETUDES}\\[0.5cm]
+\rule{\textwidth}{1.5pt}\\[0.4cm]
+{\LARGE\bfseries Plateforme intelligente de diagnostic et triage\\[0.3cm]
+de logs de bases de donn\'ees h\'et\'erog\`enes\\[0.3cm]
+par G\'en\'eration Augment\'ee par R\'ecup\'eration (RAG) Multi-Moteurs}\\[0.4cm]
+\rule{\textwidth}{1.5pt}
+\vspace{.6cm}
+\begin{tabular}{ll}
+\vspace{.2cm}
+\textbf{\'Elabor\'e par :}      & Rayen Thabet \\[0.3cm]
+\textbf{Classe :}               & 1AMIndS \\[0.3cm]
+\textbf{Encadr\'e par :}        & Monsieur Ben Mohamed Ahmed \\[0.15cm]
+                                & \small Chef de la Subdivision Administration \\[0.15cm]
+                                & \small Syst\`emes et Bases de Donn\'ees \\[0.3cm]
+\textbf{Soci\'et\'e d'accueil :}& Tunisie Telecom --- Centre technique IT de la Kasbah \\[0.3cm]
+\textbf{D\'epartement :}        & Direction Centrale des Syst\`emes d'Information (DCSI) \\[0.3cm]
+\textbf{P\'eriode :}            & Juin -- Ao\^ut 2026 \\[0.3cm]
+\textbf{Ann\'ee universitaire :}& 2025/2026 \\
+\end{tabular}
+\vfill
+{\color{ttblue}\rule{0.4\textwidth}{0.8pt}}
+\end{center}
+\end{titlepage}
+
+% ============================================================
+% REMERCIEMENTS
+% ============================================================
+\chapter*{Remerciements}
+\addcontentsline{toc}{chapter}{Remerciements}
+
+Je tiens tout d'abord \`a adresser mes sinc\`eres remerciements \`a l'ensemble du
+personnel de Tunisie Telecom, et plus particuli\`erement \`a celui du centre
+technique IT de la Kasbah, pour l'accueil chaleureux qui m'a \'et\'e r\'eserv\'e
+durant toute la dur\'ee de mon stage.
+
+Mes remerciements les plus sinc\`eres vont \`a mon encadreur, Monsieur Ben Mohamed
+Ahmed, Chef de la Subdivision Administration Syst\`emes et Bases de Donn\'ees, qui
+m'a accord\'e sa confiance d\`es le premier jour. Sa disponibilit\'e constante, la
+pertinence de ses conseils et son expertise technique m'ont \'enorm\'ement apport\'e
+et ont grandement contribu\'e \`a la r\'eussite de ce stage. Les \'echanges que nous
+avons eus sur les besoins concrets des \'equipes DBA ont directement orient\'e
+plusieurs choix techniques du projet.
+
+Je souhaite \'egalement exprimer ma gratitude \`a Monsieur Mustapha Charfeddine
+Akkez, dont les conseils avis\'es et le soutien de tous les instants m'ont
+accompagn\'e tout au long de cette exp\'erience.
+
+Plus g\'en\'eralement, je remercie chaleureusement toutes les personnes qui, de
+pr\`es ou de loin, m'ont fait profiter de leur savoir-faire et de leur exp\'erience
+durant ce stage. Travailler dans un environnement aussi exigeant que celui de la
+DCSI de Tunisie Telecom a \'et\'e une exp\'erience formatrice et enrichissante,
+tant sur le plan technique qu'humain.
+
+% ============================================================
+% TABLE DES MATIERES
+% ============================================================
+\tableofcontents
+\listoffigures
+\listoftables
+
+% ============================================================
+% INTRODUCTION GENERALE
+% ============================================================
+\chapter*{Introduction g\'en\'erale}
+\addcontentsline{toc}{chapter}{Introduction g\'en\'erale}
+
+Les bases de donn\'ees relationnelles constituent l'\'epine dorsale des syst\`emes
+informatiques des grandes entreprises. Dans des environnements critiques tels que
+ceux de Tunisie Telecom, o\`u Oracle Database, PostgreSQL et MySQL sont exploit\'es
+simultan\'ement pour supporter des milliers de transactions par seconde, la
+surveillance et le diagnostic rapide des incidents constituent une priorit\'e absolue.
+
+Au c\oe{}ur de cette surveillance se trouve l'analyse des fichiers journaux
+(\emph{logs}) produits en continu par chaque instance de base de donn\'ees. Ces
+fichiers peuvent atteindre plusieurs dizaines de milliers de lignes par jour,
+m\'elant des messages purement informationnels \`a des codes d'erreur critiques
+n\'ecessitant une intervention imm\'ediate. Le processus actuel, qui repose sur la
+lecture manuelle et l'expertise de l'administrateur de bases de donn\'ees (DBA),
+est long, sujet aux omissions et difficile \`a tenir lorsque plusieurs moteurs de
+bases de donn\'ees sont administr\'es simultan\'ement.
+
+C'est dans ce contexte que s'inscrit ce stage de fin d'\'etudes, effectu\'e au sein
+de la Subdivision Administration Syst\`emes et Bases de Donn\'ees de la Direction
+Centrale des Syst\`emes d'Information (DCSI) de Tunisie Telecom, du mois de juin
+au mois d'ao\^ut 2026. L'objectif central \'etait de concevoir et d\'evelopper une
+plateforme intelligente capable d'analyser automatiquement des fichiers de logs de
+trois moteurs de bases de donn\'ees h\'et\'erog\`enes --- Oracle, PostgreSQL et
+MySQL ---, d'identifier les incidents critiques, d'en expliquer la signification et
+de proposer des actions correctives, le tout sans d\'ependre d'une API de mod\`ele
+de langage commerciale externe.
+
+Pour atteindre cet objectif, nous avons adopt\'e l'approche de la
+\emph{G\'en\'eration Augment\'ee par R\'ecup\'eration} (RAG,
+\emph{Retrieval-Augmented Generation}), qui combine une base de connaissances
+structur\'ee \`a un mod\`ele de g\'en\'eration de texte entra\^in\'e sur mesure.
+
+Ce rapport est structur\'e en cinq chapitres. Le \textbf{Chapitre~1} pr\'esente
+l'organisme d'accueil. Le \textbf{Chapitre~2} \'etablit la probl\'ematique et
+l'\'etat de l'art. Le \textbf{Chapitre~3} expose les d\'ecisions de conception.
+Le \textbf{Chapitre~4} d\'etaille la r\'ealisation. Le \textbf{Chapitre~5}
+pr\'esente les r\'esultats et une discussion honn\^ete des limites.
+
+% ============================================================
+% CHAPITRE 1
+% ============================================================
+\chapter{Pr\'esentation de l'organisme d'accueil}
+
+\section{Pr\'esentation g\'en\'erale de Tunisie Telecom}
+
+\subsection{Historique et missions}
+
+L'Office National des T\'el\'ecommunications, connu commercialement sous le nom de
+\textbf{Tunisie Telecom}, a \'et\'e cr\'e\'e par la loi n\textdegree36 du 17 avril
+1995 et est entr\'e en activit\'e le 1\textsuperscript{er} janvier 1996. Fin 2002,
+Tunisie Telecom se transforme en soci\'et\'e anonyme de droit public. En mars 1998,
+elle inaugure son premier r\'eseau GSM~; en 2009, elle lance le c\^able sous-marin
+Hannibal, premier c\^able 100\,\% tunisien~; en 2011, la 3G~; en 2016, la 4G.
+
+Les missions de Tunisie Telecom couvrent l'ensemble de la cha\^ine de valeur des
+t\'el\'ecommunications~:
+\begin{itemize}[leftmargin=*]
+  \item L'installation, le d\'eveloppement, l'entretien et l'exploitation des
+        r\'eseaux publics de t\'el\'ecommunications fixes et mobiles~;
+  \item La promotion de services \`a valeur ajout\'ee~: internet haut d\'ebit,
+        IPTV, solutions cloud pour entreprises~;
+  \item La fourniture de solutions d'interconnexion internationale~;
+  \item L'h\'ebergement d'infrastructures informatiques critiques (data centers
+        certifi\'es Tier~III).
+\end{itemize}
+
+\subsection{Chiffres cl\'es et positionnement sur le march\'e tunisien}
+
+\begin{table}[H]
+  \centering
+  \caption{Chiffres cl\'es de Tunisie Telecom (2025)}
+  \label{tab:chiffres_cles}
+  \begin{tabularx}{\textwidth}{lX}
+    \toprule
+    \textbf{Indicateur} & \textbf{Valeur} \\
+    \midrule
+    Effectif              & Plus de 6\,400 agents \\
+    Directions r\'egionales & 24 \\
+    Espaces TT            & 140 \\
+    Points de vente priv\'es & Plus de 13\,000 \\
+    Data centers          & 3 (normes Tier III) \\
+    Filiales              & 7 (Sotetel, Topnet, ATI, etc.) \\
+    \bottomrule
+  \end{tabularx}
+\end{table}
+
+\section{Organigramme de Tunisie Telecom}
+
+\subsection{Structure organisationnelle g\'en\'erale}
+
+La figure~\ref{fig:organigramme} pr\'esente la structure organisationnelle de haut
+niveau de Tunisie Telecom, avec les directions fonctionnelles rattach\'ees au PDG
+et les directions op\'erationnelles sous l'autorit\'e du DGA.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.95\textwidth]{organigramme_tt.png}
+  \caption{Organigramme g\'en\'eral de Tunisie Telecom}
+  \label{fig:organigramme}
+\end{figure}
+
+\subsection{Positionnement de la Direction Centrale des Syst\`emes d'Information}
+
+La \textbf{Direction Centrale des Syst\`emes d'Information (DCSI)} est plac\'ee
+directement sous l'autorit\'e du DGA. Elle constitue le bras technique de l'entreprise
+pour tout ce qui concerne l'infrastructure informatique, les r\'eseaux internes et
+l'administration des bases de donn\'ees.
+
+\section{La Direction Centrale des Syst\`emes d'Information (DCSI)}
+
+\subsection{R\^ole et responsabilit\'es de la DCSI}
+
+La DCSI couvre quatre grands domaines~:
+\begin{itemize}[leftmargin=*]
+  \item Infrastructure r\'eseau interne (LAN, WAN, intranet)~;
+  \item S\'ecurit\'e informatique (firewall, contr\^ole d'acc\`es)~;
+  \item Administration des syst\`emes (serveurs Red Hat, Ubuntu, Windows Server)~;
+  \item Administration des bases de donn\'ees (Oracle, PostgreSQL, MySQL).
+\end{itemize}
+
+\subsection{Le centre technique IT --- Kasbah}
+
+Le centre technique IT de la Kasbah est le site physique o\`u sont h\'eberg\'ees
+les principales infrastructures informatiques de Tunisie Telecom. Il abrite les
+data centers certifi\'es Tier~III et la Subdivision Administration Syst\`emes et
+Bases de Donn\'ees au sein de laquelle j'ai effectu\'e mon stage.
+
+\section{Le service d'accueil et le contexte du stage}
+
+\subsection{La Subdivision Administration Syst\`emes et Bases de Donn\'ees}
+
+Dirig\'ee par Monsieur Ben Mohamed Ahmed (encadreur du stage), cette subdivision
+assure~:
+\begin{itemize}[leftmargin=*]
+  \item La supervision proactive des instances Oracle, PostgreSQL et MySQL~;
+  \item L'analyse des journaux d'erreurs~;
+  \item La gestion des sauvegardes et restaurations (RMAN, pg\_dump)~;
+  \item L'application des correctifs de s\'ecurit\'e.
+\end{itemize}
+
+\subsection{Missions quotidiennes de l'\'equipe DBA}
+
+En production, les serveurs Oracle g\'en\`erent des \emph{alert logs} pouvant
+atteindre plusieurs milliers de lignes par jour, m\'elant \'ev\'enements b\'enins
+et incidents critiques. La lecture de ces fichiers demande une expertise approfondie
+et mobilise un temps consid\'erable.
+
+\subsection{Probl\'ematique identifi\'ee \`a l'origine du stage}
+
+Plusieurs observations concordantes ont confirm\'e que \textbf{l'analyse manuelle
+des fichiers journaux est un goulot d'\'etranglement op\'erationnel}~:
+\begin{itemize}[leftmargin=*]
+  \item Trois moteurs (Oracle, PostgreSQL, MySQL) coexistent avec des formats
+        de logs et des conventions de codes d'erreur radicalement diff\'erents~;
+  \item Un m\^eme code peut appara\^itre des centaines de fois dans un seul fichier~;
+  \item Aucun outil interne n'existait pour automatiser ce processus.
+\end{itemize}
+
+% ============================================================
+% CHAPITRE 2
+% ============================================================
+\chapter{Contexte et \'etude de l'existant}
+
+\section{Probl\'ematique~: la charge de diagnostic manuel des logs}
+
+\subsection{Le processus actuel de lecture et d'analyse des logs}
+
+Le processus actuel des DBA se d\'eroule en \'etapes manuelles~: ouverture du
+fichier via SSH, recherche par \texttt{grep}, consultation de la documentation
+pour interpr\'eter les codes, r\'edaction d'un rapport d'incident. Chaque \'etape
+est chronophage et non automatis\'ee.
+
+\subsection{Volume et complexit\'e des fichiers de logs en production}
+
+Un serveur Oracle en production g\'en\`ere entre 5\,000 et 50\,000 lignes par
+journ\'ee. Dans un environnement multi-instances, le volume total peut d\'epasser
+100\,000 lignes quotidiennes.
+
+\subsection{Impact sur le temps des administrateurs de bases de donn\'ees}
+
+L'analyse des logs absorbe plusieurs heures par semaine et par administrateur ---
+temps soustrait \`a des t\^aches \`a plus haute valeur ajout\'ee.
+
+\subsection{Absence d'un jeu de donn\'ees r\'eel exploitable (contrainte de confidentialit\'e)}
+
+Les fichiers journaux r\'eels de Tunisie Telecom contiennent des informations
+sensibles sur l'architecture interne. La politique de s\'ecurit\'e de la DCSI
+interdit formellement leur utilisation en dehors de l'entreprise. Cette contrainte
+a conduit \`a une d\'ecision fondamentale~: \textbf{la totalit\'e du corpus de
+d\'eveloppement a \'et\'e g\'en\'er\'ee synth\'etiquement}, reproduisant
+fid\`element les formats r\'eels sans utiliser de donn\'ees de production.
+
+\section{Les syst\`emes cibl\'es et les limites de l'analyse manuelle actuelle}
+
+\subsection{Oracle Database --- format des logs et codes d'erreur}
+
+Les journaux Oracle (alert log) suivent un format texte structur\'e, horodat\'e
+ISO~8601. Les codes respectent une convention de pr\'efixage~:
+
+\begin{table}[H]
+  \centering
+  \caption{Principaux pr\'efixes d'erreurs Oracle}
+  \label{tab:prefixes_oracle}
+  \begin{tabularx}{\textwidth}{lX}
+    \toprule
+    \textbf{Pr\'efixe} & \textbf{Sous-syst\`eme} \\
+    \midrule
+    \texttt{ORA-}  & Erreurs g\'en\'erales du noyau Oracle \\
+    \texttt{TNS-}  & Couche r\'eseau Oracle Net \\
+    \texttt{RMAN-} & Recovery Manager \\
+    \texttt{PLS-}  & Moteur PL/SQL \\
+    \texttt{CRS-}  & Oracle Clusterware (RAC) \\
+    \bottomrule
+  \end{tabularx}
+\end{table}
+
+\begin{lstlisting}[language={},caption={Extrait type d'un alert log Oracle},label=lst:alertlog_oracle]
+2026-07-01T08:13:42.312041+01:00
+ORA-01555 encountered when current SCN is 12304568
+ORA-01555: snapshot too old: rollback segment number 4 with name "RBS3"
+\end{lstlisting}
+
+\subsection{PostgreSQL --- format des logs et codes SQLSTATE}
+
+PostgreSQL utilise des codes SQLSTATE \`a cinq caract\`eres (ex.~\texttt{42P01})
+et des niveaux de s\'ev\'erit\'e explicites~: \texttt{ERROR}, \texttt{FATAL},
+\texttt{PANIC}, \texttt{WARNING}.
+
+\begin{lstlisting}[language={},caption={Extrait type d'un log PostgreSQL},label=lst:alertlog_pg]
+2026-07-02 10:14:32.112 CET [12345] ERROR:  relation "users_tmp" does not exist
+2026-07-02 10:14:32.113 CET [12345] STATEMENT: SELECT * FROM users_tmp;
+\end{lstlisting}
+
+\subsection{MySQL --- format structur\'e et codes d'erreur}
+
+Depuis MySQL~8, le journal adopte un format structur\'e avec des balises
+\texttt{[MY-XXXXXX]} et des sous-syst\`emes \texttt{[Server]}, \texttt{[InnoDB]}.
+
+\begin{lstlisting}[language={},caption={Extrait type d'un log MySQL~8},label=lst:alertlog_mysql]
+2026-07-03T14:22:11.567890Z 0 [ERROR] [MY-010065] [Server] Could not create
+  unix socket lock file /var/run/mysqld/mysqld.sock.lock.
+\end{lstlisting}
+
+\subsection{\'Etude comparative des formats et limites de l'analyse manuelle}
+
+\begin{table}[H]
+  \centering
+  \caption{Comparaison des formats de logs des trois moteurs}
+  \label{tab:compare_formats}
+  \begin{tabularx}{\textwidth}{lXXX}
+    \toprule
+    \textbf{Crit\`ere} & \textbf{Oracle} & \textbf{PostgreSQL} & \textbf{MySQL~8+} \\
+    \midrule
+    Format code        & Pr\'efixe-num\'ero & SQLSTATE 5~chars & {[MY-XXXXXX]} \\
+    S\'ev\'erit\'e     & Implicite & Explicite & Explicite \\
+    Horodatage         & ISO~8601 & Configurable & ISO~8601 UTC \\
+    Codes info.        & Fr\'equents & Rares & Fr\'equents \\
+    \bottomrule
+  \end{tabularx}
+\end{table}
+
+\section{Limites des approches classiques}
+
+\subsection{L'analyse manuelle ligne par ligne}
+
+Impraticable au-del\`a de quelques centaines de lignes. Requiert une expertise
+que les membres moins exp\'eriment\'es de l'\'equipe ne poss\`edent pas.
+
+\subsection{Les scripts de recherche par mots-cl\'es (grep, regex simples)}
+
+Utiles pour l'extraction, mais ne fournissent aucune explication ni recommandation.
+Ne distinguent pas les erreurs r\'eelles des messages informationnels.
+
+\subsection{Les outils de log management (ELK, Splunk) et leurs limites}
+
+ELK et Splunk offrent de bonnes capacit\'es de visualisation, mais ne g\'en\`erent
+pas d'explication textuelle du sens d'un code d'erreur ni de recommandation d'action
+corrective. Ils n\'ecessitent \'egalement une infrastructure d\'edi\'ee.
+
+\section{\'Etat de l'art~: Intelligence Artificielle appliqu\'ee \`a l'analyse de logs}
+
+\subsection{D\'etection d'anomalies dans les logs (LogBERT, NeuralLog)}
+
+LogBERT et NeuralLog, \'etudi\'es en d\'etail dans les benchmarks de r\'ef\'erence~\cite{le2022log,zhu2019log},
+repr\'esentent les travaux majeurs d'application des architectures Transformer aux journaux syst\`eme.
+Ces approches sont toutefois orient\'ees \textbf{d\'etection binaire} (s\'equence normale vs.
+anormale) et ne produisent pas d'explication textuelle ni de recommandation d'action --- ce qui les rend
+insuffisantes pour le cas d'usage cible des DBA.
+
+\subsection{Le paradigme RAG (Retrieval-Augmented Generation)}
+
+La G\'en\'eration Augment\'ee par R\'ecup\'eration (RAG), introduite par Lewis et al.~\cite{lewis2020rag},
+associe une \'etape de recherche documentaire \`a une \'etape de g\'en\'eration de
+texte. Elle ancre les r\'eponses sur des documents pr\'ealablement s\'electionn\'es,
+r\'eduisant les hallucinations et am\'eliorant la tra\c cabilit\'e des diagnostics.
+
+\subsection{Les mod\`eles de langage pr\'e-entra\^in\'es et le fine-tuning}
+
+Le fine-tuning d'un mod\`ele comme FLAN-T5~\cite{flanT5} sur un corpus de domaine
+permet d'adapter ses capacit\'es g\'en\'eratives \`a une t\^ache pr\'ecise. Avec
+un corpus d'entra\^inement relativement modeste, on obtient des performances
+satisfaisantes sur une t\^ache de g\'en\'eration de texte structur\'e.
+
+\subsection{Comparatif des architectures~: encodeur-d\'ecodeur vs d\'ecodeur seul}
+
+\begin{itemize}[leftmargin=*]
+  \item \textbf{Encodeur-d\'ecodeur} (T5, BART)~: l'encodeur traite l'entr\'ee
+        et le d\'ecodeur g\'en\`ere la sortie structur\'ee. Adapт\'e aux t\^aches
+        de g\'en\'eration conditionnée~;
+  \item \textbf{D\'ecodeur seul} (GPT, LLaMA)~: tr\`es performants en g\'en\'eration
+        libre, mais plus difficiles \`a contraindre \`a un format de sortie rigide.
+\end{itemize}
+
+\section{Choix strat\'egiques et justification}
+
+\subsection{Pourquoi \'eviter le recours \`a une API LLM payante}
+
+Les API commerciales pr\'esentent des inconv\'enients r\'edhibitoires~: les logs
+ne doivent pas transiter par des serveurs tiers~; le co\^ut est r\'ecurrent~; la
+disponibilit\'e d\'epend d'une infrastructure externe.
+
+\subsection{Le choix d'un mod\`ele entra\^in\'e localement}
+
+FLAN-T5 base (250M param\`etres) est suffisamment compact pour fonctionner sur CPU
+cloud sans GPU, compatible avec les contraintes de d\'eploiement de Railway.
+
+\subsection{Le choix de l'architecture RAG plut\^ot qu'un mod\`ele purement g\'en\'eratif}
+
+Sans RAG, le mod\`ele risque de produire des explications plausibles mais incorrectes
+pour des codes rares. Avec RAG, si le code est absent de la base, le syst\`eme le
+signale explicitement plut\^ot que d'inventer.
+
+\subsection{Synth\`ese des choix techniques retenus}
+
+\begin{table}[H]
+  \centering
+  \caption{Synth\`ese des choix techniques retenus}
+  \label{tab:choix_techniques}
+  \begin{tabularx}{\textwidth}{lX}
+    \toprule
+    \textbf{Composant} & \textbf{Technologie retenue et justification} \\
+    \midrule
+    G\'en\'eration   & FLAN-T5 base fine-tun\'e~: l\'eger, encodeur-d\'ecodeur, Apache~2.0 \\
+    R\'ecup\'eration & BM25~: sans mod\`ele externe, adapt\'e aux textes courts et techniques \\
+    Classification   & TF-IDF + R\'egression Logistique~: interpr\'etable, rapide \\
+    Backend web      & FastAPI~: performant, typage fort, documentation automatique \\
+    D\'eploiement    & Docker + Railway + Hugging Face Hub \\
+    \bottomrule
+  \end{tabularx}
+\end{table}
+
+% ============================================================
+% CHAPITRE 3
+% ============================================================
+\chapter{Conception de la solution}
+
+\section{Architecture g\'en\'erale du pipeline}
+
+\subsection{Vue d'ensemble}
+
+La solution est un pipeline de traitement s\'equentiel \`a six \'etapes~:
+\textbf{d\'etection du moteur} \textrightarrow{} \textbf{extraction et d\'eduplication}
+\textrightarrow{} \textbf{classification} \textrightarrow{} \textbf{r\'ecup\'eration}
+\textrightarrow{} \textbf{g\'en\'eration} \textrightarrow{} \textbf{rapport}.
+Chaque \'etape est d\'ecouple\'ee et testable ind\'ependamment.
+
+\subsection{Sch\'ema d'architecture d\'etaill\'e}
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[node distance=0.55cm and 2.2cm]
+  \node[blockW] (log)     {\textbf{Fichier journal}\\{\small Oracle / PG / MySQL}};
+  \node[blockW, below=of log]    (detect)  {\textbf{D\'etection moteur}\\{\small engine\_detection.py}};
+  \node[blockW, below=of detect] (parser)  {\textbf{Parseur multi-moteurs}\\{\small Oracle, PG, MySQL}};
+  \node[blockW, below=of parser] (dedup)   {\textbf{D\'eduplication}\\{\small codes uniques + comptages}};
+  \node[blockW, below=of dedup]  (classif) {\textbf{Classifieur}\\{\small TF-IDF + LR}};
+  \node[store, right=2.4cm of parser]  (kb) {\textbf{Base de}\\{\textbf{connaissances}}\\{\small 27\,622 entr\'ees}};
+  \node[blockW, below=1.6cm of kb] (ret) {\textbf{R\'ecup\'erateur BM25}\\{\small exact (score=999)\\ puis lexical}};
+  \node[blockW, below=of ret]    (gen)      {\textbf{G\'en\'eration FLAN-T5}\\{\small fine-tun\'e multi-moteurs}};
+  \node[blockW, below=of gen]    (report)   {\textbf{Rapport}\\{\small JSON + Markdown + Web}};
+  \draw[arrow] (log) -- (detect);
+  \draw[arrow] (detect) -- (parser);
+  \draw[arrow] (parser) -- (dedup);
+  \draw[arrow] (dedup) -- (classif);
+  \draw[arrow] (classif.east) -| (ret.west);
+  \draw[arrow] (kb) -- (ret);
+  \draw[arrow] (ret) -- (gen);
+  \draw[arrow] (gen) -- (report);
+\end{tikzpicture}
+\caption{Architecture d\'etaill\'ee du pipeline RAG multi-moteurs}
+\label{fig:pipeline-global}
+\end{figure}
+
+\subsection{Flux de donn\'ees entre les composants}
+
+Le flux suit un chemin lin\'eaire~: le fichier est soumis au d\'etecteur de moteur,
+puis au parseur appropri\'e, qui extrait les codes avec leur contexte. Apr\`es
+d\'eduplication, chaque code unique est soumis au classifieur, puis au r\'ecup\'erateur
+qui interroge la base de connaissances, et enfin au g\'en\'erateur qui produit
+l'explication structur\'ee.
+
+\section{Conception de la base de connaissances}
+
+\subsection{Structure et sch\'ema des entr\'ees}
+
+\begin{lstlisting}[language={},caption={Sch\'ema d'une entr\'ee de la base de connaissances},label=lst:kb_schema]
+{
+  "code":     "ORA-01555",
+  "message":  "snapshot too old",
+  "category": "Transaction",
+  "cause":    "Segment de rollback recycle avant fin de lecture longue.",
+  "solution": "Augmenter UNDO_RETENTION ou la taille des segments UNDO.",
+  "keywords": ["snapshot", "rollback", "undo", "scn"],
+  "severity": "high",
+  "engine":   "oracle"
+}
+\end{lstlisting}
+
+\subsection{Strat\'egie de construction pour Oracle (documentation officielle)}
+
+Construction en deux phases~: 58 entr\'ees manuelles (codes les plus fr\'equents),
+puis 27\,224 entr\'ees suppl\'ementaires par web scraping de la documentation
+Oracle~\cite{oracledoc} via BeautifulSoup~\cite{bs4}.
+
+\subsection{Strat\'egie de construction pour PostgreSQL (fichier source SQLSTATE)}
+
+Le fichier \texttt{errcodes.txt} du code source officiel PostgreSQL a \'et\'e
+pars\'e~: 261 codes SQLSTATE standards avec leur libel\'e officiel.
+
+\subsection{Strat\'egie de construction pour MySQL (codes cur\'es manuellement)}
+
+79 codes MySQL les plus fr\'equents, saisis manuellement depuis la documentation
+officielle MySQL~8. La faible couverture est une limite reconnue du projet.
+
+\subsection{Fusion en une base de connaissances multi-moteurs unifi\'ee}
+
+Les trois bases ont \'et\'e fusionn\'ees en un fichier JSONL unique
+(\texttt{combined\_errors\_kb.jsonl}). Le champ \texttt{engine} permet le filtrage
+par moteur pour \'eviter la contamination inter-moteurs. Total~: \textbf{27\,622 entr\'ees}
+(9,78~Mo).
+
+\section{Strat\'egie de g\'en\'eration de donn\'ees synth\'etiques}
+
+\subsection{Justification~: absence de logs r\'eels exploitables}
+
+La totalit\'e du corpus d'entra\^inement est synth\'etique (cf.\ section~2.1.4).
+
+\subsection{G\'en\'eration de logs synth\'etiques r\'ealistes par moteur}
+
+Le script \texttt{generate\_finetune\_logs\_v2.py} produit des fichiers journaux
+reproduisant fid\`element la structure des vrais logs~: horodatages ISO~8601,
+lignes de bruit intercal\'ees (archivage, checkpoint), injection al\'eatoire de
+codes d'erreur.
+
+\subsection{Diversit\'e des occurrences et gestion des valeurs de substitution}
+
+Les placeholders (\texttt{\%s}, \texttt{string}) sont r\'esolus avant g\'en\'eration
+en injectant des valeurs r\'ealistes (noms de tablespace, num\'eros de segment, etc.)
+pour produire des messages d'erreur plausibles.
+
+\section{Conception du module de r\'ecup\'eration}
+
+\subsection{Choix de BM25 plut\^ot que les embeddings denses}
+
+BM25~\cite{bm25orig} a \'et\'e retenu car~: (1)~sans mod\`ele externe, fonctionnement
+hors ligne~; (2)~les textes Oracle/PG/MySQL sont courts et riches en termes techniques
+o\`u le lexical est tr\`es efficace~; (3)~latence de l'ordre de quelques dizaines
+de millisecondes sur 27\,000 entr\'ees.
+
+\subsection{Recherche par correspondance exacte de code}
+
+Avant toute recherche lexicale, une correspondance exacte sur le code normalis\'e
+est tent\'ee. Si trouv\'ee, l'entr\'ee est retourn\'ee avec un score sentinelle de~999.
+Cette correspondance court-circuite le mod\`ele T5.
+
+\subsection{Filtrage par moteur pour \'eviter la contamination inter-moteurs}
+
+Les r\'esultats BM25 sont filtr\'es pour ne retenir que les entr\'ees du moteur
+d\'etect\'e (oracle, postgres, mysql), \'evitant des correspondances s\'emantiquement
+incorrectes.
+
+\subsection{Gestion des codes non identifi\'es (pseudo-codes)}
+
+Les messages sans code normalis\'e (ex.~\texttt{ERROR: could not connect}) re\c coivent
+un pseudo-code (\texttt{PG-ERROR-xxx}). La correspondance exacte est d\'esactiv\'ee
+pour ces pseudo-codes.
+
+\section{Conception du module de classification}
+
+\subsection{Probl\'ematique~: distinguer erreur r\'eelle et message informationnel}
+
+Certains codes (ex.~ORA-16111) sont de simples messages d'\'etat. Les envoyer au
+g\'en\'erateur serait un gaspillage de ressources et induirait les op\'erateurs en erreur.
+
+\subsection{Choix d'un mod\`ele simple~: TF-IDF + r\'egression logistique}
+
+Le classifieur combine deux matrices TF-IDF (unigrammes/bigrammes de mots et
+n-grammes de caract\`eres) concat\'en\'ees avant une r\'egression logistique avec
+pond\'eration de classes.
+
+\subsection{Strat\'egie d'\'etiquetage automatique \`a partir de la base de connaissances}
+
+Les entr\'ees KB mentionnant explicitement leur caract\`ere informatif sont
+\'etiquet\'ees \texttt{INFORMATIONAL}. Cette heuristique a identifi\'e 878 codes
+Oracle informationnels sur 27\,282.
+
+\section{Choix et justification du mod\`ele g\'en\'eratif}
+
+\subsection{Pourquoi FLAN-T5 plut\^ot qu'un mod\`ele d\'ecodeur seul}
+
+FLAN-T5~\cite{flanT5} est naturellement contraint \`a condenser l'information de
+l'entr\'ee plut\^ot qu'\`a la prolonger librement, ce qui limite les hallucinations.
+
+\subsection{Le principe de l'ancrage (\emph{grounding})}
+
+Le prompt envoy\'e au mod\`ele T5 contient syst\'ematiquement les entr\'ees KB
+r\'ecup\'er\'ees pour le code analys\'e, garantissant que les explications sont
+ancr\'ees sur des donn\'ees v\'erifi\'ees.
+
+\subsection{Conception du format d'entra\^inement}
+
+\begin{lstlisting}[language={},caption={Format d'entr\'ee du mod\`ele T5},label=lst:t5_format]
+Analyze this Oracle Database error log entry and explain the error.
+
+ORA-01555: snapshot too old: rollback segment number 4 with name "RBS3"
+
+RETRIEVED KNOWLEDGE:
+- [ORA-01555] snapshot too old
+  cause: Segment de rollback recycle avant fin de lecture longue.
+  solution: Augmenter UNDO_RETENTION ou la taille des segments UNDO.
+  (score: 999.0)
+\end{lstlisting}
+
+% ============================================================
+% CHAPITRE 4
+% ============================================================
+\chapter{R\'ealisation et impl\'ementation}
+
+\section{Extraction et analyse des logs (parseurs)}
+
+\subsection{Impl\'ementation du parseur Oracle}
+
+Le parseur Oracle lit le fichier journal ligne par ligne et applique des expressions
+r\'eguli\`eres couvrant \textbf{81 pr\'efixes} reconnus (\'etendu de 13 \`a 81
+apr\`es tests). Pour chaque occurrence, il conserve le code normalis\'e, le num\'ero
+de ligne, l'horodatage et une fen\^etre de contexte configurable.
+
+\subsection{Impl\'ementation du parseur PostgreSQL}
+
+G\`ere plusieurs formats (texte avec ou sans CSV) et extrait les niveaux de
+s\'ev\'erit\'e. Les messages sans SQLSTATE re\c coivent un pseudo-code
+(\texttt{PG-FATAL}, \texttt{PG-ERROR}).
+
+\subsection{Impl\'ementation du parseur MySQL et gestion des formats h\'erit\'es}
+
+G\`ere le format structur\'e MySQL~8 (balises \texttt{[MY-XXXXXX]}) et le format
+textuel h\'erit\'e des versions ant\'erieures. La d\'etection du format est automatique.
+
+\subsection{Normalisation des codes d'erreur}
+
+La fonction \texttt{normalize\_code()} harmonise les variantes syntaxiques~:
+\texttt{ORA-1652} et \texttt{ORA-01652} d\'esignent la m\^eme erreur (z\'ero-padding
+sur 5 chiffres pour Oracle).
+
+\section{D\'etection automatique du moteur de base de donn\'ees}
+
+\subsection{Approche par heuristiques et vote pond\'er\'e}
+
+Le module \texttt{src/engine\_detection.py} applique un syst\`eme de vote
+pond\'er\'e~: pr\'esence de \texttt{ORA-}/\texttt{TNS-} (Oracle), de niveaux
+\texttt{FATAL}/\texttt{PANIC} et codes SQLSTATE (PostgreSQL), de balises
+\texttt{[MY-XXXXXX]}/\texttt{[InnoDB]} (MySQL).
+
+\subsection{Calcul d'un score de confiance}
+
+Un score normalis\'e entre 0 et 1 est calcul\'e pour chaque moteur. Le moteur avec
+le score le plus \'elev\'e est s\'electionn\'e. Ce score est inclus dans le rapport final.
+
+\subsection{Gestion des cas ambigus et des logs \`a faible signal}
+
+Si le score maximum est inf\'erieur \`a 0,1, un avertissement est \'emis dans le
+rapport et le syst\`eme se replie sur Oracle par d\'efaut.
+
+\section{Construction et enrichissement de la base de connaissances}
+
+\subsection{Extraction automatis\'ee depuis la documentation Oracle}
+
+Le script \texttt{build\_knowledge\_base.py} extrait les codes Oracle via
+BeautifulSoup~\cite{bs4}~: code normalis\'e, message court, cause, actions recommand\'ees.
+Production~: 27\,224 nouvelles entr\'ees venant compl\'eter les 58 initiales.
+
+\subsection{Extraction depuis le fichier source officiel PostgreSQL}
+
+Parsing du fichier \texttt{errcodes.txt}~: 261 codes SQLSTATE standards.
+
+\subsection{Curation manuelle des codes MySQL les plus fr\'equents}
+
+79 codes MySQL saisis manuellement depuis la documentation officielle MySQL~8.
+
+\subsection{Statistiques finales de couverture de la base de connaissances}
+
+\begin{table}[H]
+  \centering
+  \caption{Statistiques de la base de connaissances unifi\'ee}
+  \label{tab:kb_stats}
+  \begin{tabular}{lrrr}
+    \toprule
+    \textbf{Moteur} & \textbf{Entr\'ees} & \textbf{Taille (Mo)} & \textbf{M\'ethode} \\
+    \midrule
+    Oracle      & 27\,282 & 9,12 & Web scraping + manuel \\
+    PostgreSQL  & 261     & 0,11 & Fichier source officiel \\
+    MySQL       & 79      & 0,04 & Curation manuelle \\
+    \midrule
+    \textbf{Total} & \textbf{27\,622} & \textbf{9,78} & --- \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+\section{D\'eveloppement du classifieur}
+
+\subsection{G\'en\'eration du jeu de donn\'ees d'entra\^inement \'etiquet\'e}
+
+Chaque occurrence est \'etiquet\'ee \texttt{REAL\_ERROR} ou \texttt{INFORMATIONAL}
+depuis la KB. Le d\'es\'equilibre initial (2,9\,\% d'informationnels) est corrig\'e
+par surrepr\'esentation lors de la g\'en\'eration, portant la proportion \`a 17,5\,\%.
+
+\subsection{Entra\^inement et comparaison de mod\`eles}
+
+R\'egression logistique (TF-IDF) et SVM lin\'eaire compar\'es~; la r\'egression
+logistique est retenue pour ses probabilit\'es calibr\'ees.
+
+\subsection{Calibrage du seuil de d\'ecision}
+
+Seuil calibr\'e pour un rappel de~0,90 sur la classe informationnelle.
+
+\subsection{R\'esultats et limites du classifieur}
+
+\begin{table}[H]
+  \centering
+  \caption{Performances du classifieur sur le jeu de test}
+  \label{tab:classif_perf}
+  \begin{tabular}{lccc}
+    \toprule
+    \textbf{Classe} & \textbf{Pr\'ecision} & \textbf{Rappel} & \textbf{F1} \\
+    \midrule
+    Informationnelle & 0,863 & 0,901 & \textbf{0,882} \\
+    Erreur r\'eelle  & 0,994 & 0,974 & 0,984 \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+\section{Fine-tuning du mod\`ele FLAN-T5}
+
+\subsection{G\'en\'eration du corpus de fine-tuning multi-moteurs}
+
+Pour chaque occurrence dans les logs synth\'etiques, un exemple d'entra\^inement
+est construit~: le prompt contient l'instruction sp\'ecifique au moteur, le contexte
+du log et les entr\'ees KB r\'ecup\'er\'ees~; la cible est la sortie structur\'ee
+\`a quatre champs.
+
+\subsection{S\'eparation train / validation / test par code}
+
+La s\'eparation s'effectue \textbf{strictement par code d'erreur} et non par ligne de log.
+Cela garantit que le jeu de test contient exclusivement des codes totalement absents du
+jeu d'entra\^inement, permettant d'\'evaluer sans biais la capacit\'e de g\'en\'eralisation
+du mod\`ele \`a des anomalies inconnues.
+
+Le corpus v2 multi-moteurs int\`egre les trois moteurs de bases de donn\'ees. Le
+tableau~\ref{tab:splits} pr\'esente la r\'epartition exacte par moteur~:
+
+\begin{table}[H]
+  \centering
+  \caption{R\'epartition d\'etaill\'ee du corpus de fine-tuning multi-moteurs (v2)}
+  \label{tab:splits}
+  \begin{tabularx}{\textwidth}{lrrrr}
+    \toprule
+    \textbf{Sous-ensemble} & \textbf{Oracle} & \textbf{PostgreSQL} & \textbf{MySQL} & \textbf{Total (Codes uniques)} \\
+    \midrule
+    Entra\^inement (train)      & 85\,383 & 840 & 200 & \textbf{86\,423} (23\,500) \\
+    Validation (val)            & 10\,005 &  78 &  42 & \textbf{10\,125} (\phantom{0}2\,771) \\
+    Test (codes non vus)        &  4\,896 &  72 &  24 &  \textbf{4\,992} (\phantom{0}1\,348) \\
+    \midrule
+    \textbf{Total g\'en\'eral}  & \textbf{100\,284} & \textbf{990} & \textbf{266} & \textbf{101\,540} (27\,619) \\
+    \bottomrule
+  \end{tabularx}
+\end{table}
+
+Comme le met en \'evidence le tableau~\ref{tab:splits}, la proportion d'exemples Oracle
+repr\'esente 98,7\,\% du corpus total, refl\'etant la disparit\'e de taille des bases de
+connaissances sources. Cette asym\'etrie assum\'ee constitue l'une des limites analys\'ees
+en section~\ref{sec:limites}.
+
+\subsection{Environnement et hyperparam\`etres d'entra\^inement}
+
+\begin{itemize}[leftmargin=*]
+  \item Mod\`ele de base~: \texttt{google/flan-t5-base} (250M param\`etres)~;
+  \item Mode~: \emph{full fine-tuning} (sans LoRA), sur Kaggle (GPU Tesla T4, 16~Go)~;
+  \item \'Epoques~: 4~; Batch size~: 16~; Max tokens entr\'ee~: 512, sortie~: 200~;
+  \item Optimiseur~: AdamW avec warmup de 500 pas~;
+  \item Dur\'ee totale~: environ 6h30.
+\end{itemize}
+
+\subsection{Int\'egration de l'ancrage par connaissances r\'ecup\'er\'ees}
+
+Chaque exemple inclut syst\'ematiquement les entr\'ees KB r\'ecup\'er\'ees (jusqu'\`a
+3). Cela force le mod\`ele \`a apprendre \`a utiliser les connaissances fournies.
+
+\subsection{D\'etection et correction d'un bug de mesure critique}
+
+L'indicateur d'adh\'erence au format \'etait bloqu\'e \`a z\'ero sur toutes les
+\'epoques. Le bug identifi\'e~: les tokeniseurs T5 suppriment les sauts de ligne \`a
+l'encodage, rendant le parseur de r\'eponse initial inop\'erant. Correction~:
+remplacement du d\'ecoupage ligne par ligne par une regex avec \emph{lookahead}.
+Apr\`es correction~: adh\'erence \textbf{> 90\,\%} sur le jeu de validation.
+
+\subsection{Calibrage du niveau de confiance dans les sorties}
+
+Seules les correspondances exactes re\c coivent \texttt{CONFIDENCE: high}. Les
+correspondances BM25 re\c coivent \texttt{medium} ou \texttt{low} selon le score.
+
+\section{Int\'egration du mod\`ele dans le pipeline applicatif}
+
+\subsection{Chargement et mise en cache du mod\`ele}
+
+Le mod\`ele est h\'eberg\'e sur Hugging Face Hub
+(\texttt{rayenthabet004/tt-multi-engine-t5}). Les poids sont pr\'e-t\'el\'echarg\'es
+\`a la construction de l'image Docker (\texttt{ENV HF\_HOME=/app/hf\_cache}).
+Un dictionnaire \texttt{\_T5\_MODEL\_CACHE} garantit un chargement unique par instance.
+
+\subsection{Court-circuit d\'eterministe pour les correspondances exactes}
+
+Pour les codes pr\'esents dans la base (score~= 999), la g\'en\'eration T5 est
+court-circuit\'ee. L'explication est construite directement depuis la KB.
+
+\subsection{Garde-fous post-g\'en\'eration}
+
+(1)~Filtre de r\'ep\'etition~: d\'etecte et supprime les n-grammes r\'ep\'et\'es.
+(2)~Filtre de coh\'erence~: d\'etecte les codes erron\'es cit\'es dans la r\'eponse
+(hallucination) et les remplace par des formulations neutres.
+
+\section{D\'eveloppement de l'application web}
+
+\subsection{Architecture backend (FastAPI)}
+
+Principaux endpoints~:
+\begin{itemize}[leftmargin=*]
+  \item \texttt{POST /api/analyze}~: analyse d'un log en JSON~;
+  \item \texttt{POST /api/analyze/upload}~: analyse d'un fichier upload\'e~;
+  \item \texttt{POST /api/chat}~: chatbot DBA interactif~;
+  \item \texttt{GET /api/health}~: \'etat du service.
+\end{itemize}
+
+Optimisation critique~: la base de connaissances et l'index BM25 sont
+\textbf{construits une seule fois au d\'emarrage} et r\'eutilis\'es via des
+singletons (\texttt{\_KB}, \texttt{\_RETRIEVER}). Sans cette optimisation, chaque
+requ\^ete ajoutait 2 \`a 4~secondes de latence.
+
+\subsection{Conception de l'interface utilisateur}
+
+Interface HTML/CSS/JS vanilla aux couleurs Tunisie Telecom (bleu nuit, cyan).
+Fonctionnalit\'es~: tableau de bord KPIs, mode clair/sombre, filtres par moteur
+et s\'ev\'erit\'e, export Markdown et JSON.
+
+\subsection{Fonctionnalit\'e de chat interactif sur les rapports g\'en\'er\'es}
+
+Assistant conversationnel int\'egr\'e h\'eritant automatiquement du contexte du
+dernier rapport. Guardrails stricts rejetant les questions hors du domaine DBA.
+
+\section{D\'eploiement}
+
+\subsection{Conteneurisation avec Docker}
+
+\begin{lstlisting}[language={},caption={Extrait du Dockerfile --- pr\'e-t\'el\'echargement du mod\`ele},label=lst:dockerfile]
+ENV HF_HOME=/app/hf_cache
+RUN python -c "from transformers import AutoTokenizer, AutoModelForSeq2SeqLM; \
+    AutoTokenizer.from_pretrained('rayenthabet004/tt-multi-engine-t5'); \
+    AutoModelForSeq2SeqLM.from_pretrained('rayenthabet004/tt-multi-engine-t5', \
+    low_cpu_mem_usage=True)"
+ENV HF_HUB_OFFLINE=1
+\end{lstlisting}
+
+\subsection{H\'ebergement des poids du mod\`ele (Hugging Face Hub)}
+
+Les poids (\textasciitilde{}950~Mo) sont h\'eberg\'es sous l'identifiant
+\texttt{rayenthabet004/tt-multi-engine-t5}, int\'egr\'es automatiquement au build
+Docker sans alourdir le d\'ep\^ot Git.
+
+\subsection{D\'eploiement sur Railway}
+
+Railway d\'etecte automatiquement le Dockerfile et d\'eploie \`a chaque push sur
+\texttt{main}. URL de production~:
+\url{https://projet-tt-production.up.railway.app}
+
+\subsection{Probl\`emes rencontr\'es et r\'esolutions}
+
+Trois probl\`emes de d\'eploiement ont \'et\'e identifi\'es et r\'esolus~:
+
+\begin{enumerate}[leftmargin=*]
+  \item \textbf{Chargement infini (bug reload=True)}~: le file watcher Uvicorn
+        d\'etectait les fichiers de cache HF comme des modifications et red\'emarrait
+        le serveur en cours de requ\^ete. \textit{Solution}~: \texttt{reload}
+        conditionnel \`a \texttt{ENV=development}~;
+
+  \item \textbf{Reconstruction KB par requ\^ete}~: la base et l'index BM25 \'etaient
+        reconstruits \`a chaque appel HTTP (+2 \`a 4~s de latence).
+        \textit{Solution}~: mise en cache en singleton au d\'emarrage~;
+
+  \item \textbf{OOM caus\'e par torch.compile()}~: TorchInductor ajoutait 300--500~Mo
+        de cache noyaux compil\'es en plus du mod\`ele T5 (1,1~Go), provoquant un
+        arr\^et par manque de m\'emoire.
+        \textit{Solution}~: abandon de \texttt{torch.compile()}.
+\end{enumerate}
+
+% ============================================================
+% CHAPITRE 5
+% ============================================================
+\chapter{Tests, r\'esultats et \'evaluation}
+
+\section{M\'ethodologie de test}
+
+\subsection{Tests unitaires et d'int\'egration}
+
+La suite comprend \textbf{55~tests} r\'epartis en cinq fichiers~:
+
+\begin{table}[H]
+  \centering
+  \caption{R\'epartition des tests automatis\'es}
+  \label{tab:tests}
+  \begin{tabular}{lr}
+    \toprule
+    \textbf{Fichier de test} & \textbf{Tests} \\
+    \midrule
+    \texttt{test\_engine\_and\_parsers.py} & 29 \\
+    \texttt{test\_log\_parser.py}          & 7 \\
+    \texttt{test\_multi\_engine\_e2e.py}   & 8 \\
+    \texttt{test\_pipeline.py}             & 5 \\
+    \texttt{test\_retriever.py}            & 6 \\
+    \midrule
+    \textbf{Total}                         & \textbf{55} \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+Tous les tests sont ex\'ecutables sans connexion internet ni cl\'e d'API.
+
+\subsection{G\'en\'eration de logs de test synth\'etiques cibl\'es}
+
+Trois fichiers \emph{challenging} ont \'et\'e cr\'e\'es manuellement~:
+\texttt{oracle\_challenging.log}, \texttt{postgresql\_challenging.log} et
+\texttt{mysql\_challenging.log}. Ils contiennent des codes rares, des codes
+informationnels et des combinaisons susceptibles de tester les cas limites.
+
+\subsection{Tests sur des sc\'enarios r\'ealistes et volontairement complexes}
+
+Ces fichiers sont utilis\'es pour des tests de non-r\'egression \`a chaque
+modification significative du pipeline.
+
+\section{R\'esultats quantitatifs}
+
+\subsection{Pr\'ecision et rappel du classifieur}
+
+F1 de 0,882 sur la classe informationnelle (satisfaisant compte tenu du
+d\'es\'equilibre initial). F1 de 0,984 sur la classe erreur r\'eelle.
+
+\subsection{Adh\'erence au format de sortie structur\'e}
+
+L'\'evaluation de l'adh\'erence syntaxique (pr\'esence des quatre champs \texttt{MEANING},
+\texttt{LIKELY\_CAUSE}, \texttt{SUGGESTED\_SOLUTION}, \texttt{CONFIDENCE} correctement
+d\'elimit\'es) d\'emontre une excellente robustesse du mod\`ele T5 apr\`es fine-tuning~:
+le taux d'adh\'erence global atteint \textbf{98,9\,\%} sur l'ensemble du jeu de test
+(97,0\,\% pour Oracle, 100\,\% pour PostgreSQL et 100\,\% pour MySQL).
+
+\subsection{Scores BLEU-4 par moteur et analyse de la profondeur des connaissances}
+
+L'\'evaluation quantitative de la qualit\'e des diagnostics g\'en\'er\'es a \'et\'e mesur\'ee
+\`a l'aide du score \textbf{BLEU-4} calcul\'e par rapport aux explications de r\'ef\'erence
+sur des codes d'erreur strictement non vus lors de l'entra\^inement. Le tableau~\ref{tab:bleu}
+pr\'esente les r\'esultats obtenus par moteur~:
+
+\begin{table}[H]
+  \centering
+  \caption{M\'etriques d'\'evaluation quantitative par moteur (jeu de test, codes non vus)}
+  \label{tab:bleu}
+  \begin{tabularx}{\textwidth}{lrrr}
+    \toprule
+    \textbf{Moteur} & \textbf{BLEU-4} & \textbf{Adh\'erence format (\%)} & \textbf{Taille KB (entr\'ees)} \\
+    \midrule
+    Oracle          & \textbf{0,210}  & 97,0\,\%                         & 27\,282 (compl\`ete) \\
+    MySQL           & 0,170           & 100,0\,\%                        & 79 (cur\'ee manuellement) \\
+    PostgreSQL      & 0,080           & 100,0\,\%                        & 261 (38 cur\'ees, 223 g\'en\'eriques) \\
+    \midrule
+    \textbf{Moyenne globale} & \textbf{0,180} & \textbf{98,9\,\%}       & \textbf{27\,622} \\
+    \bottomrule
+  \end{tabularx}
+\end{table}
+
+\subsection{Analyse critique des r\'esultats BLEU-4 et limites des m\'etriques n-grammes}
+
+L'analyse du tableau~\ref{tab:bleu} r\'ev\`ele un enseignement technique fondamental~:
+\textbf{PostgreSQL obtient le score BLEU-4 le plus faible (0,080), malgr\'e une adh\'erence
+parfaite au format (100\,\%)}. Une investigation approfondie de la base de connaissances
+en explique l'origine~:
+\begin{itemize}[leftmargin=*]
+  \item Sur les 261 entr\'ees PostgreSQL, seules 38 entr\'ees disposent d'une description
+        technique riche r\'edig\'ee manuellement~; les 223 autres sont issues directement
+        du libell\'e laconique du fichier \texttt{errcodes.txt} (\og{}\emph{generic template}\fg{}).
+  \item Lorsque le r\'ecup\'erateur BM25 injecte un contexte pauvre, le mod\`ele T5
+        g\'en\`ere des recommandations diagnostiques g\'en\'eralistes valides, mais dont le
+        vocabulaire diff\`ere de la cible de test, p\'enalisant lourdement le score BLEU-4.
+  \item \`A l'inverse, MySQL (0,170) b\'en\'eficie de 79 codes int\'egralement cur\'es avec
+        des causes et solutions tr\`es pr\'ecises, permettant un meilleur alignement lexical.
+\end{itemize}
+
+\section{D\'emarche it\'erative de correction}
+
+\subsection{D\'etection et correction des biais de r\'ecup\'eration inter-moteurs}
+
+BM25 sans filtrage renvoyait des entr\'ees Oracle pour des logs PostgreSQL
+(mots communs \og{}archive\fg{}, \og{}log\fg{}). Correction~: filtrage strict
+par moteur dans \texttt{retrieve()}.
+
+\subsection{D\'etection et correction des erreurs de formatage temporel (MySQL)}
+
+Le parseur MySQL produisait des horodatages incorrects pour les logs h\'erit\'es.
+Correction~: ajout d'un second pattern regex pour les deux formats de timestamp.
+
+\subsection{D\'etection et correction du regroupement incorrect des pseudo-codes}
+
+Les pseudo-codes \texttt{PG-ERROR} \'etaient regroup\'es sous une m\^eme cl\'e,
+perdant le contexte sp\'ecifique. Correction~: cl\'e composite (code + message).
+
+\subsection{D\'etection et correction de la fuite de valeurs de substitution}
+
+Des placeholders non r\'esolus (\texttt{\%s}) dans les donn\'ees d'entra\^inement
+\'etaient reproduits dans les sorties T5. Correction~: r\'esolution \`a la
+g\'en\'eration des donn\'ees + post-traitement de nettoyage.
+
+\subsection{Synth\`ese des anomalies identifi\'ees et corrig\'ees}
+
+L'Annexe~C pr\'esente le d\'etail chronologique complet de toutes les corrections.
+
+\section{Analyse qualitative des rapports g\'en\'er\'es}
+\label{sec:qualitatif}
+
+\subsection{Cas de succ\`es~: correspondances exactes}
+
+Pour les codes bien couverts (ORA-01555, ORA-00060, ORA-00257), les explications
+sont pr\'ecises, structur\'ees et directement actionnables~:
+
+\begin{lstlisting}[language={},caption={Extrait de rapport pour ORA-01555},label=lst:report_example]
+MEANING: snapshot too old: rollback segment number 4 with name "RBS3"
+LIKELY_CAUSE: Transaction longue lisant un snapshot avant recyclage du segment.
+SUGGESTED_SOLUTION: Augmenter UNDO_RETENTION, agrandir les tablespaces UNDO.
+CONFIDENCE: high
+Source: kb_exact_match | KB refs: ORA-01555
+\end{lstlisting}
+
+\subsection{Cas d'\'echec r\'esiduels et leur analyse}
+
+Pour les codes absents de la KB, le syst\`eme adopte un comportement conservateur~:
+correspondance BM25 la plus proche signal\'ee comme \og{}suggestion non confirm\'ee\fg{},
+confiance abaiss\'ee \`a \texttt{low}. Ce comportement est pr\'ef\'erable \`a une
+explication invent\'ee.
+
+\subsection{Benchmark d'hallucination et comportement face \`a des codes inconnus}
+
+Un benchmark quantitatif d'abstention a \'et\'e conduit sur un \'echantillon de
+\textbf{20 codes d'erreur in\'edits et synth\'etiquement perturb\'es} inject\'es dans le pipeline~:
+\begin{itemize}[leftmargin=*]
+  \item \textbf{0 / 20 hallucination av\'er\'ee}~: aucune fabrication de faux num\'ero d'erreur
+        interne ni d'affirmation p\'eremptoire infond\'ee n'a \'et\'e observ\'ee~;
+  \item \textbf{17 / 20 r\'eponses prudentes calibr\'ees (\emph{hedged})}~: le mod\`ele a
+        g\'en\'er\'e un diagnostic g\'en\'erique assorti d'un niveau de confiance r\'eduit
+        (\texttt{CONFIDENCE: low} ou \texttt{medium}) et du label de source
+        \texttt{t5\_local\_no\_kb\_match}~;
+  \item \textbf{3 / 20 replis conservateurs standards}~: recommandations d'inspection
+        g\'en\'erale des traces syst\`eme sans sp\'eculation.
+\end{itemize}
+
+\section{Limites identifi\'ees et discussion honn\^ete}
+\label{sec:limites}
+
+\subsection{D\'es\'equilibre de couverture et profondeur des bases de connaissances}
+
+Oracle dispose de 27\,282 entr\'ees exhaustives, MySQL de 79 entr\'ees cur\'ees, et
+PostgreSQL de 261 entr\'ees (dont seulement 38 r\'eellement enrichies). Comme
+d\'emontr\'e en section~5.2.3, cette disparit\'e de profondeur documentaire explique
+directement le faible score BLEU-4 de PostgreSQL (0,080) par rapport \`a Oracle (0,210)
+et MySQL (0,170). L'enrichissement manuel des 223 codes SQLSTATE g\'en\'eriques de
+PostgreSQL constitue la priorit\'e imm\'ediate.
+
+\subsection{D\'ependance \`a des donn\'ees d'entra\^inement synth\'etiques}
+
+Les logs de production pr\'esentent probablement des caract\'eristiques non captur\'ees
+dans le corpus synth\'etique (codes tr\`es rares, formulations atypiques).
+
+\subsection{Absence de validation sur des logs de production r\'eels}
+
+La validation sur des logs r\'eels est la seule mani\`ere de confirmer l'utilit\'e
+op\'erationnelle r\'eelle du syst\`eme. Non r\'ealisable dans le cadre de ce stage
+pour des raisons de confidentialit\'e.
+
+\subsection{Risques r\'esiduels de g\'en\'eration incorrecte}
+
+Pour les correspondances BM25 uniquement, le mod\`ele T5 peut g\'en\'erer des
+explications plausibles mais incorrectes. Le m\'ecanisme de confiance att\'enue ce
+risque mais ne l'\'elimine pas.
+
+% ============================================================
+% CONCLUSION
+% ============================================================
+\chapter*{Conclusion g\'en\'erale et perspectives}
+\addcontentsline{toc}{chapter}{Conclusion g\'en\'erale et perspectives}
+
+\section*{Synth\`ese des objectifs atteints}
+
+Ce stage a permis de mener de bout en bout la conception et le d\'eveloppement
+d'une plateforme compl\`ete de diagnostic automatique des logs de bases de donn\'ees
+h\'et\'erog\`enes. Les objectifs fix\'es ont tous \'et\'e atteints~:
+\begin{itemize}[leftmargin=*]
+  \item Support multi-moteurs (Oracle, PostgreSQL, MySQL) avec d\'etection automatique~;
+  \item Base de connaissances de 27\,622 entr\'ees sans donn\'ees de production~;
+  \item Mod\`ele FLAN-T5 fine-tun\'e, autonome, sans API externe payante~;
+  \item Interface web d\'eploy\'ee en production sur Railway~;
+  \item 55~tests automatis\'es, 100\,\% de r\'eussite.
+\end{itemize}
+
+Sur le plan technique, les principaux apports sont la ma\^itrise du cycle complet
+d'un syst\`eme NLP appliqu\'e~: corpus, fine-tuning, \'evaluation, correction de
+bugs subtils et d\'eploiement en production.
+
+\section*{Perspectives d'am\'elioration}
+
+\begin{itemize}[leftmargin=*]
+  \item \textbf{Extension de la couverture MySQL et PostgreSQL}~: automatiser
+        l'extraction des codes MySQL comme pour Oracle~;
+  \item \textbf{Retrieval hybride}~: combiner BM25 et embeddings denses pour am\'eliorer
+        la qualit\'e de r\'ecup\'eration pour les codes absents~;
+  \item \textbf{Corr\'elation d'\'ev\'enements}~: relier plusieurs codes co-occurring
+        pour identifier une cause racine commune~;
+  \item \textbf{Scoring de s\'ev\'erit\'e dynamique}~: score global pour l'ensemble
+        du log analys\'e~;
+  \item \textbf{Validation sur logs r\'eels}~: priorit\'e absolue d\`es qu'un
+        protocole de pseudonymisation sera valid\'e avec la DCSI.
+\end{itemize}
+
+% ============================================================
+% BIBLIOGRAPHIE
+% ============================================================
+\begin{thebibliography}{99}
+
+\bibitem{oracledoc}
+Oracle Corporation.
+\textit{Oracle Database Error Messages}.
+Oracle Help Center, 2024.
+\url{https://docs.oracle.com/en/database/oracle/oracle-database/}
+
+\bibitem{bs4}
+Richardson, L.
+\textit{Beautiful Soup Documentation}.
+Crummy.com, 2023.
+\url{https://pypi.org/project/beautifulsoup4/}
+
+\bibitem{bm25}
+Brown, D.
+\textit{rank\_bm25~: A Collection of BM25 Algorithms in Python}.
+GitHub, 2020.
+\url{https://github.com/dorianbrown/rank_bm25}
+
+\bibitem{bm25orig}
+Robertson, S. E. et Zaragoza, H.
+\textit{The Probabilistic Relevance Framework: BM25 and Beyond}.
+Foundations and Trends in Information Retrieval, 3(4), 333--389, 2009.
+
+\bibitem{lewis2020rag}
+Lewis, P., Perez, E., Piktus, A., et al.
+\textit{Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks}.
+Advances in Neural Information Processing Systems (NeurIPS), 33, 9459--9474, 2020.
+
+\bibitem{zhu2019log}
+Zhu, J., He, S., Liu, J., He, P., Xie, Q., Zheng, Z. et Lyu, M. R.
+\textit{Tools and Benchmarks for Automated Log Parsing}.
+Proceedings of the 41st IEEE/ACM International Conference on Software Engineering (ICSE), 121--130, 2019.
+
+\bibitem{le2022log}
+Le, V.-H. et Zhang, H.
+\textit{Log-based Anomaly Detection with Deep Learning: How Far Are We?}
+Proceedings of the 44th IEEE/ACM International Conference on Software Engineering (ICSE), 1356--1367, 2022.
+
+\bibitem{flanT5}
+Chung, H. W. et al.
+\textit{Scaling Instruction-Finetuned Language Models}.
+Journal of Machine Learning Research (JMLR), 2024.
+
+\bibitem{fastapi}
+Ram\'irez, S.
+\textit{FastAPI Documentation}.
+Tiangolo, 2024.
+\url{https://fastapi.tiangolo.com/}
+
+\bibitem{hfhub}
+Wolf, T. et al.
+\textit{Transformers: State-of-the-Art Natural Language Processing}.
+Proceedings of EMNLP (Systems Demonstrations), 38--45, 2020.
+
+\end{thebibliography}
+
+% ============================================================
+% ANNEXES
+% ============================================================
+\appendix
+
+\chapter{Extraits de code significatifs}
+
+\section{Parseur Oracle --- extraction des codes d'erreur}
+
+\begin{lstlisting}[language=Python,caption={Extrait de src/log\_parser.py},label=lst:parser]
+# 81 prefixes reconnus : ORA, TNS, RMAN, PLS, CRS, DRG, ...
+ORACLE_PREFIXES = [
+    "ORA", "TNS", "RMAN", "PLS", "CRS", "DRG", "INS",
+    "OCI", "NZE", "QSM", "PRVT", ...
+]
+_ORACLE_PATTERN = re.compile(
+    r'\b(' + '|'.join(ORACLE_PREFIXES) + r')-(\d{3,6})\b'
+)
+
+def extract_oracle_errors(text: str) -> list[ErrorOccurrence]:
+    results = []
+    for m in _ORACLE_PATTERN.finditer(text):
+        code = normalize_code(m.group(0))
+        results.append(ErrorOccurrence(code=code, ...))
+    return deduplicate(results)
+\end{lstlisting}
+
+\section{Pipeline de g\'en\'eration --- fonction \texttt{generate\_t5()}}
+
+\begin{lstlisting}[language=Python,caption={Extrait de src/rag/generator.py},label=lst:generate_t5]
+def generate_t5(code, raw_line, context, retrieved,
+                model_dir=DEFAULT_T5_MODEL_DIR,
+                max_new_tokens=80, engine="oracle"):
+    instruction = INSTRUCTIONS.get(engine, INSTRUCTIONS["oracle"])
+    try:
+        tokenizer, model = _load_t5(model_dir)
+    except Exception:
+        fallback = generate_mock(code, raw_line, context, retrieved)
+        fallback.source = "t5_fallback_to_kb"
+        return fallback
+
+    kb_lines = [
+        f"- [{e.code}] {e.message}\n"
+        f"  cause: {e.cause}\n"
+        f"  solution: {e.solution}\n"
+        f"  (score: {s:.1f})"
+        for e, s in (retrieved or [])
+    ]
+    kb_block = "\n".join(kb_lines) or "(no entries found)"
+    source_text = instruction + "\n\n" + context + "\n\n" \
+                  + "RETRIEVED KNOWLEDGE:\n" + kb_block
+
+    inputs = tokenizer(source_text, return_tensors="pt",
+                       truncation=True, max_length=512).to(model.device)
+    import torch
+    with torch.no_grad():
+        output_ids = model.generate(
+            **inputs, max_new_tokens=max_new_tokens,
+            do_sample=False, repetition_penalty=1.2,
+            no_repeat_ngram_size=3,
+        )
+    text = tokenizer.decode(output_ids[0], skip_special_tokens=True)
+    return _parse_and_build_explanation(text, code, retrieved)
+\end{lstlisting}
+
+\chapter{Exemples de rapports g\'en\'er\'es par moteur}
+
+\section{Rapport Oracle --- ORA-00060 et ORA-01555}
+
+\begin{lstlisting}[language={},caption={Extrait de rapport Oracle},label=lst:report_oracle]
+## ORA-00060  (seen 3x, lines: [142, 287, 301])
+MEANING: Deadlock detected while waiting for resource.
+LIKELY_CAUSE: Deux transactions ont tente d'acquerir des verrous croises.
+SUGGESTED_SOLUTION: Revoir l'ordre d'acquisition des verrous. Examiner
+  V$LOCK et V$SESSION pour identifier les sessions impliquees.
+CONFIDENCE: high | Source: kb_exact_match | KB refs: ORA-00060
+
+## ORA-01555  (seen 7x, lines: [89, 112, ...])
+MEANING: snapshot too old: rollback segment number 4 with name "RBS3"
+LIKELY_CAUSE: Requete longue lisant un snapshot avant recyclage du segment.
+SUGGESTED_SOLUTION: Augmenter UNDO_RETENTION, agrandir les tablespaces UNDO.
+CONFIDENCE: high | Source: kb_exact_match | KB refs: ORA-01555
+\end{lstlisting}
+
+\section{Rapport PostgreSQL --- 42P01 et 53300}
+
+\begin{lstlisting}[language={},caption={Extrait de rapport PostgreSQL},label=lst:report_pg]
+## 42P01  (seen 2x, lines: [34, 78])
+MEANING: undefined_table: La relation specifiee n'existe pas.
+LIKELY_CAUSE: Nom de table incorrect ou table non creee dans le schema courant.
+SUGGESTED_SOLUTION: Verifier le nom de la table via \dt ou pg_tables.
+CONFIDENCE: high | Source: kb_exact_match
+
+## 53300  (seen 1x, lines: [189])
+MEANING: too_many_connections: Limite de connexions atteinte.
+SUGGESTED_SOLUTION: Augmenter max_connections dans postgresql.conf
+  ou deployer PgBouncer comme pooler de connexions.
+CONFIDENCE: high | Source: kb_exact_match
+\end{lstlisting}
+
+\chapter{D\'etail chronologique des corrections apportées au pipeline}
+
+\begin{enumerate}[leftmargin=*]
+  \item \textbf{Bug parseur regex}~: liste des pr\'efixes Oracle pass\'ee de 13 \`a 81.
+  \item \textbf{Bug tokeniseur T5}~: sauts de ligne supprim\'es bloquant le parseur
+        de r\'eponse. Corrig\'e par regex \emph{lookahead}.
+  \item \textbf{Bug contamination inter-moteurs}~: BM25 sans filtrage. Corrig\'e
+        par filtrage dans \texttt{retrieve()}.
+  \item \textbf{Bug pseudo-codes PG-ERROR}~: regroupement sous m\^eme cl\'e.
+        Corrig\'e par cl\'e composite.
+  \item \textbf{Bug placeholders non r\'esolus}~: valeurs \texttt{\%s} propag\'ees
+        dans les sorties T5. Corrig\'e par r\'esolution \`a la g\'en\'eration.
+  \item \textbf{Bug reload=True}~: file watcher Uvicorn red\'emarrait le serveur.
+        Corrig\'e par \texttt{reload} conditionnel.
+  \item \textbf{Bug KB rebuild par requ\^ete}~: +2 \`a 4~s de latence.
+        Corrig\'e par singletons au d\'emarrage.
+  \item \textbf{Bug OOM torch.compile()}~: +300--500~Mo de m\'emoire.
+        Corrig\'e par suppression de \texttt{torch.compile()}.
+\end{enumerate}
+
+\chapter{Guide d'installation et de d\'eploiement}
+
+\section{Installation locale}
+
+\begin{lstlisting}[language=bash,caption={Installation locale},label=lst:install]
+# 1. Cloner le depot
+git clone https://github.com/rayenthabet004-spec/Projet-TT.git
+cd Projet-TT
+
+# 2. Installer les dependances Python
+pip install -r requirements.txt
+
+# 3. Lancer le serveur de developpement
+ENV=development python web_app.py
+# Acces : http://localhost:8000
+
+# 4. Lancer la suite de tests
+python -m pytest tests/ -v
+# Attendu : 55 passed
+\end{lstlisting}
+
+\section{D\'eploiement Docker}
+
+\begin{lstlisting}[language=bash,caption={Docker build et run},label=lst:docker]
+# Build (pre-cache le modele T5 dans l'image)
+docker build -t projet-tt .
+
+# Lancement
+docker run -p 8000:8000 -e HF_TOKEN=<votre_token> projet-tt
+\end{lstlisting}
+
+\section{Variables d'environnement}
+
+\begin{table}[H]
+  \centering
+  \caption{Variables d'environnement de l'application}
+  \label{tab:env_vars}
+  \begin{tabularx}{\textwidth}{llX}
+    \toprule
+    \textbf{Variable} & \textbf{D\'efaut} & \textbf{Description} \\
+    \midrule
+    \texttt{PORT}             & 8000       & Port d'\'ecoute \\
+    \texttt{ENV}              & production & \texttt{development} active le rechargement \\
+    \texttt{HF\_HOME}         & /app/hf\_cache & Cache Hugging Face \\
+    \texttt{HF\_HUB\_OFFLINE} & 1          & D\'esactive les appels r\'eseau HF Hub \\
+    \texttt{HF\_TOKEN}        & (vide)     & Token HF (requis au build si d\'ep\^ot priv\'e) \\
+    \texttt{T5\_HF\_REPO\_ID} & rayenthabet004/tt-multi-engine-t5 & Identifiant mod\`ele \\
+    \texttt{GEMINI\_API\_KEY} & (vide)     & Cl\'e Gemini (optionnel) \\
+    \texttt{GROQ\_API\_KEY}   & (vide)     & Cl\'e Groq (optionnel) \\
+    \bottomrule
+  \end{tabularx}
+\end{table}
+
+\end{document}

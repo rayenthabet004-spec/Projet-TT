@@ -29,21 +29,17 @@ my project.zip
 markitdown/
 
 # Academic reports & LaTeX documents
-*.tex
 *.pdf
-human report.tex
-rapport_stage_rayen.tex
-Rapport de stage Amal Kachroumi.*
-
-# Internal session notes & planning docs
-BUILD_PLAN_MULTI_ENGINE.md
-CONVERSATION_SUMMARY.md
-HANDOFF_NEXT_SESSION.md
-HANDOVER_AI_CONTEXT.md
-PROGRESS.md
-TESTING_CHECKLIST.md
-document.md
-image.png
+*.aux
+*.log
+*.toc
+*.out
+*.lof
+*.lot
+*.synctex*
+*.fls
+*.fdb_latexmk
+!rapport_final.tex
 
 # Large Model Weights (FLAN-T5 ~1GB) & checkpoint artifacts
 models/*t5*/
